@@ -10,6 +10,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 @Service
 public class UserService {
@@ -50,10 +51,11 @@ public class UserService {
 
 
     /**с ModelAttribute**/
-    public String registerUser(User user) {
+    public String registerUser(User user, Model model) {
         // Проверяем, существует ли пользователь с таким email
         if (userRepository.findByEmail(user.getEmail()).isPresent()) {
-            return "Email уже используется!";
+            model.addAttribute("emailError", "Уже есть аккаунт для введённого адреса электронной почты!");
+            return "redirect:/registration";
         }
 
         // Находим роль "CUSTOMER" в базе данных

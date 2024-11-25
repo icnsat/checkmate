@@ -34,9 +34,9 @@ public class RegistrationController {
 
     /**с ModelAttribute**/
     @PostMapping("/registration")
-    public String addUser(@ModelAttribute User user) {
+    public String addUser(@ModelAttribute User user, Model model) {
         log.info("Starting registration for user: {}", user.getEmail());
-        return userService.registerUser(user);
+        return userService.registerUser(user, model);
     }
 
     @GetMapping("/login")

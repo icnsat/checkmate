@@ -15,11 +15,12 @@ public class Hotel {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "country", nullable = false)
-    private String country;
+//    @Column(name = "country", nullable = false)
+//    private String country;
 
-    @Column(name = "city", nullable = false)
-    private String city;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "city_id", nullable = false)
+    private City city;
 
     @Column(name = "address", nullable = false)
     private String address;
@@ -35,17 +36,17 @@ public class Hotel {
     // Конструкторы, геттеры и сеттеры
     public Hotel() {}
 
-    public Hotel(String name, String country, String city, String address, Double rating) {
+    public Hotel(String name, /*String country,*/ City city, String address, Double rating) {
         this.name = name;
-        this.country = country;
+        //this.country = country;
         this.city = city;
         this.address = address;
         this.rating = rating;
     }
 
-    public Hotel(String name, String country, String city, String address, Double rating, List<Room> rooms) {
+    public Hotel(String name, /*String country,*/ City city, String address, Double rating, List<Room> rooms) {
         this.name = name;
-        this.country = country;
+        //this.country = country;
         this.city = city;
         this.address = address;
         this.rating = rating;
@@ -68,19 +69,20 @@ public class Hotel {
         this.name = name;
     }
 
-    public String getCountry() {
-        return country;
-    }
+//    public String getCountry() {
+//        return country;
+//    }
+//
+//    public void setCountry(String country) {
+//        this.country = country;
+//    }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
 
-    public String getCity() {
+    public City getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    public void setCity(City city) {
         this.city = city;
     }
 

@@ -52,7 +52,7 @@ public class SecurityConfig{
                         .requestMatchers(
                                 "/", "/registration", "/login",
                                 "/search", "/search_homepage", "/search_results",
-                                "/search_results/**", "/hotel/**"
+                                "/search_results/**", "/hotel/**", "/api/cities/**"
                                 ).permitAll()
                         .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
                         .anyRequest().authenticated()

@@ -61,7 +61,7 @@ public class HotelService {
 
         // return hotels;
         return hotelRepository.findHotelsWithAvailableRooms(
-                hotelSearchForm.getCity(),
+                hotelSearchForm.getCityId(),
                 hotelSearchForm.getCheckInDate(),
                 hotelSearchForm.getCheckOutDate(),
                 hotelSearchForm.getAdults()

@@ -7,7 +7,8 @@ import java.time.LocalDate;
 
 public class HotelSearchForm {
     @NotNull(message = "Город не может быть пустым")
-    private String city;
+    //private String city;
+    private Long cityId;
 
     @NotNull(message = "Укажите дату заезда")
     private LocalDate checkInDate;
@@ -20,19 +21,19 @@ public class HotelSearchForm {
 
     public HotelSearchForm() {}
 
-    public HotelSearchForm(String city, LocalDate checkInDate, LocalDate checkOutDate, int adults) {
-        this.city = city;
+    public HotelSearchForm(Long cityId, LocalDate checkInDate, LocalDate checkOutDate, int adults) {
+        this.cityId = cityId;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.adults = adults;
     }
 
-    public String getCity() {
-        return city;
+    public Long getCityId() {
+        return cityId;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setCityId(Long cityId) {
+        this.cityId = cityId;
     }
 
     public LocalDate getCheckInDate() {

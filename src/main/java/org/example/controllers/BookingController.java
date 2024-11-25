@@ -1,11 +1,9 @@
 package org.example.controllers;
 
 import jakarta.servlet.http.HttpSession;
-import org.example.entities.CustomUserDetails;
-import org.example.entities.Hotel;
-import org.example.entities.Room;
-import org.example.entities.User;
+import org.example.entities.*;
 import org.example.services.BookingService;
+import org.example.services.CityService;
 import org.example.services.HotelService;
 import org.example.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +24,13 @@ public class BookingController {
 
     private HotelService hotelService;
     private BookingService bookingService;
+    private CityService cityService;
 
     @Autowired
-    public BookingController(HotelService hotelService, BookingService bookingService) {
+    public BookingController(HotelService hotelService, BookingService bookingService, CityService cityService) {
         this.hotelService = hotelService;
         this.bookingService = bookingService;
+        this.cityService = cityService;
     }
 
     @PostMapping("/room/booking")
@@ -44,10 +44,12 @@ public class BookingController {
         // Получение информации о номере
         Room room = hotelService.getRoomById(roomId);
         Hotel hotel = hotelService.getHotelByRoomId(roomId);
+        City city = cityService.getCityById(hotel.getCity().getId());
 
         // Передача данных на страницу бронирования
         model.addAttribute("hotel", hotel);
         model.addAttribute("room", room);
+        model.addAttribute("city", city);
         model.addAttribute("checkInDate", checkInDate);
         model.addAttribute("checkOutDate", checkOutDate);
         model.addAttribute("adults", adults);

@@ -3,31 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <title>Registration</title>
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-
-        <!--
-        <div th:if="${param.userexists}">
-            <p>User already exists, try again.
-        </div>
-        <div th:tesxt="${userexists}"/>
-        -->
 
 
         <header th:insert="~{blocks/header :: header}"></header>
 
+        <div th:if="${emailError}" class="invalid_un_p">
+            <p>Уже есть аккаунт для введённого адреса электронной почты!</p>
+        </div>
+
         <div class="signup-form">
             <div>Регистрация</div>
 
-            <form th:action="@{/registration}" method="post">
-                <input type="email" name="email" placeholder="Почта"/>
-                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+            <form th:action="@{/registration}" method="post" class="mb-3 mt-3 border col-lg-8">
+                <input class="form-control" type="email" name="email" placeholder="Почта"/>
+<!--                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>-->
 
-                <input type="password" name="password"  placeholder="Пароль"/>
-                <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+                <input class="form-control" type="password" name="password"  placeholder="Пароль"/>
+<!--                <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>-->
 
                 <input type="hidden" name="_csrf" value="${_csrf.token}" />
-                <input type="submit" value="Зарегистрироваться"/>
+                <input class="btn btn-primary" type="submit" value="Зарегистрироваться"/>
             </form>
 
             <div>Уже есть аккаунт? <a href="/login">Войти</a></div>

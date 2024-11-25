@@ -4,6 +4,9 @@ INSERT INTO roles (id, role_name) VALUES
 INSERT INTO booking_statuses (id, name, description) VALUES
 (1, 'PENDING', 'Бронирование в обработке'), (2, 'CONFIRMED', 'Бронирование подтверждено'), (3, 'CANCELLED', 'Бронирование отменено');
 
+UPDATE users SET role_id=2 WHERE email='ad@min.com';
+
+
 SELECT * FROM users;
 
 SELECT * FROM roles;
@@ -16,12 +19,19 @@ SELECT * FROM booking_statuses;
 
 SELECT * FROM bookings;
 
+SELECT * FROM cities;
 
-INSERT INTO hotels (address, city, country, name, rating) VALUES
-('Улица Тверская, дом 10', 'Москва', 'Россия', 'Гранд Москва Отель', 4.5),
-('Невский проспект, дом 20', 'Санкт-Петербург', 'Россия', 'Отель Северное Сияние', 4.7),
-('Курортный проспект, дом 50', 'Сочи', 'Россия', 'Сочи Солнечный Резорт', 4.3);
 
+INSERT INTO cities (id, name, country) VALUES
+(1, 'Москва', 'Россия'),
+(2, 'Санкт-Петербург', 'Россия'),
+(3, 'Сочи', 'Россия');
+
+
+INSERT INTO hotels (id, address, city_id, name, rating) VALUES
+(1, 'Улица Тверская, дом 10', 1, 'Гранд Москва Отель', 4.5),
+(2, 'Невский проспект, дом 20', 2, 'Отель Северное Сияние', 4.7),
+(3, 'Курортный проспект, дом 50', 3, 'Сочи Солнечный Резорт', 4.3);
 
 -- Номера для отеля в Москве
 INSERT INTO rooms (capacity, description, hotel_id, price, room_type) VALUES
@@ -40,4 +50,5 @@ INSERT INTO rooms (capacity, description, hotel_id, price, room_type) VALUES
 (2, 'Номер с видом на море, оснащённый всем необходимым', 3, 7000.00, 'Стандарт'),
 (4, 'Семейный номер с двумя спальнями и балконом', 3, 12000.00, 'Семейный'),
 (2, 'Премиальный люкс с террасой и личным бассейном', 3, 25000.00, 'Люкс');
+
 

@@ -24,3 +24,36 @@ function updateMaxCheckInDate() {
         checkInDate.value = formattedPrevDay; // Также устанавливаем выбранное значение
     }
 }
+
+
+function fetchCities() {
+    const query = document.getElementById("city").value;
+    const suggestions = document.getElementById("citySuggestions");
+
+    if (query.length < 2) {
+        suggestions.style.display = "none";
+        suggestions.innerHTML = "";
+        return;
+    }
+
+    fetch(`/api/cities?query=${encodeURIComponent(query)}`)
+        .then(response => response.json())
+        .then(cities => {
+            suggestions.innerHTML = "";
+            cities.forEach(city => {
+                const li = document.createElement("li");
+                li.textContent = `${city.name}, ${city.country}`;
+                li.className = 'list-group-item list-group-item-action';
+                li.onclick = () => {
+                    document.getElementById("city").value = `${city.name}, ${city.country}`;
+                    document.getElementById("cityId").value = city.id;
+                    suggestions.style.display = "none";
+                };
+                suggestions.appendChild(li);
+            });
+            suggestions.style.display = "block";
+        })
+        .catch(error => {
+            console.error("Ошибка при получении списка городов:", error);
+        });
+}

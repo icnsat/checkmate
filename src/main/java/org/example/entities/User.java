@@ -35,10 +35,7 @@ public class User {
     //private String phoneNumber;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(
-            name = "role_id",
-            nullable = false
-    )
+    @JoinColumn( name = "role_id", nullable = false)
     private Role role;
 
 

@@ -1,13 +1,16 @@
 package org.example.controllers;
 
 import jakarta.servlet.http.HttpSession;
+import org.example.entities.City;
 import org.example.entities.Hotel;
 import org.example.entities.HotelSearchForm;
 import org.example.entities.Room;
+import org.example.services.CityService;
 import org.example.services.HotelService;
 import org.example.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,10 +22,11 @@ import java.util.List;
 @Controller
 public class HomeController {
     private final HotelService hotelService;
-
+    private final CityService cityService;
     @Autowired
-    public HomeController(HotelService hotelService) {
+    public HomeController(HotelService hotelService, CityService cityService) {
         this.hotelService = hotelService;
+        this.cityService = cityService;
     }
 
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(UserService.class);
@@ -36,8 +40,9 @@ public class HomeController {
     @GetMapping("/search_homepage")
     public String showSearchForm(Model model) {
         // Список популярных городов
-        List<String> cities = List.of("Москва", "Санкт-Петербург", "Сочи", "Эсто-Садок");
+        List<City> cities = cityService.getAllCities();//List.of("Москва", "Санкт-Петербург", "Сочи", "Эсто-Садок");
         model.addAttribute("cities", cities);
+
 
         // Получаем текущую дату
         LocalDate today = LocalDate.now();
@@ -71,8 +76,13 @@ public class HomeController {
         //session.setAttribute("hotelSearchForm", hotelSearchForm);
 
         // Добавляем доступные города для поиска
-        List<String> cities = List.of("Москва", "Санкт-Петербург", "Сочи", "Эсто-Садок");
+        List<City> cities = cityService.getAllCities(); // Получаем все города
         model.addAttribute("cities", cities);
+
+        City city = cityService.getCityById(hotelSearchForm.getCityId());
+        model.addAttribute("city", city);
+
+
         // Получаем текущую дату
         LocalDate today = LocalDate.now();
         // Преобразование дат в строку (формат YYYY-MM-DD)
@@ -92,6 +102,19 @@ public class HomeController {
 
         return "search_results"; // Имя HTML-шаблона для результатов
     }
+
+
+    @GetMapping("/api/cities")
+    @ResponseBody
+    public List<City> searchCities(@RequestParam String query) {
+        return cityService.searchCities(query); // Возвращаем города, которые содержат query
+    }
+//    public ResponseEntity<List<String>> getCities(@RequestParam String query) {
+//        // Вызываем сервис, чтобы найти города по введенной строке
+//        List<String> matchingCities = cityService.findCitiesByQuery(query);
+//        return ResponseEntity.ok(matchingCities);
+//    }
+
 
     @GetMapping("/hotel/{id}")
     public String getHotelDetails(
@@ -127,9 +150,12 @@ public class HomeController {
 //                hotelSearchForm.getAdults()
         );
 
+        City city = cityService.getCityById(hotel.getCity().getId());
+
         // Добавление данных в модель
         model.addAttribute("hotel", hotel);
         model.addAttribute("rooms", rooms);
+        model.addAttribute("city", city);
 //        model.addAttribute("hotelSearchForm", hotelSearchForm);
 
         model.addAttribute("checkInDate", checkInDate);
