@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Аккаунт</title>
+    </head>
+    <body>
+
+        <header th:insert="~{blocks/header :: header}"></header>
+
+        <h1>Мой аккаунт</h1>
+
+        <section>
+            <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit">Выйти</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Мои бронирования</h2>
+            <div th:if="${bookings.isEmpty()}">
+                <p>У вас пока нет бронирований.</p>
+            </div>
+            <div th:if="${!bookings.isEmpty()}">
+                <ul>
+                    <li th:each="booking : ${bookings}">
+                        <p><strong>ОТ: </strong> <span th:text="${booking.createdAt}"></span></p>
+                        <p><strong>Отель:</strong> <span th:text="${booking.room.hotel.name}"></span></p>
+                        <p><strong>Номер:</strong> <span th:text="${booking.room.roomType}"></span></p>
+                        <p><strong>Дата заезда:</strong> <span th:text="${booking.checkInDate}"></span></p>
+                        <p><strong>Дата выезда:</strong> <span th:text="${booking.checkOutDate}"></span></p>
+                        <p><strong>Цена:</strong> <span th:text="${booking.totalPrice} + ' руб.'"></span></p>
+                        <p><strong>Статус:</strong> <span th:text="${booking.status.name}"></span></p>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <footer th:insert="~{blocks/footer :: footer}"></footer>
+
+    </body>
+</html>

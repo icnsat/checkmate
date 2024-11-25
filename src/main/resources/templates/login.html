@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Login</title>
+
+    </head>
+    <body>
+
+        <header th:insert="~{blocks/header :: header}"></header>
+
+
+        <!--
+        <div th:if="${param.error}" class="invalid_un_p">
+            <p>Неправильное имя пользователя или пароль</p>
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        -->
+
+        <div class="login-form">
+
+            <div class="login-form-form">
+
+                <div>Вход в аккаунт</div>
+
+                <form th:action="@{/login}" method="post">
+                    <input type="email" name="email" placeholder="Почта пользователя"/>
+                    <input type="password" name="password" placeholder="Пароль"/>
+                    <input type="submit" value="Войти"/>
+                </form>
+
+                <div>Ещё нет акканута? <a href="/registration">Регистрация</a></div>
+
+            </div>
+        </div>
+
+        <footer th:insert="~{blocks/footer :: footer}"></footer>
+
+    </body>
+</html>
