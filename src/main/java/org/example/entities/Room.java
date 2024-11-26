@@ -28,6 +28,9 @@ public class Room {
     @Column(name = "description", nullable = false)
     private String description;  // Описание
 
+    @Column(name = "photo")
+    private String photo;
+
     // @Column(name = "available", nullable = false)
     // private boolean available = true;  // Доступность комнаты
 
@@ -44,6 +47,15 @@ public class Room {
         this.capacity = capacity;
         this.price = price;
         this.description = description;
+    }
+
+    public Room(Hotel hotel, String roomType, int capacity, Double price, String description, String photo) {
+        this.hotel = hotel;
+        this.roomType = roomType;
+        this.capacity = capacity;
+        this.price = price;
+        this.description = description;
+        this.photo = photo;
     }
 
     public Long getId() {
@@ -102,6 +114,14 @@ public class Room {
 //        this.available = available;
 //    }
 
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
     @Override
     public String toString() {

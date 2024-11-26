@@ -78,6 +78,9 @@
                                     <h2 th:text="${hotel.name}">Название отеля</h2>
                                 </div>
                                 <div class="card-body">
+                                    <div>
+                                        <img th:src="@{/uploads/{photo}(photo=${hotel.photo})}" alt="Фото отеля" style="width: 100px; height: auto;" th:if="${hotel.photo != null}">
+                                    </div>
                                     <p th:text="'Адрес: ' + ${hotel.address}">Адрес отеля</p>
                                     <p th:text="'Город: ' + ${city.name}">Город</p>
                                     <p th:text="'Рейтинг: ' + ${hotel.rating} + ' ★'">Рейтинг</p>

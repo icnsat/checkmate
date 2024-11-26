@@ -2,10 +2,7 @@ package org.example.controllers;
 
 import jakarta.servlet.http.HttpSession;
 import org.example.entities.*;
-import org.example.services.BookingService;
-import org.example.services.CityService;
-import org.example.services.HotelService;
-import org.example.services.UserService;
+import org.example.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.Authentication;
@@ -25,12 +22,17 @@ public class BookingController {
     private HotelService hotelService;
     private BookingService bookingService;
     private CityService cityService;
+    private RoomService roomService;
 
     @Autowired
-    public BookingController(HotelService hotelService, BookingService bookingService, CityService cityService) {
+    public BookingController(HotelService hotelService,
+                             BookingService bookingService,
+                             CityService cityService,
+                             RoomService roomService) {
         this.hotelService = hotelService;
         this.bookingService = bookingService;
         this.cityService = cityService;
+        this.roomService = roomService;
     }
 
     @PostMapping("/room/booking")
@@ -42,7 +44,7 @@ public class BookingController {
             Model model) {
 
         // Получение информации о номере
-        Room room = hotelService.getRoomById(roomId);
+        Room room = roomService.getRoomById(roomId);
         Hotel hotel = hotelService.getHotelByRoomId(roomId);
         City city = cityService.getCityById(hotel.getCity().getId());
 

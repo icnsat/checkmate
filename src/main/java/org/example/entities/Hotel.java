@@ -28,29 +28,56 @@ public class Hotel {
     @Column(name = "rating", nullable = false, columnDefinition = "DECIMAL(2,1) CHECK (rating BETWEEN 0 AND 5)")
     private Double rating;
 
+    @Column(name = "photo")
+    private String photo;
+
     @OneToMany(mappedBy = "hotel")
     private List<Room> rooms;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "manager_id", nullable = false)
+    private User manager;
 
 
     // Конструкторы, геттеры и сеттеры
     public Hotel() {}
 
-    public Hotel(String name, /*String country,*/ City city, String address, Double rating) {
+    public Hotel(String name, /*String country,*/ City city, String address, Double rating, User manager) {
         this.name = name;
         //this.country = country;
         this.city = city;
         this.address = address;
         this.rating = rating;
+        this.manager = manager;
     }
 
-    public Hotel(String name, /*String country,*/ City city, String address, Double rating, List<Room> rooms) {
+    public Hotel(String name, /*String country,*/ City city, String address, Double rating, List<Room> rooms, User manager) {
         this.name = name;
         //this.country = country;
         this.city = city;
         this.address = address;
         this.rating = rating;
         this.rooms = rooms;
+        this.manager = manager;
+    }
+
+    public Hotel(String name, City city, String address, Double rating, String photo, User manager) {
+        this.name = name;
+        this.city = city;
+        this.address = address;
+        this.rating = rating;
+        this.photo = photo;
+        this.manager = manager;
+    }
+
+    public Hotel(String name, City city, String address, Double rating, String photo, List<Room> rooms, User manager) {
+        this.name = name;
+        this.city = city;
+        this.address = address;
+        this.rating = rating;
+        this.photo = photo;
+        this.rooms = rooms;
+        this.manager = manager;
     }
 
     public Long getId() {
@@ -102,11 +129,27 @@ public class Hotel {
         this.rating = rating;
     }
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
     public List<Room> getRooms() {
         return rooms;
     }
 
     public void setRooms(List<Room> rooms) {
         this.rooms = rooms;
+    }
+
+    public User getManager() {
+        return manager;
+    }
+
+    public void setManager(User manager) {
+        this.manager = manager;
     }
 }

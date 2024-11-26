@@ -2,6 +2,7 @@ package org.example.repositories;
 
 import org.example.entities.City;
 import org.example.entities.Hotel;
+import org.example.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -29,4 +30,5 @@ public interface HotelRepository extends JpaRepository<Hotel, Long> {
             @Param("adults") int adults
     );
 
+    List<Hotel> findAllByManager(User currentUser);
 }

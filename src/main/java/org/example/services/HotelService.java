@@ -3,6 +3,7 @@ package org.example.services;
 import org.example.entities.Room;
 import org.example.entities.Hotel;
 import org.example.entities.HotelSearchForm;
+import org.example.entities.User;
 import org.example.repositories.BookingRepository;
 import org.example.repositories.HotelRepository;
 import org.example.repositories.RoomRepository;
@@ -20,9 +21,6 @@ public class HotelService {
     private HotelRepository hotelRepository;
     @Autowired
     private RoomRepository roomRepository;
-//    @Autowired
-//    private final BookingRepository bookingRepository;
-
 
     public HotelService(HotelRepository hotelRepository, RoomRepository roomRepository) {
         this.hotelRepository = hotelRepository;
@@ -30,36 +28,9 @@ public class HotelService {
         // this.bookingRepository = bookingRepository;
     }
 
-//    public boolean isAvailable(Long hotelId, LocalDate checkInDate, LocalDate checkOutDate) {
-//        /** Если для отеля есть пересекающиеся бронирования, он недоступен **/
-//        List<Booking> overlappingBookings = bookingRepository.findOverlappingBookings(hotelId, checkInDate, checkOutDate);
-//        return overlappingBookings.isEmpty();
-//    }
-
     public List<Hotel> findHotels(HotelSearchForm hotelSearchForm) {
         log.info("Find all users by city name from HotelSearchForm :)");
 
-        /** Убрали отдельно получение этих параметров:
-         * hotelSearchForm.getCity() вместо city в hotelRepository.findByCity() и т.д. **/
-        // String city = hotelSearchForm.getCity();
-        // LocalDate checkInDate = hotelSearchForm.getCheckInDate();
-        // LocalDate checkOutDate = hotelSearchForm.getCheckOutDate();
-        // int adults = hotelSearchForm.getAdults();
-
-//        /** Простая бизнес-логика: поиск отелей по городу **/
-//        List<Hotel> hotels = hotelRepository.findByCity(hotelSearchForm.getCity());
-
-//         (Опционально) можно добавить фильтрацию, если потребуется (например, по доступным датам)
-//        hotels = hotels.stream()
-//                .filter(hotel -> hotel.isAvailable(checkInDate, checkOutDate))
-//                .collect(Collectors.toList());
-
-//        /** Фильтруем отели по доступности **/
-//        return hotels.stream()
-//                .filter(hotel -> isAvailable(hotel.getId(), hotelSearchForm.getCheckInDate(), hotelSearchForm.getCheckOutDate()))
-//                .collect(Collectors.toList());
-
-        // return hotels;
         return hotelRepository.findHotelsWithAvailableRooms(
                 hotelSearchForm.getCityId(),
                 hotelSearchForm.getCheckInDate(),
@@ -78,11 +49,19 @@ public class HotelService {
         return roomRepository.findAvailableRooms(hotelId, checkInDate, checkOutDate, adults);
     }
 
-    public Room getRoomById(Long roomId) {
-        return roomRepository.findRoomById(roomId);
-    }
-
     public Hotel getHotelByRoomId(Long roomId) {
         return roomRepository.findHotelByRoomId(roomId);
+    }
+
+    public List<Hotel> getHotelsByManager(User currentUser) {
+        return hotelRepository.findAllByManager(currentUser);
+    }
+
+    public void saveHotel(Hotel hotel) {
+        hotelRepository.save(hotel);
+    }
+
+    public void deleteHotel(Hotel hotel) {
+        hotelRepository.delete(hotel);
     }
 }

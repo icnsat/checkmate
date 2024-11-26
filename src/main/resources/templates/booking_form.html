@@ -29,6 +29,7 @@
             <!-- Информация о номере -->
             <section class="col">
                 <h2>Выбранный номер</h2>
+                <img th:src="@{/uploads/{photo}(photo=${room.photo})}" alt="Фото номера" style="width: 100px; height: auto;" th:if="${room.photo != null}">
                 <p><strong>Тип:</strong> <span th:text="${room.roomType}">Тип номера</span></p>
                 <p><strong>Вместимость:</strong> <span th:text="${room.capacity}">0</span></p>
                 <p><strong>Описание:</strong> <span th:text="${room.description}">Описание номера</span></p>

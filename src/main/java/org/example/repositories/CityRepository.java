@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface CityRepository extends JpaRepository<City, Long> {
@@ -17,4 +18,9 @@ public interface CityRepository extends JpaRepository<City, Long> {
     List<City> findByNameContainingIgnoreCase(@Param("query") String query);
 
     City findCityById(Long id);
+
+    Optional<City> findByName(String trim);
+
+    City findCityByName(String trim);
+
 }

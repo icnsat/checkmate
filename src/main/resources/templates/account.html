@@ -35,6 +35,7 @@
                             </div>
                             <div class="card-body">
                                 <p><strong>Отель:</strong> <span th:text="${booking.room.hotel.name}"></span></p>
+                                <img th:src="@{/uploads/{photo}(photo=${booking.room.photo})}" alt="Фото номера" style="width: 100px; height: auto;" th:if="${booking.room.photo != null}">
                                 <p><strong>Номер:</strong> <span th:text="${booking.room.roomType}"></span></p>
                                 <p><strong>Дата заезда:</strong> <span th:text="${booking.checkInDate}"></span></p>
                                 <p><strong>Дата выезда:</strong> <span th:text="${booking.checkOutDate}"></span></p>

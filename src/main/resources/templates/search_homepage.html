@@ -14,46 +14,41 @@
     <body>
         <header th:insert="~{blocks/header :: header}"></header>
 
-        <form th:action="@{/search}" method="post" class="container p-5 my-5 border">
-            <div class="row">
-                <div class="col-lg-4">
-                    <!-- Выпадающий список городов -->
-    <!--                <label for="city">Куда вы хотите поехать?</label>-->
-    <!--                <select id="city" name="city" required>-->
-    <!--                    <option th:each="city : ${cities}" th:value="${city}" th:text="${city}"></option>-->
-    <!--                </select>-->
+        <div class="container mt-5">
+            <form th:action="@{/search}" method="post" class="p-5 my-5 border">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label for="city">Куда вы хотите поехать?</label>
+                        <input class="form-control-lg form-control" type="text" id="city" name="city" oninput="fetchCities()" autocomplete="off"
+                               th:value="${cities[0].name}" required placeholder="Город">
+                        <input type="hidden" id="cityId" name="cityId" th:value="${cities[0].id}">
+                        <ul class="list-group" id="citySuggestions" style="display: none;"></ul>
+                    </div>
 
-                    <label for="city">Куда вы хотите поехать?</label>
-                    <input class="form-control-lg form-control" type="text" id="city" name="city" oninput="fetchCities()" autocomplete="off"
-                           th:value="${cities[0].name}" required placeholder="Город">
-                    <input type="hidden" id="cityId" name="cityId" th:value="${cities[0].id}">
-                    <ul class="list-group" id="citySuggestions" style="display: none;"></ul>
+                    <div class="col-lg-2">
+                        <!-- Поля выбора даты -->
+                        <label for="checkInDate">Дата заезда:</label>
+                        <input class="form-control-lg form-control" type="date" id="checkInDate" name="checkInDate" th:value="${defaultCheckInDate}"
+                               th:min="${todayDate}" onchange="updateMinCheckOutDate()" required>
+                    </div>
 
-                </div>
+                    <div class="col-lg-2">
+                        <label for="checkOutDate">Дата выезда:</label>
+                        <input class="form-control-lg form-control" type="date" id="checkOutDate" name="checkOutDate" th:value="${defaultCheckOutDate}"
+                               th:min="${todayDate}" onchange="updateMaxCheckInDate()" required>
+                    </div>
 
-                <div class="col-lg-2">
-                    <!-- Поля выбора даты -->
-                    <label for="checkInDate">Дата заезда:</label>
-                    <input class="form-control-lg form-control" type="date" id="checkInDate" name="checkInDate" th:value="${defaultCheckInDate}"
-                           th:min="${todayDate}" onchange="updateMinCheckOutDate()" required>
-                </div>
-                <div class="col-lg-2">
-                    <label for="checkOutDate">Дата выезда:</label>
-                    <input class="form-control-lg form-control" type="date" id="checkOutDate" name="checkOutDate" th:value="${defaultCheckOutDate}"
-                           th:min="${todayDate}" onchange="updateMaxCheckInDate()" required>
-                </div>
+                    <div class="col-lg-3">
+                        <label for="adults">Количество взрослых:</label>
+                        <input class="form-control-lg form-control" type="number" id="adults" name="adults" min="1" th:value="${defaultAdults}" required>
+                    </div>
 
-                <div class="col-lg-3">
-                    <!-- Поле для количества взрослых -->
-                    <label for="adults">Количество взрослых:</label>
-                    <input class="form-control-lg form-control" type="number" id="adults" name="adults" min="1" th:value="${defaultAdults}" required>
+                    <div class="col-lg-1 align-content-start">
+                        <button class="btn btn-primary btn-lg" type="submit">Найти</button>
+                    </div>
                 </div>
-                <div class="col-lg-1 align-content-start">
-                    <button class="btn btn-primary btn-lg" type="submit">Найти</button>
-                </div>
-            </div>
-        </form>
-
+            </form>
+        </div>
         <footer th:insert="~{blocks/footer :: footer}"></footer>
 
     </body>

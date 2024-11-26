@@ -1,10 +1,7 @@
 package org.example.controllers;
 
 import jakarta.servlet.http.HttpSession;
-import org.example.entities.City;
-import org.example.entities.Hotel;
-import org.example.entities.HotelSearchForm;
-import org.example.entities.Room;
+import org.example.entities.*;
 import org.example.services.CityService;
 import org.example.services.HotelService;
 import org.example.services.UserService;
@@ -23,10 +20,12 @@ import java.util.List;
 public class HomeController {
     private final HotelService hotelService;
     private final CityService cityService;
+    private final UserService userService;
     @Autowired
-    public HomeController(HotelService hotelService, CityService cityService) {
+    public HomeController(HotelService hotelService, CityService cityService, UserService userService) {
         this.hotelService = hotelService;
         this.cityService = cityService;
+        this.userService = userService;
     }
 
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(UserService.class);
@@ -39,10 +38,12 @@ public class HomeController {
 
     @GetMapping("/search_homepage")
     public String showSearchForm(Model model) {
+//        User user = userService.getUser();
+//        model.addAttribute("user", user);
+
         // Список популярных городов
         List<City> cities = cityService.getAllCities();//List.of("Москва", "Санкт-Петербург", "Сочи", "Эсто-Садок");
         model.addAttribute("cities", cities);
-
 
         // Получаем текущую дату
         LocalDate today = LocalDate.now();

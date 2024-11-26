@@ -52,7 +52,8 @@ public class BookingService {
         BookingStatus bookingStatus = bookingStatusRepository.findBookingStatusByName("PENDING");
         // LocalDateTime createdAt = LocalDateTime.now(); // уже есть в конструкторе
 
-        Booking booking = new Booking(user,
+        Booking booking = new Booking(
+                user,
                 firstName,
                 lastName,
                 phone,
@@ -71,4 +72,27 @@ public class BookingService {
         return bookingRepository.findAllByUser(user);
     }
 
+    public List<Booking> getBookingsByHotels(List<Hotel> hotels) {
+        return bookingRepository.findByHotelIn(hotels);
+    }
+
+    public void deleteByRoom(Room room) {
+        List<Booking> bookings = bookingRepository.findByRoom(room);
+
+        if (bookings != null && !bookings.isEmpty()) {
+            bookingRepository.deleteAll(bookings);
+        }
+    }
+
+    public Booking getBookingById(Long bookingId) {
+        return bookingRepository.findBookingById(bookingId);
+    }
+
+    public BookingStatus getBookingStatusByName(String name) {
+        return bookingStatusRepository.findBookingStatusByName(name);
+    }
+
+    public void updateBooking(Booking booking){
+        bookingRepository.save(booking);
+    }
 }

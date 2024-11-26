@@ -3,6 +3,12 @@
         <li class="nav-item">
             <a class="nav-link" href="/">checkmate</a>
         </li>
+        <li th:if="${userRole == 'STAFF'}">
+            <a class="btn btn-success" th:href="@{/staff/dashboard}">Редактирование отелей</a>
+        </li>
+        <li th:if="${userRole == 'STAFF'}">
+            <a class="btn btn-success" th:href="@{/staff/booking}">Текущее бронирование</a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="/account">Аккаунт</a>
         </li>

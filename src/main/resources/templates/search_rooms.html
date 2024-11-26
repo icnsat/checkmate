@@ -34,6 +34,9 @@
                     <p><strong>Город:</strong> <span th:text="${city.name}">Город</span></p>
                     <p><strong>Страна:</strong> <span th:text="${city.country}">Страна</span></p>
                     <p><strong>Рейтинг:</strong> <span th:text="${hotel.rating} + ' ★'">Рейтинг</span></p>
+                    <div>
+                        <img th:src="@{/uploads/{photo}(photo=${hotel.photo})}" alt="Фото отеля" style="width: 100px; height: auto;" th:if="${hotel.photo != null}">
+                    </div>
                 </div>
             </section>
 
@@ -74,7 +77,7 @@
                 <div th:each="room : ${rooms}">
                     <div class="card">
                         <div class="card-body">
-                            <img th:src="@{/images/room-placeholder.jpg}" alt="Фото номера"> <!-- Заменить на реальный путь к фото -->
+                            <img th:src="@{/uploads/{photo}(photo=${room.photo})}" alt="Фото номера" style="width: 100px; height: auto;" th:if="${room.photo != null}">
                             <h3 th:text="${room.roomType}">Тип номера</h3>
                             <p><strong>Вместимость:</strong> <span th:text="${room.capacity}">0</span></p>
                             <p><strong>Описание:</strong> <span th:text="${room.description}">Описание номера</span></p>

@@ -27,8 +27,8 @@
                 <div>Вход в аккаунт</div>
 
                 <form th:action="@{/login}" method="post" class="mb-3 mt-3 border col-lg-8">
-                    <input class="form-control" type="email" name="email" placeholder="Почта пользователя"/>
-                    <input class="form-control" type="password" name="password" placeholder="Пароль"/>
+                    <input class="form-control" type="email" name="email" placeholder="Почта пользователя" required/>
+                    <input class="form-control" type="password" name="password" placeholder="Пароль" required/>
                     <input class="btn btn-primary" type="submit" value="Войти"/>
                 </form>
 

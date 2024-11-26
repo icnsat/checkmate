@@ -54,7 +54,9 @@ public class SecurityConfig{
                                 "/search", "/search_homepage", "/search_results",
                                 "/search_results/**", "/hotel/**", "/api/cities/**"
                                 ).permitAll()
-                        .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/uploads/**").permitAll()
+                        .requestMatchers("/staff/**").hasRole("STAFF")
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
