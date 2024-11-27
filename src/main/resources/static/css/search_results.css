@@ -1,0 +1,16 @@
+#citySuggestions {
+    position: absolute;
+    z-index: 1050;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    max-height: 200px;
+    overflow-y: auto;
+    width: calc(100% - 20px); /* Подстраивается под ширину поля ввода */
+    margin-top: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#citySuggestions .list-group-item {
+    cursor: pointer;
+}

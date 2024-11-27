@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Высота страницы = высоте окна браузера */
+}
+
+main {
+    flex: 1; /* Основной контент занимает оставшееся пространство */
+}
+
+footer {
+    background-color: #f8f9fa; /* Светло-серый фон для футера */
+    padding: 1rem 0;
+    text-align: center;
+}

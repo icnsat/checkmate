@@ -1,202 +1,208 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Менеджерская панель</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-<header th:insert="~{blocks/header :: header}"></header>
+    <head>
+        <meta charset="UTF-8">
+        <title>Менеджерская панель</title>
+        <link href="/css/footer.css" rel="stylesheet">
 
-<div class="container mt-5">
-    <h1>Добро пожаловать, Менеджер</h1>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
 
-    <!-- Кнопка для вызова модального окна -->
-    <div class="mb-4">
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addHotelModal">Добавить новый отель</button>
-    </div>
+        <header th:insert="~{blocks/header :: header}"></header>
 
-    <!-- Список отелей -->
-    <h2>Ваши отели</h2>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>Название</th>
-            <th>Город</th>
-            <th>Страна</th>
-            <th>Адрес</th>
-            <th>Рейтинг</th>
-            <th>Фото</th>
-            <th>Действия</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="hotel : ${hotels}">
-            <td th:text="${hotel.name}"></td>
-            <td th:text="${hotel.city.name}"></td>
-            <td th:text="${hotel.city.country}"></td>
-            <td th:text="${hotel.address}"></td>
-            <td th:text="${hotel.rating}"></td>
-            <td>
-                <img th:src="@{/uploads/{photo}(photo=${hotel.photo})}" alt="Фото отеля" style="width: 100px; height: auto;" th:if="${hotel.photo != null}">
-                <span th:if="${hotel.photo == null}">Нет фото</span>
-            </td>
-            <td>
-                <!-- Кнопка редактирования -->
-                <button class="btn btn-primary btn-sm"
-                        data-bs-toggle="modal"
-                        th:attr="data-bs-target='#editHotelModal' + ${hotel.id}">
-                    Редактировать
-                </button>
-                <!-- Кнопка удаления -->
-                <button class="btn btn-danger btn-sm"
-                        data-bs-toggle="modal"
-                        th:attr="data-bs-target='#deleteHotelModal' + ${hotel.id}">
-                    Удалить
-                </button>
-                <!-- Кнопка просмотра комнат -->
-                <a class="btn btn-info btn-sm" th:href="@{/staff/hotel/rooms/{id}(id=${hotel.id})}">Просмотреть номера</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+        <main>
+            <div class="container mt-5">
+                <h1>Добро пожаловать, Менеджер</h1>
 
-<!-- Модальные окна -->
-<div th:each="hotel : ${hotels}">
+                <!-- Кнопка для вызова модального окна -->
+                <div class="mb-4">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addHotelModal">Добавить новый отель</button>
+                </div>
 
-    <!-- Модальное окно для редактирования -->
-    <div class="modal fade" th:id="'editHotelModal' + ${hotel.id}" tabindex="-1" aria-labelledby="editHotelModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form th:action="@{/staff/hotel/edit}" method="post" enctype="multipart/form-data">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editHotelModalLabel">Редактировать отель</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- Список отелей -->
+                <h2>Ваши отели</h2>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Город</th>
+                        <th>Страна</th>
+                        <th>Адрес</th>
+                        <th>Рейтинг</th>
+                        <th>Фото</th>
+                        <th>Действия</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="hotel : ${hotels}">
+                        <td th:text="${hotel.name}"></td>
+                        <td th:text="${hotel.city.name}"></td>
+                        <td th:text="${hotel.city.country}"></td>
+                        <td th:text="${hotel.address}"></td>
+                        <td th:text="${hotel.rating}"></td>
+                        <td>
+                            <img th:src="@{/uploads/{photo}(photo=${hotel.photo})}" alt="Фото отеля" style="width: 100px; height: auto;" th:if="${hotel.photo != null}">
+                            <span th:if="${hotel.photo == null}">Нет фото</span>
+                        </td>
+                        <td>
+                            <!-- Кнопка редактирования -->
+                            <button class="btn btn-primary btn-sm"
+                                    data-bs-toggle="modal"
+                                    th:attr="data-bs-target='#editHotelModal' + ${hotel.id}">
+                                Редактировать
+                            </button>
+                            <!-- Кнопка удаления -->
+                            <button class="btn btn-danger btn-sm"
+                                    data-bs-toggle="modal"
+                                    th:attr="data-bs-target='#deleteHotelModal' + ${hotel.id}">
+                                Удалить
+                            </button>
+                            <!-- Кнопка просмотра комнат -->
+                            <a class="btn btn-info btn-sm" th:href="@{/staff/hotel/rooms/{id}(id=${hotel.id})}">Просмотреть номера</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Модальные окна -->
+            <div th:each="hotel : ${hotels}">
+
+                <!-- Модальное окно для редактирования -->
+                <div class="modal fade" th:id="'editHotelModal' + ${hotel.id}" tabindex="-1" aria-labelledby="editHotelModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form th:action="@{/staff/hotel/edit}" method="post" enctype="multipart/form-data">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editHotelModalLabel">Редактировать отель</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="hidden" name="id" th:value="${hotel.id}">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Название</label>
+                                        <input type="text" class="form-control" id="name" name="name" th:value="${hotel.name}" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="city" class="form-label">Город</label>
+                                        <input type="text" class="form-control" id="city" name="city" th:value="${hotel.city.name}" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="country" class="form-label">Страна</label>
+                                        <input type="text" class="form-control" id="country" name="country" th:value="${hotel.city.country}" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="address" class="form-label">Адрес</label>
+                                        <input type="text" class="form-control" id="address" name="address" th:value="${hotel.address}" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="rating" class="form-label">Рейтинг</label>
+                                        <input type="number" step="0.1" class="form-control" id="rating" name="rating" th:value="${hotel.rating}" required>
+                                    </div>
+            <!--                        <div class="mb-3">-->
+            <!--                            <label for="description" class="form-label">Описание</label>-->
+            <!--                            <textarea class="form-control" id="description" name="description" rows="3" th:text="${hotel.description}" required></textarea>-->
+            <!--                        </div>-->
+            <!--                        <div class="mb-3">-->
+            <!--                            <label for="editPhoto" class="form-label">Фотография</label>-->
+            <!--                            <input type="file" class="form-control" id="editPhoto" name="photo" th:value="${hotel.photo}">-->
+            <!--                        </div>-->
+
+
+                                    <div class="mb-3">
+                                        <label for="editPhoto" class="form-label">Фото отеля</label>
+                                        <input type="file" class="form-control" id="editPhoto" name="photo">
+                                        <div class="mt-2">
+                                            <img th:src="@{'/uploads/' + ${hotel.photo}}" alt="Фото отеля" class="img-thumbnail" style="max-width: 200px;">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                                    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <input type="hidden" name="id" th:value="${hotel.id}">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Название</label>
-                            <input type="text" class="form-control" id="name" name="name" th:value="${hotel.name}" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="city" class="form-label">Город</label>
-                            <input type="text" class="form-control" id="city" name="city" th:value="${hotel.city.name}" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="country" class="form-label">Страна</label>
-                            <input type="text" class="form-control" id="country" name="country" th:value="${hotel.city.country}" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="address" class="form-label">Адрес</label>
-                            <input type="text" class="form-control" id="address" name="address" th:value="${hotel.address}" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="rating" class="form-label">Рейтинг</label>
-                            <input type="number" step="0.1" class="form-control" id="rating" name="rating" th:value="${hotel.rating}" required>
-                        </div>
-<!--                        <div class="mb-3">-->
-<!--                            <label for="description" class="form-label">Описание</label>-->
-<!--                            <textarea class="form-control" id="description" name="description" rows="3" th:text="${hotel.description}" required></textarea>-->
-<!--                        </div>-->
-<!--                        <div class="mb-3">-->
-<!--                            <label for="editPhoto" class="form-label">Фотография</label>-->
-<!--                            <input type="file" class="form-control" id="editPhoto" name="photo" th:value="${hotel.photo}">-->
-<!--                        </div>-->
+                </div>
 
+                <!-- Модальное окно для подтверждения удаления -->
+                <div class="modal fade" th:id="'deleteHotelModal' + ${hotel.id}" tabindex="-1" aria-labelledby="deleteHotelModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form th:action="@{/staff/hotel/delete}" method="post">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteHotelModalLabel">Удалить отель</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Вы уверены, что хотите удалить отель "<span th:text="${hotel.name}"></span>"?</p>
+                                    <input type="hidden" name="id" th:value="${hotel.id}">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                                    <button type="submit" class="btn btn-danger">Удалить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
-                        <div class="mb-3">
-                            <label for="editPhoto" class="form-label">Фото отеля</label>
-                            <input type="file" class="form-control" id="editPhoto" name="photo">
-                            <div class="mt-2">
-                                <img th:src="@{'/uploads/' + ${hotel.photo}}" alt="Фото отеля" class="img-thumbnail" style="max-width: 200px;">
+            </div>
+
+            <!-- Модальное окно для добавления отеля -->
+            <div class="modal fade" id="addHotelModal" tabindex="-1" aria-labelledby="addHotelModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form th:action="@{/staff/hotel/add}" method="post" enctype="multipart/form-data">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addHotelModalLabel">Добавить новый отель</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                        </div>
-
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="name2" class="form-label">Название</label>
+                                    <input type="text" class="form-control" id="name2" name="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="city2" class="form-label">Город</label>
+                                    <input type="text" class="form-control" id="city2" name="city" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="country2" class="form-label">Страна</label>
+                                    <input type="text" class="form-control" id="country2" name="country" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address2" class="form-label">Адрес</label>
+                                    <input type="text" class="form-control" id="address2" name="address" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rating2" class="form-label">Рейтинг</label>
+                                    <input type="number" class="form-control" id="rating2" name="rating" step="0.1" required>
+                                </div>
+            <!--                    <div class="mb-3">-->
+            <!--                        <label for="description" class="form-label">Описание</label>-->
+            <!--                        <textarea class="form-control" id="description" name="description" required></textarea>-->
+            <!--                    </div>-->
+                                <div class="mb-3">
+                                    <label for="photo" class="form-label">Фотография</label>
+                                    <input type="file" class="form-control" id="photo" name="photo">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                                <button type="submit" class="btn btn-primary">Добавить</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
-                    </div>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
+        </main>
 
-    <!-- Модальное окно для подтверждения удаления -->
-    <div class="modal fade" th:id="'deleteHotelModal' + ${hotel.id}" tabindex="-1" aria-labelledby="deleteHotelModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form th:action="@{/staff/hotel/delete}" method="post">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="deleteHotelModalLabel">Удалить отель</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Вы уверены, что хотите удалить отель "<span th:text="${hotel.name}"></span>"?</p>
-                        <input type="hidden" name="id" th:value="${hotel.id}">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                        <button type="submit" class="btn btn-danger">Удалить</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+        <footer th:insert="~{blocks/footer :: footer}"></footer>
 
-</div>
-
-<!-- Модальное окно для добавления отеля -->
-<div class="modal fade" id="addHotelModal" tabindex="-1" aria-labelledby="addHotelModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form th:action="@{/staff/hotel/add}" method="post" enctype="multipart/form-data">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addHotelModalLabel">Добавить новый отель</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="name2" class="form-label">Название</label>
-                        <input type="text" class="form-control" id="name2" name="name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="city2" class="form-label">Город</label>
-                        <input type="text" class="form-control" id="city2" name="city" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="country2" class="form-label">Страна</label>
-                        <input type="text" class="form-control" id="country2" name="country" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="address2" class="form-label">Адрес</label>
-                        <input type="text" class="form-control" id="address2" name="address" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="rating2" class="form-label">Рейтинг</label>
-                        <input type="number" class="form-control" id="rating2" name="rating" step="0.1" required>
-                    </div>
-<!--                    <div class="mb-3">-->
-<!--                        <label for="description" class="form-label">Описание</label>-->
-<!--                        <textarea class="form-control" id="description" name="description" required></textarea>-->
-<!--                    </div>-->
-                    <div class="mb-3">
-                        <label for="photo" class="form-label">Фотография</label>
-                        <input type="file" class="form-control" id="photo" name="photo">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                    <button type="submit" class="btn btn-primary">Добавить</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<footer th:insert="~{blocks/footer :: footer}"></footer>
-</body>
+    </body>
 </html>

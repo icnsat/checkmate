@@ -1,0 +1,18 @@
+.center {
+    margin: 0 auto;
+    float: none;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header, .card-body {
+    padding: 20px;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-bottom: 20px;
+}
