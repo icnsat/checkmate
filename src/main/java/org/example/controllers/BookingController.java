@@ -23,16 +23,19 @@ public class BookingController {
     private BookingService bookingService;
     private CityService cityService;
     private RoomService roomService;
+    private UserService userService;
 
     @Autowired
     public BookingController(HotelService hotelService,
                              BookingService bookingService,
                              CityService cityService,
-                             RoomService roomService) {
+                             RoomService roomService,
+                             UserService userService) {
         this.hotelService = hotelService;
         this.bookingService = bookingService;
         this.cityService = cityService;
         this.roomService = roomService;
+        this.userService = userService;
     }
 
     @PostMapping("/room/booking")
@@ -42,6 +45,11 @@ public class BookingController {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkOutDate,
             @RequestParam int adults,
             Model model) {
+
+        boolean userIsBlocked = userService.getUser().isIsBlocked();
+        if (userIsBlocked) {
+            return "booking_fail"; // аккаунт заблокирован
+        }
 
         // Получение информации о номере
         Room room = roomService.getRoomById(roomId);

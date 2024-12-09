@@ -38,7 +38,8 @@ public class User {
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
-
+    @Column(name = "is_blocked")
+    private boolean isBlocked;
 
 
     // Конструкторы, геттеры и сеттеры
@@ -48,6 +49,13 @@ public class User {
         this.email = email;
         this.password = password;
         this.role = role;
+    }
+
+    public User(String email, String password, Role role, boolean is_blocked) {
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.isBlocked = is_blocked;
     }
 
     public Long getId() {
@@ -80,5 +88,13 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public boolean isIsBlocked() {
+        return isBlocked;
+    }
+
+    public void setIsBlocked(boolean is_blocked) {
+        this.isBlocked = is_blocked;
     }
 }

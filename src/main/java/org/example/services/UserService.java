@@ -12,6 +12,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -65,8 +67,9 @@ public class UserService {
         // Кодируем пароль
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-        // Присваиваем роль и сохраняем пользователя
+        // Присваиваем роль и статус блокирования и сохраняем пользователя
         user.setRole(userRole);
+        user.setIsBlocked(false);
         userRepository.save(user);
 
         return "redirect:/login";
@@ -79,6 +82,15 @@ public class UserService {
         return customUserDetails.getUser();
     }
 
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
 
+    public void updateBlockStatus(Long userId, boolean blockStatus) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalStateException("User not found"));
+        user.setIsBlocked(blockStatus);
+        userRepository.save(user);
+    }
 
 }

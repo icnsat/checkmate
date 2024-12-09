@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доступ запрещен</title>
+    <link href="/css/footer.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<header th:insert="~{blocks/header :: header}"></header>
+
+<main>
+    <!-- Основной блок -->
+    <div class="container my-5">
+        <div class="text-center">
+            <!-- Иконка ошибки -->
+            <div class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="currentColor" class="bi bi-x-circle text-danger" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </div>
+            <!-- Заголовок -->
+            <h1 class="text-danger">Ваш аккаунт заблокирован</h1>
+            <!-- Сообщение -->
+            <p class="mt-3 fs-5 text-secondary">
+                К сожалению, вы не можете сделать бронирование, так как ваш аккаунт был заблокирован.
+                Пожалуйста, свяжитесь с администрацией для решения этого вопроса.
+            </p>
+            <!-- Кнопки -->
+            <div class="mt-4">
+                <a href="/" class="btn btn-primary btn-lg me-2">На главную</a>
+                <a href="mailto:support@example.com" class="btn btn-outline-secondary btn-lg">Связаться с поддержкой</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer th:insert="~{blocks/footer :: footer}" class="mt-5"></footer>
+
+</body>
+</html>
