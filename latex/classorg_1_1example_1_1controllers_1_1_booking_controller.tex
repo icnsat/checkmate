@@ -1,0 +1,155 @@
+\doxysection{org.\+example.\+controllers.\+Booking\+Controller Class Reference}
+\hypertarget{classorg_1_1example_1_1controllers_1_1_booking_controller}{}\label{classorg_1_1example_1_1controllers_1_1_booking_controller}\index{org.example.controllers.BookingController@{org.example.controllers.BookingController}}
+
+
+Контроллер для обработки операций бронирования номеров.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_booking_controller_a27bde05d83a08507d1ea2c92e75273ea}{Booking\+Controller}} (\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_hotel_service}{Hotel\+Service}} hotel\+Service, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service}{Booking\+Service}} booking\+Service, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_city_service}{City\+Service}} city\+Service, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_room_service}{Room\+Service}} room\+Service, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}} user\+Service)
+\begin{DoxyCompactList}\small\item\em Конструктор с внедрением зависимостей. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_booking_controller_ae0b8983cd6ea2baf0a5ed72d2ce26440}{handle\+Room\+Booking}} ( @Request\+Param Long room\+Id, @Request\+Param @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date check\+In\+Date, @Request\+Param @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date check\+Out\+Date, @Request\+Param int adults, Model model)
+\begin{DoxyCompactList}\small\item\em Обрабатывает запрос на бронирование номера. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_booking_controller_ae55b27c5d447887fe577d89c1b07e0ab}{confirm\+Booking}} (@Request\+Param Long room\+Id, @Request\+Param @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date check\+In\+Date, @Request\+Param @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date check\+Out\+Date, @Request\+Param int adults, @Request\+Param Double total\+Price, @Request\+Param String first\+Name, @Request\+Param String last\+Name, @Request\+Param String phone, Model model)
+\begin{DoxyCompactList}\small\item\em Подтверждает бронирование номера. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Контроллер для обработки операций бронирования номеров. 
+
+Обрабатывает весь процесс бронирования от выбора номера до подтверждения. \begin{DoxyAuthor}{Author}
+Елизавета Горновова 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17.\+04.\+25 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_booking_controller_a27bde05d83a08507d1ea2c92e75273ea}\index{org.example.controllers.BookingController@{org.example.controllers.BookingController}!BookingController@{BookingController}}
+\index{BookingController@{BookingController}!org.example.controllers.BookingController@{org.example.controllers.BookingController}}
+\doxysubsubsection{\texorpdfstring{BookingController()}{BookingController()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_booking_controller_a27bde05d83a08507d1ea2c92e75273ea} 
+org.\+example.\+controllers.\+Booking\+Controller.\+Booking\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_hotel_service}{Hotel\+Service}}}]{hotel\+Service}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service}{Booking\+Service}}}]{booking\+Service}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_city_service}{City\+Service}}}]{city\+Service}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_room_service}{Room\+Service}}}]{room\+Service}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}}}]{user\+Service}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор с внедрением зависимостей. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel\+Service} & Сервис работы с отелями \\
+\hline
+{\em booking\+Service} & Сервис работы с бронированиями \\
+\hline
+{\em city\+Service} & Сервис работы с городами \\
+\hline
+{\em room\+Service} & Сервис работы с номерами \\
+\hline
+{\em user\+Service} & Сервис работы с пользователями \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_booking_controller_ae55b27c5d447887fe577d89c1b07e0ab}\index{org.example.controllers.BookingController@{org.example.controllers.BookingController}!confirmBooking@{confirmBooking}}
+\index{confirmBooking@{confirmBooking}!org.example.controllers.BookingController@{org.example.controllers.BookingController}}
+\doxysubsubsection{\texorpdfstring{confirmBooking()}{confirmBooking()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_booking_controller_ae55b27c5d447887fe577d89c1b07e0ab} 
+String org.\+example.\+controllers.\+Booking\+Controller.\+confirm\+Booking (\begin{DoxyParamCaption}\item[{@Request\+Param Long}]{room\+Id}{, }\item[{@Request\+Param @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date}]{check\+In\+Date}{, }\item[{@Request\+Param @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date}]{check\+Out\+Date}{, }\item[{@Request\+Param int}]{adults}{, }\item[{@Request\+Param Double}]{total\+Price}{, }\item[{@Request\+Param String}]{first\+Name}{, }\item[{@Request\+Param String}]{last\+Name}{, }\item[{@Request\+Param String}]{phone}{, }\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Подтверждает бронирование номера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Id} & ID номера \\
+\hline
+{\em check\+In\+Date} & Дата заезда (формат ISO DATE) \\
+\hline
+{\em check\+Out\+Date} & Дата выезда (формат ISO DATE) \\
+\hline
+{\em adults} & Количество взрослых \\
+\hline
+{\em total\+Price} & Общая стоимость \\
+\hline
+{\em first\+Name} & Имя гостя \\
+\hline
+{\em last\+Name} & Фамилия гостя \\
+\hline
+{\em phone} & Телефон гостя \\
+\hline
+{\em model} & Модель для передачи данных в представление \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Имя шаблона для отображения успешного бронирования
+\end{DoxyReturn}
+Метод\+:
+\begin{DoxyEnumerate}
+\item Создает бронирование через booking\+Service
+\item Добавляет сообщение об успехе в модель
+\item Возвращает страницу подтверждения
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+Доступен по POST /booking/confirm 
+\end{DoxyNote}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_booking_controller_ae0b8983cd6ea2baf0a5ed72d2ce26440}\index{org.example.controllers.BookingController@{org.example.controllers.BookingController}!handleRoomBooking@{handleRoomBooking}}
+\index{handleRoomBooking@{handleRoomBooking}!org.example.controllers.BookingController@{org.example.controllers.BookingController}}
+\doxysubsubsection{\texorpdfstring{handleRoomBooking()}{handleRoomBooking()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_booking_controller_ae0b8983cd6ea2baf0a5ed72d2ce26440} 
+String org.\+example.\+controllers.\+Booking\+Controller.\+handle\+Room\+Booking (\begin{DoxyParamCaption}\item[{@Request\+Param Long}]{room\+Id}{, }\item[{@Request\+Param @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date}]{check\+In\+Date}{, }\item[{@Request\+Param @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date}]{check\+Out\+Date}{, }\item[{@Request\+Param int}]{adults}{, }\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Обрабатывает запрос на бронирование номера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Id} & ID номера \\
+\hline
+{\em check\+In\+Date} & Дата заезда (формат ISO DATE) \\
+\hline
+{\em check\+Out\+Date} & Дата выезда (формат ISO DATE) \\
+\hline
+{\em adults} & Количество взрослых \\
+\hline
+{\em model} & Модель для передачи данных в представление \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Имя шаблона для отображения
+\end{DoxyReturn}
+Метод\+:
+\begin{DoxyEnumerate}
+\item Проверяет не заблокирован ли пользователь
+\item Получает информацию о номере, отеле и городе
+\item Добавляет данные в модель\+:
+\begin{DoxyItemize}
+\item hotel\+: информация об отеле
+\item room\+: информация о номере
+\item city\+: информация о городе
+\item check\+In\+Date\+: дата заезда
+\item check\+Out\+Date\+: дата выезда
+\item adults\+: количество гостей
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+Доступен по POST /room/booking 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Возвращает booking\+\_\+fail если пользователь заблокирован 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/controllers/Booking\+Controller.\+java\end{DoxyCompactItemize}

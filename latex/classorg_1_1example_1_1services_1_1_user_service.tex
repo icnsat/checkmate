@@ -1,0 +1,124 @@
+\doxysection{org.\+example.\+services.\+User\+Service Class Reference}
+\hypertarget{classorg_1_1example_1_1services_1_1_user_service}{}\label{classorg_1_1example_1_1services_1_1_user_service}\index{org.example.services.UserService@{org.example.services.UserService}}
+
+
+Сервис для управления пользователями.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service_ada64b2ec1f1c555773c0d266a4708f13}{User\+Service}} (\mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_user_repository}{User\+Repository}} user\+Repository, \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_role_repository}{Role\+Repository}} role\+Repository, BCrypt\+Password\+Encoder password\+Encoder)
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service_aed37469da5ac6b8f617f70de0b4bd177}{register\+User}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} user, Model model)
+\begin{DoxyCompactList}\small\item\em Регистрация нового пользователя через форму (Model\+Attribute). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service_a9b9309430f2785c8792ad1f9b846a72d}{get\+User}} ()
+\begin{DoxyCompactList}\small\item\em Получение текущего авторизованного пользователя. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} $>$ \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service_ac83db2a5d82a8f6c83f8d86143eef304}{get\+All\+Users}} ()
+\begin{DoxyCompactList}\small\item\em Получение всех пользователей. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service_a5fcb6a2aca23791fa4b60590eb759b21}{update\+Block\+Status}} (Long user\+Id, boolean block\+Status)
+\begin{DoxyCompactList}\small\item\em Обновление статуса блокировки пользователя. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Сервис для управления пользователями. 
+
+Предоставляет функциональность регистрации пользователей, получения текущего пользователя, управления блокировкой пользователей и работы с ролями. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1services_1_1_user_service_ada64b2ec1f1c555773c0d266a4708f13}\index{org.example.services.UserService@{org.example.services.UserService}!UserService@{UserService}}
+\index{UserService@{UserService}!org.example.services.UserService@{org.example.services.UserService}}
+\doxysubsubsection{\texorpdfstring{UserService()}{UserService()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_user_service_ada64b2ec1f1c555773c0d266a4708f13} 
+org.\+example.\+services.\+User\+Service.\+User\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_user_repository}{User\+Repository}}}]{user\+Repository}{, }\item[{\mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_role_repository}{Role\+Repository}}}]{role\+Repository}{, }\item[{BCrypt\+Password\+Encoder}]{password\+Encoder}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор \doxylink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Repository} & Репозиторий пользователей. \\
+\hline
+{\em role\+Repository} & Репозиторий ролей. \\
+\hline
+{\em password\+Encoder} & Кодировщик паролей. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1services_1_1_user_service_ac83db2a5d82a8f6c83f8d86143eef304}\index{org.example.services.UserService@{org.example.services.UserService}!getAllUsers@{getAllUsers}}
+\index{getAllUsers@{getAllUsers}!org.example.services.UserService@{org.example.services.UserService}}
+\doxysubsubsection{\texorpdfstring{getAllUsers()}{getAllUsers()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_user_service_ac83db2a5d82a8f6c83f8d86143eef304} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} $>$ org.\+example.\+services.\+User\+Service.\+get\+All\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получение всех пользователей. 
+
+\begin{DoxyReturn}{Returns}
+Список всех пользователей в системе. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_user_service_a9b9309430f2785c8792ad1f9b846a72d}\index{org.example.services.UserService@{org.example.services.UserService}!getUser@{getUser}}
+\index{getUser@{getUser}!org.example.services.UserService@{org.example.services.UserService}}
+\doxysubsubsection{\texorpdfstring{getUser()}{getUser()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_user_service_a9b9309430f2785c8792ad1f9b846a72d} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} org.\+example.\+services.\+User\+Service.\+get\+User (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получение текущего авторизованного пользователя. 
+
+\begin{DoxyReturn}{Returns}
+Объект текущего пользователя. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_user_service_aed37469da5ac6b8f617f70de0b4bd177}\index{org.example.services.UserService@{org.example.services.UserService}!registerUser@{registerUser}}
+\index{registerUser@{registerUser}!org.example.services.UserService@{org.example.services.UserService}}
+\doxysubsubsection{\texorpdfstring{registerUser()}{registerUser()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_user_service_aed37469da5ac6b8f617f70de0b4bd177} 
+String org.\+example.\+services.\+User\+Service.\+register\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{user}{, }\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Регистрация нового пользователя через форму (Model\+Attribute). 
+
+с Request\+Param с Model\+Attribute
+
+Проверяет, существует ли уже пользователь с таким email. Если нет — создаёт нового пользователя с ролью "{}\+CUSTOMER"{}, кодирует пароль и сохраняет в базу данных.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Объект пользователя, полученный из формы. \\
+\hline
+{\em model} & Модель для передачи ошибок в представление. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Строка-\/перенаправление на страницу входа или регистрации. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_user_service_a5fcb6a2aca23791fa4b60590eb759b21}\index{org.example.services.UserService@{org.example.services.UserService}!updateBlockStatus@{updateBlockStatus}}
+\index{updateBlockStatus@{updateBlockStatus}!org.example.services.UserService@{org.example.services.UserService}}
+\doxysubsubsection{\texorpdfstring{updateBlockStatus()}{updateBlockStatus()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_user_service_a5fcb6a2aca23791fa4b60590eb759b21} 
+void org.\+example.\+services.\+User\+Service.\+update\+Block\+Status (\begin{DoxyParamCaption}\item[{Long}]{user\+Id}{, }\item[{boolean}]{block\+Status}{}\end{DoxyParamCaption})}
+
+
+
+Обновление статуса блокировки пользователя. 
+
+Позволяет администратору заблокировать или разблокировать пользователя.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & Идентификатор пользователя. \\
+\hline
+{\em block\+Status} & Новый статус блокировки (true — заблокирован). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/services/User\+Service.\+java\end{DoxyCompactItemize}

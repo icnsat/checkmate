@@ -1,0 +1,49 @@
+\doxysection{org.\+example.\+repositories.\+Role\+Repository Interface Reference}
+\hypertarget{interfaceorg_1_1example_1_1repositories_1_1_role_repository}{}\label{interfaceorg_1_1example_1_1repositories_1_1_role_repository}\index{org.example.repositories.RoleRepository@{org.example.repositories.RoleRepository}}
+
+
+Репозиторий для управления сущностями \doxylink{classorg_1_1example_1_1entities_1_1_role}{Role} (Роли пользователей).  
+
+
+Inheritance diagram for org.\+example.\+repositories.\+Role\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceorg_1_1example_1_1repositories_1_1_role_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Optional$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_role}{Role}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_role_repository_a365535711b3cf97360422cc8fa1011f6}{find\+By\+Role\+Name}} (String role\+Name)
+\begin{DoxyCompactList}\small\item\em Найти роль по имени. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Репозиторий для управления сущностями \doxylink{classorg_1_1example_1_1entities_1_1_role}{Role} (Роли пользователей). 
+
+Содержит методы для работы с ролью пользователя, включая поиск роли по имени. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_role_repository_a365535711b3cf97360422cc8fa1011f6}\index{org.example.repositories.RoleRepository@{org.example.repositories.RoleRepository}!findByRoleName@{findByRoleName}}
+\index{findByRoleName@{findByRoleName}!org.example.repositories.RoleRepository@{org.example.repositories.RoleRepository}}
+\doxysubsubsection{\texorpdfstring{findByRoleName()}{findByRoleName()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_role_repository_a365535711b3cf97360422cc8fa1011f6} 
+Optional$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_role}{Role}} $>$ org.\+example.\+repositories.\+Role\+Repository.\+find\+By\+Role\+Name (\begin{DoxyParamCaption}\item[{String}]{role\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Найти роль по имени. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em role\+Name} & Имя роли. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Роль, найденная по имени, обёрнутая в Optional. 
+\end{DoxyReturn}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/repositories/Role\+Repository.\+java\end{DoxyCompactItemize}

@@ -1,0 +1,102 @@
+\doxysection{org.\+example.\+repositories.\+Hotel\+Repository Interface Reference}
+\hypertarget{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository}{}\label{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository}\index{org.example.repositories.HotelRepository@{org.example.repositories.HotelRepository}}
+
+
+Репозиторий для управления сущностями \doxylink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel} (Отели).  
+
+
+Inheritance diagram for org.\+example.\+repositories.\+Hotel\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository_a58d257042ab909c2020a0d3d79b02af5}{find\+By\+City}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} city)
+\begin{DoxyCompactList}\small\item\em Найти все отели, расположенные в заданном городе. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository_a819bfbaf7bad2070928a5cd269ec8c80}{find\+Hotels\+With\+Available\+Rooms}} ( @Param("{}city\+Id"{}) Long city\+Id, @Param("{}check\+In\+Date"{}) Local\+Date check\+In\+Date, @Param("{}check\+Out\+Date"{}) Local\+Date check\+Out\+Date, @Param("{}adults"{}) int adults)
+\begin{DoxyCompactList}\small\item\em Найти отели с доступными номерами на заданные даты и по заданному количеству взрослых. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository_af6dd754a2b15267e619603696d2b5d02}{find\+All\+By\+Manager}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} current\+User)
+\begin{DoxyCompactList}\small\item\em Найти все отели, которыми управляет указанный пользователь. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Репозиторий для управления сущностями \doxylink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel} (Отели). 
+
+Содержит методы поиска отелей по различным критериям, включая город, доступность номеров и управляющего пользователя. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository_af6dd754a2b15267e619603696d2b5d02}\index{org.example.repositories.HotelRepository@{org.example.repositories.HotelRepository}!findAllByManager@{findAllByManager}}
+\index{findAllByManager@{findAllByManager}!org.example.repositories.HotelRepository@{org.example.repositories.HotelRepository}}
+\doxysubsubsection{\texorpdfstring{findAllByManager()}{findAllByManager()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository_af6dd754a2b15267e619603696d2b5d02} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} $>$ org.\+example.\+repositories.\+Hotel\+Repository.\+find\+All\+By\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{current\+User}{}\end{DoxyParamCaption})}
+
+
+
+Найти все отели, которыми управляет указанный пользователь. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+User} & Пользователь-\/менеджер. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список отелей, закреплённых за пользователем. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository_a58d257042ab909c2020a0d3d79b02af5}\index{org.example.repositories.HotelRepository@{org.example.repositories.HotelRepository}!findByCity@{findByCity}}
+\index{findByCity@{findByCity}!org.example.repositories.HotelRepository@{org.example.repositories.HotelRepository}}
+\doxysubsubsection{\texorpdfstring{findByCity()}{findByCity()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository_a58d257042ab909c2020a0d3d79b02af5} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} $>$ org.\+example.\+repositories.\+Hotel\+Repository.\+find\+By\+City (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}}}]{city}{}\end{DoxyParamCaption})}
+
+
+
+Найти все отели, расположенные в заданном городе. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & Объект \doxylink{classorg_1_1example_1_1entities_1_1_city}{City}, по которому производится фильтрация. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список отелей, находящихся в указанном городе. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository_a819bfbaf7bad2070928a5cd269ec8c80}\index{org.example.repositories.HotelRepository@{org.example.repositories.HotelRepository}!findHotelsWithAvailableRooms@{findHotelsWithAvailableRooms}}
+\index{findHotelsWithAvailableRooms@{findHotelsWithAvailableRooms}!org.example.repositories.HotelRepository@{org.example.repositories.HotelRepository}}
+\doxysubsubsection{\texorpdfstring{findHotelsWithAvailableRooms()}{findHotelsWithAvailableRooms()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_hotel_repository_a819bfbaf7bad2070928a5cd269ec8c80} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} $>$ org.\+example.\+repositories.\+Hotel\+Repository.\+find\+Hotels\+With\+Available\+Rooms (\begin{DoxyParamCaption}\item[{@Param("{}city\+Id"{}) Long}]{city\+Id}{, }\item[{@Param("{}check\+In\+Date"{}) Local\+Date}]{check\+In\+Date}{, }\item[{@Param("{}check\+Out\+Date"{}) Local\+Date}]{check\+Out\+Date}{, }\item[{@Param("{}adults"{}) int}]{adults}{}\end{DoxyParamCaption})}
+
+
+
+Найти отели с доступными номерами на заданные даты и по заданному количеству взрослых. 
+
+Отели подбираются с учетом\+:
+\begin{DoxyItemize}
+\item города,
+\item вместимости номеров,
+\item отсутствия пересечения дат с уже существующими бронями.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Id} & Идентификатор города. \\
+\hline
+{\em check\+In\+Date} & Дата заезда. \\
+\hline
+{\em check\+Out\+Date} & Дата выезда. \\
+\hline
+{\em adults} & Количество взрослых. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список отелей, удовлетворяющих условиям. 
+\end{DoxyReturn}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/repositories/Hotel\+Repository.\+java\end{DoxyCompactItemize}

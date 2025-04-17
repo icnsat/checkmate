@@ -1,0 +1,194 @@
+\doxysection{org.\+example.\+services.\+Booking\+Service Class Reference}
+\hypertarget{classorg_1_1example_1_1services_1_1_booking_service}{}\label{classorg_1_1example_1_1services_1_1_booking_service}\index{org.example.services.BookingService@{org.example.services.BookingService}}
+
+
+Сервис для управления бронированиями.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service_a3e5a1220329a1168f4919cc77128d6cf}{Booking\+Service}} (\mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_booking_repository}{Booking\+Repository}} booking\+Repository, \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_room_repository}{Room\+Repository}} room\+Repository, \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_booking_status_repository}{Booking\+Status\+Repository}} booking\+Status\+Repository, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}} user\+Service)
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{classorg_1_1example_1_1services_1_1_booking_service}{Booking\+Service} с внедрением зависимостей. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service_a41164095af68f9c056de1fabb5a1718c}{create\+Booking}} (Long room\+Id, Local\+Date check\+In\+Date, Local\+Date check\+Out\+Date, int adults, Double total\+Price, String first\+Name, String last\+Name, String phone)
+\begin{DoxyCompactList}\small\item\em Создание нового бронирования. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} $>$ \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service_a505b1bbe9b1ae034618af80e17bc9b29}{get\+Bookings\+By\+User}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} user)
+\begin{DoxyCompactList}\small\item\em Получение всех бронирований пользователя. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} $>$ \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service_affd6351d2b38c4f30190b1ed16bd7565}{get\+Bookings\+By\+Hotels}} (List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} $>$ hotels)
+\begin{DoxyCompactList}\small\item\em Получение бронирований по списку отелей. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service_a7f8a9b5ad311882881c1339b3490cadb}{delete\+By\+Room}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} room)
+\begin{DoxyCompactList}\small\item\em Удаление бронирований, связанных с определённой комнатой. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service_a2e4a0303e85ae83a4097e8a3a0e1b1a7}{get\+Booking\+By\+Id}} (Long booking\+Id)
+\begin{DoxyCompactList}\small\item\em Получение бронирования по его ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking_status}{Booking\+Status}} \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service_a853c017d684b98772dd674642d5302f7}{get\+Booking\+Status\+By\+Name}} (String name)
+\begin{DoxyCompactList}\small\item\em Получение статуса бронирования по его имени. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service_a35c4fc18b0907363d49057c90f89fdf1}{update\+Booking}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} booking)
+\begin{DoxyCompactList}\small\item\em Обновление информации о бронировании. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Сервис для управления бронированиями. 
+
+Этот класс отвечает за создание, получение, обновление и удаление бронирований. Взаимодействует с репозиториями, связанными с сущностями \doxylink{classorg_1_1example_1_1entities_1_1_booking}{Booking}, \doxylink{classorg_1_1example_1_1entities_1_1_room}{Room}, \doxylink{classorg_1_1example_1_1entities_1_1_booking_status}{Booking\+Status}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1services_1_1_booking_service_a3e5a1220329a1168f4919cc77128d6cf}\index{org.example.services.BookingService@{org.example.services.BookingService}!BookingService@{BookingService}}
+\index{BookingService@{BookingService}!org.example.services.BookingService@{org.example.services.BookingService}}
+\doxysubsubsection{\texorpdfstring{BookingService()}{BookingService()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_booking_service_a3e5a1220329a1168f4919cc77128d6cf} 
+org.\+example.\+services.\+Booking\+Service.\+Booking\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_booking_repository}{Booking\+Repository}}}]{booking\+Repository}{, }\item[{\mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_room_repository}{Room\+Repository}}}]{room\+Repository}{, }\item[{\mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_booking_status_repository}{Booking\+Status\+Repository}}}]{booking\+Status\+Repository}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}}}]{user\+Service}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор \doxylink{classorg_1_1example_1_1services_1_1_booking_service}{Booking\+Service} с внедрением зависимостей. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em booking\+Repository} & Репозиторий бронирований. \\
+\hline
+{\em room\+Repository} & Репозиторий комнат. \\
+\hline
+{\em booking\+Status\+Repository} & Репозиторий статусов бронирований. \\
+\hline
+{\em user\+Service} & Сервис для получения текущего пользователя. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1services_1_1_booking_service_a41164095af68f9c056de1fabb5a1718c}\index{org.example.services.BookingService@{org.example.services.BookingService}!createBooking@{createBooking}}
+\index{createBooking@{createBooking}!org.example.services.BookingService@{org.example.services.BookingService}}
+\doxysubsubsection{\texorpdfstring{createBooking()}{createBooking()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_booking_service_a41164095af68f9c056de1fabb5a1718c} 
+void org.\+example.\+services.\+Booking\+Service.\+create\+Booking (\begin{DoxyParamCaption}\item[{Long}]{room\+Id}{, }\item[{Local\+Date}]{check\+In\+Date}{, }\item[{Local\+Date}]{check\+Out\+Date}{, }\item[{int}]{adults}{, }\item[{Double}]{total\+Price}{, }\item[{String}]{first\+Name}{, }\item[{String}]{last\+Name}{, }\item[{String}]{phone}{}\end{DoxyParamCaption})}
+
+
+
+Создание нового бронирования. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Id} & ID комнаты. \\
+\hline
+{\em check\+In\+Date} & Дата заезда. \\
+\hline
+{\em check\+Out\+Date} & Дата выезда. \\
+\hline
+{\em adults} & Количество взрослых. \\
+\hline
+{\em total\+Price} & Итоговая цена бронирования. \\
+\hline
+{\em first\+Name} & Имя клиента. \\
+\hline
+{\em last\+Name} & Фамилия клиента. \\
+\hline
+{\em phone} & Номер телефона клиента. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1services_1_1_booking_service_a7f8a9b5ad311882881c1339b3490cadb}\index{org.example.services.BookingService@{org.example.services.BookingService}!deleteByRoom@{deleteByRoom}}
+\index{deleteByRoom@{deleteByRoom}!org.example.services.BookingService@{org.example.services.BookingService}}
+\doxysubsubsection{\texorpdfstring{deleteByRoom()}{deleteByRoom()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_booking_service_a7f8a9b5ad311882881c1339b3490cadb} 
+void org.\+example.\+services.\+Booking\+Service.\+delete\+By\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}}}]{room}{}\end{DoxyParamCaption})}
+
+
+
+Удаление бронирований, связанных с определённой комнатой. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Комната, для которой удаляются бронирования. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1services_1_1_booking_service_a2e4a0303e85ae83a4097e8a3a0e1b1a7}\index{org.example.services.BookingService@{org.example.services.BookingService}!getBookingById@{getBookingById}}
+\index{getBookingById@{getBookingById}!org.example.services.BookingService@{org.example.services.BookingService}}
+\doxysubsubsection{\texorpdfstring{getBookingById()}{getBookingById()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_booking_service_a2e4a0303e85ae83a4097e8a3a0e1b1a7} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} org.\+example.\+services.\+Booking\+Service.\+get\+Booking\+By\+Id (\begin{DoxyParamCaption}\item[{Long}]{booking\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Получение бронирования по его ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em booking\+Id} & Идентификатор бронирования. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Объект \doxylink{classorg_1_1example_1_1entities_1_1_booking}{Booking} или null, если не найден. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_booking_service_affd6351d2b38c4f30190b1ed16bd7565}\index{org.example.services.BookingService@{org.example.services.BookingService}!getBookingsByHotels@{getBookingsByHotels}}
+\index{getBookingsByHotels@{getBookingsByHotels}!org.example.services.BookingService@{org.example.services.BookingService}}
+\doxysubsubsection{\texorpdfstring{getBookingsByHotels()}{getBookingsByHotels()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_booking_service_affd6351d2b38c4f30190b1ed16bd7565} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} $>$ org.\+example.\+services.\+Booking\+Service.\+get\+Bookings\+By\+Hotels (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} $>$}]{hotels}{}\end{DoxyParamCaption})}
+
+
+
+Получение бронирований по списку отелей. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotels} & Список отелей. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список бронирований в указанных отелях. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_booking_service_a505b1bbe9b1ae034618af80e17bc9b29}\index{org.example.services.BookingService@{org.example.services.BookingService}!getBookingsByUser@{getBookingsByUser}}
+\index{getBookingsByUser@{getBookingsByUser}!org.example.services.BookingService@{org.example.services.BookingService}}
+\doxysubsubsection{\texorpdfstring{getBookingsByUser()}{getBookingsByUser()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_booking_service_a505b1bbe9b1ae034618af80e17bc9b29} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} $>$ org.\+example.\+services.\+Booking\+Service.\+get\+Bookings\+By\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{user}{}\end{DoxyParamCaption})}
+
+
+
+Получение всех бронирований пользователя. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Пользователь. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список бронирований, сделанных этим пользователем. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_booking_service_a853c017d684b98772dd674642d5302f7}\index{org.example.services.BookingService@{org.example.services.BookingService}!getBookingStatusByName@{getBookingStatusByName}}
+\index{getBookingStatusByName@{getBookingStatusByName}!org.example.services.BookingService@{org.example.services.BookingService}}
+\doxysubsubsection{\texorpdfstring{getBookingStatusByName()}{getBookingStatusByName()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_booking_service_a853c017d684b98772dd674642d5302f7} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking_status}{Booking\+Status}} org.\+example.\+services.\+Booking\+Service.\+get\+Booking\+Status\+By\+Name (\begin{DoxyParamCaption}\item[{String}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Получение статуса бронирования по его имени. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Имя статуса (например, "{}\+PENDING"{}, "{}\+CONFIRMED"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Объект \doxylink{classorg_1_1example_1_1entities_1_1_booking_status}{Booking\+Status}. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_booking_service_a35c4fc18b0907363d49057c90f89fdf1}\index{org.example.services.BookingService@{org.example.services.BookingService}!updateBooking@{updateBooking}}
+\index{updateBooking@{updateBooking}!org.example.services.BookingService@{org.example.services.BookingService}}
+\doxysubsubsection{\texorpdfstring{updateBooking()}{updateBooking()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_booking_service_a35c4fc18b0907363d49057c90f89fdf1} 
+void org.\+example.\+services.\+Booking\+Service.\+update\+Booking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}}}]{booking}{}\end{DoxyParamCaption})}
+
+
+
+Обновление информации о бронировании. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em booking} & Обновлённый объект \doxylink{classorg_1_1example_1_1entities_1_1_booking}{Booking}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/services/Booking\+Service.\+java\end{DoxyCompactItemize}

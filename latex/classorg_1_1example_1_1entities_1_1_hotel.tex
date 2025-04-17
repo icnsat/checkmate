@@ -1,0 +1,404 @@
+\doxysection{org.\+example.\+entities.\+Hotel Class Reference}
+\hypertarget{classorg_1_1example_1_1entities_1_1_hotel}{}\label{classorg_1_1example_1_1entities_1_1_hotel}\index{org.example.entities.Hotel@{org.example.entities.Hotel}}
+
+
+Сущность, представляющая отель.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a4099671e50465f35be42807daa9489e6}{Hotel}} ()
+\begin{DoxyCompactList}\small\item\em Конструктор без параметров. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_aece1b857870bb70f01bcd99e9f2a8544}{Hotel}} (String name, \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} city, String address, Double rating, \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} manager)
+\begin{DoxyCompactList}\small\item\em Конструктор отеля без фото и списка комнат. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_afb23f9a165f513c852936c835f8f7153}{Hotel}} (String name, \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} city, String address, Double rating, List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ rooms, \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} manager)
+\begin{DoxyCompactList}\small\item\em Конструктор отеля со списком комнат, без фото. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_ad58e2a70cfe69f8b1e0e323a9fd7e5ce}{Hotel}} (String name, \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} city, String address, Double rating, String photo, \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} manager)
+\begin{DoxyCompactList}\small\item\em Конструктор отеля с фото, без списка комнат. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a82c9a01ec3dbabf7999566bf3ea13a46}{Hotel}} (String name, \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} city, String address, Double rating, String photo, List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ rooms, \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} manager)
+\begin{DoxyCompactList}\small\item\em Конструктор отеля с фото и списком комнат. \end{DoxyCompactList}\item 
+Long \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a8f60c33b3d21ccfae0bde5894c4d6542}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Получить ID отеля. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a47bff82d0b1a16b1ff65d61611335691}{set\+Id}} (Long id)
+\begin{DoxyCompactList}\small\item\em Установить ID отеля. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_af4812a0df68e22c92c3bb720fc6f9861}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Получить название отеля. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_ad17cc4166eaf9cf945119af33fc1ce7b}{set\+Name}} (String name)
+\begin{DoxyCompactList}\small\item\em Установить название отеля. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a657787763caccac324b33ce24dd177ab}{get\+City}} ()
+\begin{DoxyCompactList}\small\item\em Получить город отеля. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a86c54dc84558d6024a64bea68b9e00ef}{set\+City}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} city)
+\begin{DoxyCompactList}\small\item\em Установить город отеля. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a1bb6d558c24f305c1a658475c1626ab3}{get\+Address}} ()
+\begin{DoxyCompactList}\small\item\em Получить адрес отеля. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a176c56ba5afcbfadc4145890c3bb910f}{set\+Address}} (String address)
+\begin{DoxyCompactList}\small\item\em Установить адрес отеля. \end{DoxyCompactList}\item 
+Double \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a0a86f29d76b377efff5e054f4689ac57}{get\+Rating}} ()
+\begin{DoxyCompactList}\small\item\em Получить рейтинг отеля. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a2d651d107575eee5cbe0e99d7895e8e1}{set\+Rating}} (Double rating)
+\begin{DoxyCompactList}\small\item\em Установить рейтинг отеля. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_af5917c2f1223f18e26dbbfaf803789b9}{get\+Photo}} ()
+\begin{DoxyCompactList}\small\item\em Получить фото отеля. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a411e7258e59399cc777b106421cbbb93}{set\+Photo}} (String photo)
+\begin{DoxyCompactList}\small\item\em Установить фото отеля. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a4414c96fc6238e4e2cb5840f5efafad8}{get\+Rooms}} ()
+\begin{DoxyCompactList}\small\item\em Получить номера отеля. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a7a12daf46ed308f46231deb5dce8add8}{set\+Rooms}} (List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ rooms)
+\begin{DoxyCompactList}\small\item\em Установить номера отеля. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_a46124ee8c20d2f7bf23f4b7f60581b86}{get\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Получить менеджера отеля. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_abdf03eb8febd980d1771a008155b62db}{set\+Manager}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} manager)
+\begin{DoxyCompactList}\small\item\em Установить менеджера отеля. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Сущность, представляющая отель. 
+
+Хранит информацию об отеле, включая название, город, адрес, рейтинг, фото, номера и менеджера.
+
+@entity Аннотация JPA для сопоставления с таблицей "{}hotels"{} @table Указывает имя таблицы в базе данных 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a4099671e50465f35be42807daa9489e6}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!Hotel@{Hotel}}
+\index{Hotel@{Hotel}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{Hotel()}{Hotel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a4099671e50465f35be42807daa9489e6} 
+org.\+example.\+entities.\+Hotel.\+Hotel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор без параметров. 
+
+Используется JPA для создания пустого объекта \doxylink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}. \Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_aece1b857870bb70f01bcd99e9f2a8544}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!Hotel@{Hotel}}
+\index{Hotel@{Hotel}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{Hotel()}{Hotel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_aece1b857870bb70f01bcd99e9f2a8544} 
+org.\+example.\+entities.\+Hotel.\+Hotel (\begin{DoxyParamCaption}\item[{String}]{name}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}}}]{city}{, }\item[{String}]{address}{, }\item[{Double}]{rating}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор отеля без фото и списка комнат. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Название отеля. \\
+\hline
+{\em city} & Город, где находится отель. \\
+\hline
+{\em address} & Адрес отеля. \\
+\hline
+{\em rating} & Рейтинг отеля. \\
+\hline
+{\em manager} & Менеджер отеля. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_afb23f9a165f513c852936c835f8f7153}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!Hotel@{Hotel}}
+\index{Hotel@{Hotel}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{Hotel()}{Hotel()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_afb23f9a165f513c852936c835f8f7153} 
+org.\+example.\+entities.\+Hotel.\+Hotel (\begin{DoxyParamCaption}\item[{String}]{name}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}}}]{city}{, }\item[{String}]{address}{, }\item[{Double}]{rating}{, }\item[{List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$}]{rooms}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор отеля со списком комнат, без фото. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Название отеля. \\
+\hline
+{\em city} & Город, где находится отель. \\
+\hline
+{\em address} & Адрес отеля. \\
+\hline
+{\em rating} & Рейтинг отеля. \\
+\hline
+{\em rooms} & Список комнат в отеле. \\
+\hline
+{\em manager} & Менеджер отеля. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_ad58e2a70cfe69f8b1e0e323a9fd7e5ce}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!Hotel@{Hotel}}
+\index{Hotel@{Hotel}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{Hotel()}{Hotel()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_ad58e2a70cfe69f8b1e0e323a9fd7e5ce} 
+org.\+example.\+entities.\+Hotel.\+Hotel (\begin{DoxyParamCaption}\item[{String}]{name}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}}}]{city}{, }\item[{String}]{address}{, }\item[{Double}]{rating}{, }\item[{String}]{photo}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор отеля с фото, без списка комнат. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Название отеля. \\
+\hline
+{\em city} & Город, где находится отель. \\
+\hline
+{\em address} & Адрес отеля. \\
+\hline
+{\em rating} & Рейтинг отеля. \\
+\hline
+{\em photo} & Путь или ссылка на фото отеля. \\
+\hline
+{\em manager} & Менеджер отеля. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a82c9a01ec3dbabf7999566bf3ea13a46}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!Hotel@{Hotel}}
+\index{Hotel@{Hotel}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{Hotel()}{Hotel()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a82c9a01ec3dbabf7999566bf3ea13a46} 
+org.\+example.\+entities.\+Hotel.\+Hotel (\begin{DoxyParamCaption}\item[{String}]{name}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}}}]{city}{, }\item[{String}]{address}{, }\item[{Double}]{rating}{, }\item[{String}]{photo}{, }\item[{List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$}]{rooms}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{manager}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор отеля с фото и списком комнат. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Название отеля. \\
+\hline
+{\em city} & Город, где находится отель. \\
+\hline
+{\em address} & Адрес отеля. \\
+\hline
+{\em rating} & Рейтинг отеля. \\
+\hline
+{\em photo} & Путь или ссылка на фото отеля. \\
+\hline
+{\em rooms} & Список комнат в отеле. \\
+\hline
+{\em manager} & Менеджер отеля. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a1bb6d558c24f305c1a658475c1626ab3}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!getAddress@{getAddress}}
+\index{getAddress@{getAddress}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{getAddress()}{getAddress()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a1bb6d558c24f305c1a658475c1626ab3} 
+String org.\+example.\+entities.\+Hotel.\+get\+Address (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить адрес отеля. 
+
+\begin{DoxyReturn}{Returns}
+Адрес отеля. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a657787763caccac324b33ce24dd177ab}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!getCity@{getCity}}
+\index{getCity@{getCity}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{getCity()}{getCity()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a657787763caccac324b33ce24dd177ab} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} org.\+example.\+entities.\+Hotel.\+get\+City (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить город отеля. 
+
+\begin{DoxyReturn}{Returns}
+Название города. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a8f60c33b3d21ccfae0bde5894c4d6542}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!getId@{getId}}
+\index{getId@{getId}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a8f60c33b3d21ccfae0bde5894c4d6542} 
+Long org.\+example.\+entities.\+Hotel.\+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить ID отеля. 
+
+\begin{DoxyReturn}{Returns}
+Уникальный идентификатор отеля. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a46124ee8c20d2f7bf23f4b7f60581b86}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!getManager@{getManager}}
+\index{getManager@{getManager}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{getManager()}{getManager()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a46124ee8c20d2f7bf23f4b7f60581b86} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} org.\+example.\+entities.\+Hotel.\+get\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить менеджера отеля. 
+
+\begin{DoxyReturn}{Returns}
+Менеджер отеля. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_af4812a0df68e22c92c3bb720fc6f9861}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!getName@{getName}}
+\index{getName@{getName}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_af4812a0df68e22c92c3bb720fc6f9861} 
+String org.\+example.\+entities.\+Hotel.\+get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить название отеля. 
+
+\begin{DoxyReturn}{Returns}
+Название отеля. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_af5917c2f1223f18e26dbbfaf803789b9}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!getPhoto@{getPhoto}}
+\index{getPhoto@{getPhoto}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{getPhoto()}{getPhoto()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_af5917c2f1223f18e26dbbfaf803789b9} 
+String org.\+example.\+entities.\+Hotel.\+get\+Photo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить фото отеля. 
+
+\begin{DoxyReturn}{Returns}
+Фото отеля. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a0a86f29d76b377efff5e054f4689ac57}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!getRating@{getRating}}
+\index{getRating@{getRating}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{getRating()}{getRating()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a0a86f29d76b377efff5e054f4689ac57} 
+Double org.\+example.\+entities.\+Hotel.\+get\+Rating (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить рейтинг отеля. 
+
+\begin{DoxyReturn}{Returns}
+Рейтинг отеля. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a4414c96fc6238e4e2cb5840f5efafad8}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!getRooms@{getRooms}}
+\index{getRooms@{getRooms}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{getRooms()}{getRooms()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a4414c96fc6238e4e2cb5840f5efafad8} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ org.\+example.\+entities.\+Hotel.\+get\+Rooms (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить номера отеля. 
+
+\begin{DoxyReturn}{Returns}
+Номера отеля. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a176c56ba5afcbfadc4145890c3bb910f}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!setAddress@{setAddress}}
+\index{setAddress@{setAddress}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a176c56ba5afcbfadc4145890c3bb910f} 
+void org.\+example.\+entities.\+Hotel.\+set\+Address (\begin{DoxyParamCaption}\item[{String}]{address}{}\end{DoxyParamCaption})}
+
+
+
+Установить адрес отеля. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Адрес отеля. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a86c54dc84558d6024a64bea68b9e00ef}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!setCity@{setCity}}
+\index{setCity@{setCity}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{setCity()}{setCity()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a86c54dc84558d6024a64bea68b9e00ef} 
+void org.\+example.\+entities.\+Hotel.\+set\+City (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}}}]{city}{}\end{DoxyParamCaption})}
+
+
+
+Установить город отеля. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & Название города. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a47bff82d0b1a16b1ff65d61611335691}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!setId@{setId}}
+\index{setId@{setId}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a47bff82d0b1a16b1ff65d61611335691} 
+void org.\+example.\+entities.\+Hotel.\+set\+Id (\begin{DoxyParamCaption}\item[{Long}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Установить ID отеля. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Идентификатор отеля. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_abdf03eb8febd980d1771a008155b62db}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!setManager@{setManager}}
+\index{setManager@{setManager}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{setManager()}{setManager()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_abdf03eb8febd980d1771a008155b62db} 
+void org.\+example.\+entities.\+Hotel.\+set\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{manager}{}\end{DoxyParamCaption})}
+
+
+
+Установить менеджера отеля. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & Менеджер отеля. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_ad17cc4166eaf9cf945119af33fc1ce7b}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!setName@{setName}}
+\index{setName@{setName}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_ad17cc4166eaf9cf945119af33fc1ce7b} 
+void org.\+example.\+entities.\+Hotel.\+set\+Name (\begin{DoxyParamCaption}\item[{String}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Установить название отеля. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Название отеля. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a411e7258e59399cc777b106421cbbb93}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!setPhoto@{setPhoto}}
+\index{setPhoto@{setPhoto}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{setPhoto()}{setPhoto()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a411e7258e59399cc777b106421cbbb93} 
+void org.\+example.\+entities.\+Hotel.\+set\+Photo (\begin{DoxyParamCaption}\item[{String}]{photo}{}\end{DoxyParamCaption})}
+
+
+
+Установить фото отеля. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em photo} & Фото отеля. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a2d651d107575eee5cbe0e99d7895e8e1}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!setRating@{setRating}}
+\index{setRating@{setRating}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{setRating()}{setRating()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a2d651d107575eee5cbe0e99d7895e8e1} 
+void org.\+example.\+entities.\+Hotel.\+set\+Rating (\begin{DoxyParamCaption}\item[{Double}]{rating}{}\end{DoxyParamCaption})}
+
+
+
+Установить рейтинг отеля. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rating} & Рейтинг отеля. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_hotel_a7a12daf46ed308f46231deb5dce8add8}\index{org.example.entities.Hotel@{org.example.entities.Hotel}!setRooms@{setRooms}}
+\index{setRooms@{setRooms}!org.example.entities.Hotel@{org.example.entities.Hotel}}
+\doxysubsubsection{\texorpdfstring{setRooms()}{setRooms()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_hotel_a7a12daf46ed308f46231deb5dce8add8} 
+void org.\+example.\+entities.\+Hotel.\+set\+Rooms (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$}]{rooms}{}\end{DoxyParamCaption})}
+
+
+
+Установить номера отеля. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rooms} & Номера отеля. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/entities/Hotel.\+java\end{DoxyCompactItemize}

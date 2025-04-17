@@ -1,0 +1,120 @@
+\doxysection{org.\+example.\+services.\+City\+Service Class Reference}
+\hypertarget{classorg_1_1example_1_1services_1_1_city_service}{}\label{classorg_1_1example_1_1services_1_1_city_service}\index{org.example.services.CityService@{org.example.services.CityService}}
+
+
+Сервис для работы с городами.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_city_service_af1db52607a04518eeb710baac8a4e0c1}{City\+Service}} (\mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_city_repository}{City\+Repository}} city\+Repository)
+\begin{DoxyCompactList}\small\item\em Конструктор сервиса. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_city_service_a88b3fb31a200f75d1d2ef11a109e4b74}{get\+City\+By\+Id}} (Long id)
+\begin{DoxyCompactList}\small\item\em Получить город по его ID. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_city_service_a66d08964fd122a361f66d38a9891c99c}{get\+All\+Cities}} ()
+\begin{DoxyCompactList}\small\item\em Получить список всех городов. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_city_service_a8442f45b5d1f32ea4d05477d96d4e1fd}{search\+Cities}} (String query)
+\begin{DoxyCompactList}\small\item\em Поиск городов по названию (без учёта регистра). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_city_service_ab1106b7b548110397a066af98d65b827}{find\+Or\+Create\+By\+Name}} (String city, String country)
+\begin{DoxyCompactList}\small\item\em Найти город по имени и стране или создать новый. Ищет город с заданными параметрами. Если такой город не найден, создаёт и сохраняет новый. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Сервис для работы с городами. 
+
+Предоставляет методы для получения, поиска и создания городов. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1services_1_1_city_service_af1db52607a04518eeb710baac8a4e0c1}\index{org.example.services.CityService@{org.example.services.CityService}!CityService@{CityService}}
+\index{CityService@{CityService}!org.example.services.CityService@{org.example.services.CityService}}
+\doxysubsubsection{\texorpdfstring{CityService()}{CityService()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_city_service_af1db52607a04518eeb710baac8a4e0c1} 
+org.\+example.\+services.\+City\+Service.\+City\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_city_repository}{City\+Repository}}}]{city\+Repository}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор сервиса. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Repository} & Репозиторий для работы с сущностями \doxylink{classorg_1_1example_1_1entities_1_1_city}{City}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1services_1_1_city_service_ab1106b7b548110397a066af98d65b827}\index{org.example.services.CityService@{org.example.services.CityService}!findOrCreateByName@{findOrCreateByName}}
+\index{findOrCreateByName@{findOrCreateByName}!org.example.services.CityService@{org.example.services.CityService}}
+\doxysubsubsection{\texorpdfstring{findOrCreateByName()}{findOrCreateByName()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_city_service_ab1106b7b548110397a066af98d65b827} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} org.\+example.\+services.\+City\+Service.\+find\+Or\+Create\+By\+Name (\begin{DoxyParamCaption}\item[{String}]{city}{, }\item[{String}]{country}{}\end{DoxyParamCaption})}
+
+
+
+Найти город по имени и стране или создать новый. Ищет город с заданными параметрами. Если такой город не найден, создаёт и сохраняет новый. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & Название города. \\
+\hline
+{\em country} & Название страны. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Существующий или вновь созданный объект \doxylink{classorg_1_1example_1_1entities_1_1_city}{City}. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_city_service_a66d08964fd122a361f66d38a9891c99c}\index{org.example.services.CityService@{org.example.services.CityService}!getAllCities@{getAllCities}}
+\index{getAllCities@{getAllCities}!org.example.services.CityService@{org.example.services.CityService}}
+\doxysubsubsection{\texorpdfstring{getAllCities()}{getAllCities()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_city_service_a66d08964fd122a361f66d38a9891c99c} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ org.\+example.\+services.\+City\+Service.\+get\+All\+Cities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить список всех городов. 
+
+\begin{DoxyReturn}{Returns}
+Список всех городов в базе данных. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_city_service_a88b3fb31a200f75d1d2ef11a109e4b74}\index{org.example.services.CityService@{org.example.services.CityService}!getCityById@{getCityById}}
+\index{getCityById@{getCityById}!org.example.services.CityService@{org.example.services.CityService}}
+\doxysubsubsection{\texorpdfstring{getCityById()}{getCityById()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_city_service_a88b3fb31a200f75d1d2ef11a109e4b74} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} org.\+example.\+services.\+City\+Service.\+get\+City\+By\+Id (\begin{DoxyParamCaption}\item[{Long}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Получить город по его ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Уникальный идентификатор города. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Объект \doxylink{classorg_1_1example_1_1entities_1_1_city}{City}, если найден. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_city_service_a8442f45b5d1f32ea4d05477d96d4e1fd}\index{org.example.services.CityService@{org.example.services.CityService}!searchCities@{searchCities}}
+\index{searchCities@{searchCities}!org.example.services.CityService@{org.example.services.CityService}}
+\doxysubsubsection{\texorpdfstring{searchCities()}{searchCities()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_city_service_a8442f45b5d1f32ea4d05477d96d4e1fd} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ org.\+example.\+services.\+City\+Service.\+search\+Cities (\begin{DoxyParamCaption}\item[{String}]{query}{}\end{DoxyParamCaption})}
+
+
+
+Поиск городов по названию (без учёта регистра). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & Строка поиска (частичное или полное имя города). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список городов, подходящих под условие поиска. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/services/City\+Service.\+java\end{DoxyCompactItemize}

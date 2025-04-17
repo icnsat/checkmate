@@ -16,6 +16,15 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * @class SecurityConfig
+ * @brief Основной класс конфигурации безопасности Spring Security.
+ *
+ * Настраивает аутентификацию, авторизацию и правила доступа для приложения.
+ * @author Елизавета Горновова
+ * @version 1.0
+ * @date 17.04.25
+ */
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -23,18 +32,29 @@ public class SecurityConfig{
 
     private static final Logger logger = LoggerFactory.getLogger(SecurityConfig.class);
 
+    /**
+     * @brief Создает bean для кодирования паролей.
+     * @return BCryptPasswordEncoder - реализация PasswordEncoder, использующая алгоритм BCrypt.
+     */
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * @brief Создает bean для загрузки данных пользователя.
+     * @return UserDetailsService - кастомная реализация сервиса для работы с пользователями.
+     */
     @Bean
     public UserDetailsService userDetailsService()
     {
         return new CustomUserDetailsService();
     }
 
-
+    /**
+     * @brief Настраивает провайдер аутентификации.
+     * @return AuthenticationProvider - DaoAuthenticationProvider с настроенными UserDetailsService и PasswordEncoder.
+     */
     @Bean
     public AuthenticationProvider authenticationProvider() {
         var provider = new DaoAuthenticationProvider();
@@ -43,6 +63,18 @@ public class SecurityConfig{
         return provider;
     }
 
+    /**
+     * @brief Конфигурирует цепочку фильтров безопасности.
+     * @param http - объект для настройки безопасности веб-запросов.
+     * @return SecurityFilterChain - цепочка фильтров безопасности.
+     * @throws Exception при ошибках конфигурации.
+     *
+     * @details Настройки включают:
+     * - Отключение CSRF и CORS защиты
+     * - Настройку правил доступа для различных URL
+     * - Конфигурацию формы входа
+     * - Настройку выхода из системы
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -53,7 +85,7 @@ public class SecurityConfig{
                                 "/", "/registration", "/login",
                                 "/search", "/search_homepage", "/search_results",
                                 "/search_results/**", "/hotel/**", "/api/cities/**"
-                                ).permitAll()
+                        ).permitAll()
                         .requestMatchers("/css/**", "/js/**", "/uploads/**").permitAll()
                         .requestMatchers("/staff/**").hasRole("STAFF")
                         .requestMatchers("/admin/**").hasRole("ADMIN")
@@ -64,8 +96,8 @@ public class SecurityConfig{
                         .loginPage("/login")
                         .usernameParameter("email") //!!!
                         //.defaultSuccessUrl("/search_homepage", true) // true не знаю зачем,
-                                                                       // но defaultSuccessUrl убрала, чтобы сохраняло,
-                                                                       // куда пользоавтель пытался перейти
+                        // но defaultSuccessUrl убрала, чтобы сохраняло,
+                        // куда пользоавтель пытался перейти
                         .permitAll()
                 )
                 .logout((logout) -> logout

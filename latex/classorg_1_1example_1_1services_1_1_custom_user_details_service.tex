@@ -1,0 +1,58 @@
+\doxysection{org.\+example.\+services.\+Custom\+User\+Details\+Service Class Reference}
+\hypertarget{classorg_1_1example_1_1services_1_1_custom_user_details_service}{}\label{classorg_1_1example_1_1services_1_1_custom_user_details_service}\index{org.example.services.CustomUserDetailsService@{org.example.services.CustomUserDetailsService}}
+
+
+Реализация сервиса загрузки пользовательских данных для Spring Security.  
+
+
+Inheritance diagram for org.\+example.\+services.\+Custom\+User\+Details\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1example_1_1services_1_1_custom_user_details_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+User\+Details \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_custom_user_details_service_aac74de199b8ad56ac8736820761ab1c4}{load\+User\+By\+Username}} (String email)  throws Username\+Not\+Found\+Exception 
+\begin{DoxyCompactList}\small\item\em Загружает пользователя по email. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Реализация сервиса загрузки пользовательских данных для Spring Security. 
+
+Класс реализует интерфейс User\+Details\+Service и используется Spring Security для получения пользовательских данных по email (вместо username). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1services_1_1_custom_user_details_service_aac74de199b8ad56ac8736820761ab1c4}\index{org.example.services.CustomUserDetailsService@{org.example.services.CustomUserDetailsService}!loadUserByUsername@{loadUserByUsername}}
+\index{loadUserByUsername@{loadUserByUsername}!org.example.services.CustomUserDetailsService@{org.example.services.CustomUserDetailsService}}
+\doxysubsubsection{\texorpdfstring{loadUserByUsername()}{loadUserByUsername()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_custom_user_details_service_aac74de199b8ad56ac8736820761ab1c4} 
+User\+Details org.\+example.\+services.\+Custom\+User\+Details\+Service.\+load\+User\+By\+Username (\begin{DoxyParamCaption}\item[{String}]{email}{}\end{DoxyParamCaption}) throws Username\+Not\+Found\+Exception}
+
+
+
+Загружает пользователя по email. 
+
+load\+User\+By\+USERNAME на самом деле ищет пользователей по EMAIL. Поиск идет по почте, так как при регистрации указывается только она; Поля username у аккаунта нет.
+
+Метод переопределяет load\+User\+By\+Username интерфейса User\+Details\+Service, и ищет пользователя по email, а не по username. Это сделано потому, что в системе регистрации используется только email.
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email пользователя, по которому производится поиск. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Объект User\+Details, представляющий пользователя. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Username\+Not\+Found\+Exception} & Если пользователь не найден. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/services/Custom\+User\+Details\+Service.\+java\end{DoxyCompactItemize}

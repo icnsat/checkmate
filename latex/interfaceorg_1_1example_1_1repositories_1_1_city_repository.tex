@@ -1,0 +1,124 @@
+\doxysection{org.\+example.\+repositories.\+City\+Repository Interface Reference}
+\hypertarget{interfaceorg_1_1example_1_1repositories_1_1_city_repository}{}\label{interfaceorg_1_1example_1_1repositories_1_1_city_repository}\index{org.example.repositories.CityRepository@{org.example.repositories.CityRepository}}
+
+
+Репозиторий для управления сущностями \doxylink{classorg_1_1example_1_1entities_1_1_city}{City} (Города).  
+
+
+Inheritance diagram for org.\+example.\+repositories.\+City\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceorg_1_1example_1_1repositories_1_1_city_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_city_repository_a7648cabbb50c75c6b75d67dfdd711ca2}{find\+All}} ()
+\begin{DoxyCompactList}\small\item\em Получить список всех городов. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_city_repository_ac80c83f59c3d91db20cbbd0a6898ea02}{find\+By\+Name\+Containing\+Ignore\+Case}} (@Param("{}query"{}) String query)
+\begin{DoxyCompactList}\small\item\em Поиск городов по части имени (без учета регистра). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_city_repository_ac77e1f9094cd9ce7b3cee84831650695}{find\+City\+By\+Id}} (Long id)
+\begin{DoxyCompactList}\small\item\em Найти город по его уникальному идентификатору. \end{DoxyCompactList}\item 
+Optional$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_city_repository_ae013fdfd3deb8abd85d87ce23fde8258}{find\+By\+Name}} (String trim)
+\begin{DoxyCompactList}\small\item\em Найти город по имени (обернут в Optional). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_city_repository_a79b493f1377773c3b39b35076e053127}{find\+City\+By\+Name}} (String trim)
+\begin{DoxyCompactList}\small\item\em Найти город по имени (без Optional). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Репозиторий для управления сущностями \doxylink{classorg_1_1example_1_1entities_1_1_city}{City} (Города). 
+
+Обеспечивает интерфейс для операций с базой данных, связанных с городами. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_city_repository_a7648cabbb50c75c6b75d67dfdd711ca2}\index{org.example.repositories.CityRepository@{org.example.repositories.CityRepository}!findAll@{findAll}}
+\index{findAll@{findAll}!org.example.repositories.CityRepository@{org.example.repositories.CityRepository}}
+\doxysubsubsection{\texorpdfstring{findAll()}{findAll()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_city_repository_a7648cabbb50c75c6b75d67dfdd711ca2} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ org.\+example.\+repositories.\+City\+Repository.\+find\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить список всех городов. 
+
+\begin{DoxyReturn}{Returns}
+Список всех объектов \doxylink{classorg_1_1example_1_1entities_1_1_city}{City}. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_city_repository_ae013fdfd3deb8abd85d87ce23fde8258}\index{org.example.repositories.CityRepository@{org.example.repositories.CityRepository}!findByName@{findByName}}
+\index{findByName@{findByName}!org.example.repositories.CityRepository@{org.example.repositories.CityRepository}}
+\doxysubsubsection{\texorpdfstring{findByName()}{findByName()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_city_repository_ae013fdfd3deb8abd85d87ce23fde8258} 
+Optional$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ org.\+example.\+repositories.\+City\+Repository.\+find\+By\+Name (\begin{DoxyParamCaption}\item[{String}]{trim}{}\end{DoxyParamCaption})}
+
+
+
+Найти город по имени (обернут в Optional). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em trim} & Имя города. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Optional, содержащий объект \doxylink{classorg_1_1example_1_1entities_1_1_city}{City}, если найден. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_city_repository_ac80c83f59c3d91db20cbbd0a6898ea02}\index{org.example.repositories.CityRepository@{org.example.repositories.CityRepository}!findByNameContainingIgnoreCase@{findByNameContainingIgnoreCase}}
+\index{findByNameContainingIgnoreCase@{findByNameContainingIgnoreCase}!org.example.repositories.CityRepository@{org.example.repositories.CityRepository}}
+\doxysubsubsection{\texorpdfstring{findByNameContainingIgnoreCase()}{findByNameContainingIgnoreCase()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_city_repository_ac80c83f59c3d91db20cbbd0a6898ea02} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ org.\+example.\+repositories.\+City\+Repository.\+find\+By\+Name\+Containing\+Ignore\+Case (\begin{DoxyParamCaption}\item[{@Param("{}query"{}) String}]{query}{}\end{DoxyParamCaption})}
+
+
+
+Поиск городов по части имени (без учета регистра). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & Подстрока для поиска по имени города. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список городов, имя которых содержит заданную подстроку. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_city_repository_ac77e1f9094cd9ce7b3cee84831650695}\index{org.example.repositories.CityRepository@{org.example.repositories.CityRepository}!findCityById@{findCityById}}
+\index{findCityById@{findCityById}!org.example.repositories.CityRepository@{org.example.repositories.CityRepository}}
+\doxysubsubsection{\texorpdfstring{findCityById()}{findCityById()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_city_repository_ac77e1f9094cd9ce7b3cee84831650695} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} org.\+example.\+repositories.\+City\+Repository.\+find\+City\+By\+Id (\begin{DoxyParamCaption}\item[{Long}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Найти город по его уникальному идентификатору. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Идентификатор города. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Объект \doxylink{classorg_1_1example_1_1entities_1_1_city}{City}. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_city_repository_a79b493f1377773c3b39b35076e053127}\index{org.example.repositories.CityRepository@{org.example.repositories.CityRepository}!findCityByName@{findCityByName}}
+\index{findCityByName@{findCityByName}!org.example.repositories.CityRepository@{org.example.repositories.CityRepository}}
+\doxysubsubsection{\texorpdfstring{findCityByName()}{findCityByName()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_city_repository_a79b493f1377773c3b39b35076e053127} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} org.\+example.\+repositories.\+City\+Repository.\+find\+City\+By\+Name (\begin{DoxyParamCaption}\item[{String}]{trim}{}\end{DoxyParamCaption})}
+
+
+
+Найти город по имени (без Optional). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em trim} & Имя города. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Объект \doxylink{classorg_1_1example_1_1entities_1_1_city}{City}, если найден. 
+\end{DoxyReturn}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/repositories/City\+Repository.\+java\end{DoxyCompactItemize}

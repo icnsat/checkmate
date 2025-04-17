@@ -16,9 +16,20 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * @class StaffController
+ * @brief Контроллер для обработки запросов, связанные с действиями менеджеров отелей.
+ *
+ * Контроллер позволяет менеджерам просматривать отели, номера, бронирования и управлять ими.
+ * @author Елизавета Горновова
+ * @version 1.0
+ * @date 17.04.25
+ */
 @Controller
 @RequestMapping("/staff")
 public class StaffController {
+
+    /** @brief Каталог загрузки изображений отелей и номеров */
     @Value("${file.upload-dir}")
     private String uploadDir;
 
@@ -28,6 +39,14 @@ public class StaffController {
     private final BookingService bookingService;
     private final CityService cityService;
 
+    /**
+     * @brief Конструктор с внедрением зависимостей.
+     * @param userService Сервис для работы с пользователями
+     * @param hotelService Сервис для работы с отелями
+     * @param bookingService Сервис для работы с бронированиями
+     * @param roomService Сервис для работы с номерами
+     * @param cityService Сервис для работы с городами
+     */
     @Autowired
     public StaffController(UserService userService,
                            HotelService hotelService,
@@ -41,6 +60,11 @@ public class StaffController {
         this.cityService = cityService;
     }
 
+    /**
+     * @brief Отображает панель управления менеджера.
+     * @param model Модель для передачи данных на фронтенд
+     * @return Название HTML-шаблона
+     */
     @GetMapping("/dashboard")
     public String managerDashboard(Model model) {
         // Получаем текущего пользователя
@@ -70,6 +94,12 @@ public class StaffController {
 //        return "manager/bookings";
 //    }
 
+    /**
+     * @brief Отображает список номеров конкретного отеля.
+     * @param hotelId Идентификатор отеля
+     * @param model Модель для передачи данных
+     * @return Название HTML-шаблона
+     */
     @GetMapping("/hotel/rooms/{id}")
     public String viewHotelRooms(@PathVariable("id") Long hotelId, Model model) {
         Hotel hotel = hotelService.getHotelById(hotelId);
@@ -81,6 +111,18 @@ public class StaffController {
         return "manager_hotel_rooms";
     }
 
+    /**
+     * @brief Обновляет данные отеля.
+     * @param id Идентификатор отеля
+     * @param name Название отеля
+     * @param city Название города
+     * @param country Страна
+     * @param address Адрес
+     * @param rating Рейтинг
+     * @param photo Фото отеля
+     * @return Редирект на дашборд
+     * @throws IOException При ошибке загрузки файла
+     */
     @PostMapping("/hotel/edit")
     public String editHotel(@RequestParam Long id,
                             @RequestParam String name,
@@ -112,6 +154,17 @@ public class StaffController {
         return "redirect:/staff/dashboard";
     }
 
+    /**
+     * @brief Добавляет новый отель.
+     * @param name Название отеля
+     * @param city Название города
+     * @param country Страна
+     * @param address Адрес
+     * @param rating Рейтинг
+     * @param photo Фото отеля
+     * @return Редирект на дашборд
+     * @throws IOException При ошибке загрузки файла
+     */
     @PostMapping("/hotel/add")
     public String addHotel(@RequestParam String name,
                            @RequestParam String city,
@@ -144,6 +197,11 @@ public class StaffController {
         return "redirect:/staff/dashboard";
     }
 
+    /**
+     * @brief Удаляет отель и связанные с ним данные.
+     * @param id Идентификатор отеля
+     * @return Редирект на дашборд
+     */
     @PostMapping("/hotel/delete")
     public String deleteHotel(@RequestParam Long id) {
         // Получаем отель по ID
@@ -163,6 +221,17 @@ public class StaffController {
         return "redirect:/staff/dashboard";
     }
 
+    /**
+     * @brief Добавляет новый номер в отель.
+     * @param hotelId Идентификатор отеля
+     * @param roomType Тип номера
+     * @param capacity Вместимость
+     * @param price Цена за ночь
+     * @param description Описание
+     * @param photo Фото номера
+     * @return Редирект к списку номеров отеля
+     * @throws IOException При ошибке загрузки
+     */
     @PostMapping("/room/add")
     public String addRoom(@RequestParam Long hotelId,
                           @RequestParam String roomType,
@@ -191,6 +260,18 @@ public class StaffController {
         return "redirect:/staff/hotel/rooms/" + hotelId;
     }
 
+    /**
+     * @brief Редактирует информацию о номере.
+     * @param id Идентификатор номера
+     * @param hotelId Идентификатор отеля
+     * @param roomType Тип номера
+     * @param capacity Вместимость
+     * @param price Цена за ночь
+     * @param description Описание
+     * @param photo Фото номера
+     * @return Редирект к списку номеров отеля
+     * @throws IOException При ошибке загрузки
+     */
     @PostMapping("/room/edit")
     public String updateRoom(@RequestParam Long id,
                              @RequestParam Long hotelId,
@@ -227,7 +308,12 @@ public class StaffController {
         return "redirect:/staff/hotel/rooms/" + hotelId;
     }
 
-     @PostMapping("/room/delete")
+    /**
+     * @brief Удаляет номер и связанные с ним бронирования.
+     * @param id Идентификатор номера
+     * @return Редирект к списку номеров отеля
+     */
+    @PostMapping("/room/delete")
     public String deleteRoom(@RequestParam Long id) {
         Room room = roomService.getRoomById(id);
 
@@ -249,6 +335,11 @@ public class StaffController {
 
 
     // Отображение текущих бронирований
+    /**
+     * @brief Отображает список всех бронирований для менеджера.
+     * @param model Модель с данными
+     * @return HTML-шаблон со списком бронирований
+     */
     @GetMapping("/booking")
     public String viewBookings(Model model) {
         // Получаем текущего пользователя
@@ -264,6 +355,12 @@ public class StaffController {
     }
 
     // Изменение статуса бронирования
+    /**
+     * @brief Изменяет статус бронирования.
+     * @param bookingId Идентификатор бронирования
+     * @param status Новый статус (CONFIRMED или CANCELLED)
+     * @return Редирект к списку бронирований
+     */
     @PostMapping("/booking/edit")
     public String editBookingStatus(@RequestParam Long bookingId,
                                     @RequestParam String status) {

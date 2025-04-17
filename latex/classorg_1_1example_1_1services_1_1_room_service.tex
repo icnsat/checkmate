@@ -1,0 +1,154 @@
+\doxysection{org.\+example.\+services.\+Room\+Service Class Reference}
+\hypertarget{classorg_1_1example_1_1services_1_1_room_service}{}\label{classorg_1_1example_1_1services_1_1_room_service}\index{org.example.services.RoomService@{org.example.services.RoomService}}
+
+
+Сервис для управления номерами в отелях.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_room_service_ae7d556495829a6b5d7010e9278183c97}{Room\+Service}} (\mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_room_repository}{Room\+Repository}} room\+Repository)
+\begin{DoxyCompactList}\small\item\em Конструктор сервиса \doxylink{classorg_1_1example_1_1services_1_1_room_service}{Room\+Service}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_room_service_aa3806ac88766fa700af62934763a5ff4}{get\+Room\+By\+Id}} (Long room\+Id)
+\begin{DoxyCompactList}\small\item\em Получение номера по его идентификатору. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_room_service_acfeb79ab442e1c21abc1c4b6dc2a3d62}{get\+Rooms\+By\+Hotel}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} hotel)
+\begin{DoxyCompactList}\small\item\em Получение всех номеров, относящихся к конкретному отелю. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_room_service_a990b30755ec11874047f875d108de6d9}{save\+Room}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} room)
+\begin{DoxyCompactList}\small\item\em Сохранение или обновление номера. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_room_service_af8a85e48de95d3beb5d607bd8df8397a}{delete\+Room}} (Long room\+Id)
+\begin{DoxyCompactList}\small\item\em Удаление номера по его ID. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_room_service_af1f09fa9200bd98de2721d7ba0767247}{find\+By\+Hotel}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} hotel)
+\begin{DoxyCompactList}\small\item\em Поиск всех номеров, относящихся к заданному отелю. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_room_service_af75401a187ab11fe6255a5ea02139cb7}{delete\+By\+Hotel}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} hotel)
+\begin{DoxyCompactList}\small\item\em Удаление всех номеров, принадлежащих отелю. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Сервис для управления номерами в отелях. 
+
+Обеспечивает операции по получению, сохранению и удалению номеров, а также предоставляет методы для поиска номеров по отелю. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1services_1_1_room_service_ae7d556495829a6b5d7010e9278183c97}\index{org.example.services.RoomService@{org.example.services.RoomService}!RoomService@{RoomService}}
+\index{RoomService@{RoomService}!org.example.services.RoomService@{org.example.services.RoomService}}
+\doxysubsubsection{\texorpdfstring{RoomService()}{RoomService()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_room_service_ae7d556495829a6b5d7010e9278183c97} 
+org.\+example.\+services.\+Room\+Service.\+Room\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_room_repository}{Room\+Repository}}}]{room\+Repository}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор сервиса \doxylink{classorg_1_1example_1_1services_1_1_room_service}{Room\+Service}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Repository} & Репозиторий номеров. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1services_1_1_room_service_af75401a187ab11fe6255a5ea02139cb7}\index{org.example.services.RoomService@{org.example.services.RoomService}!deleteByHotel@{deleteByHotel}}
+\index{deleteByHotel@{deleteByHotel}!org.example.services.RoomService@{org.example.services.RoomService}}
+\doxysubsubsection{\texorpdfstring{deleteByHotel()}{deleteByHotel()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_room_service_af75401a187ab11fe6255a5ea02139cb7} 
+void org.\+example.\+services.\+Room\+Service.\+delete\+By\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}}}]{hotel}{}\end{DoxyParamCaption})}
+
+
+
+Удаление всех номеров, принадлежащих отелю. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Отель, номера которого будут удалены. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1services_1_1_room_service_af8a85e48de95d3beb5d607bd8df8397a}\index{org.example.services.RoomService@{org.example.services.RoomService}!deleteRoom@{deleteRoom}}
+\index{deleteRoom@{deleteRoom}!org.example.services.RoomService@{org.example.services.RoomService}}
+\doxysubsubsection{\texorpdfstring{deleteRoom()}{deleteRoom()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_room_service_af8a85e48de95d3beb5d607bd8df8397a} 
+void org.\+example.\+services.\+Room\+Service.\+delete\+Room (\begin{DoxyParamCaption}\item[{Long}]{room\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Удаление номера по его ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Id} & Идентификатор номера для удаления. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1services_1_1_room_service_af1f09fa9200bd98de2721d7ba0767247}\index{org.example.services.RoomService@{org.example.services.RoomService}!findByHotel@{findByHotel}}
+\index{findByHotel@{findByHotel}!org.example.services.RoomService@{org.example.services.RoomService}}
+\doxysubsubsection{\texorpdfstring{findByHotel()}{findByHotel()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_room_service_af1f09fa9200bd98de2721d7ba0767247} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ org.\+example.\+services.\+Room\+Service.\+find\+By\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}}}]{hotel}{}\end{DoxyParamCaption})}
+
+
+
+Поиск всех номеров, относящихся к заданному отелю. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Отель, по которому осуществляется поиск. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список всех номеров, принадлежащих отелю. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_room_service_aa3806ac88766fa700af62934763a5ff4}\index{org.example.services.RoomService@{org.example.services.RoomService}!getRoomById@{getRoomById}}
+\index{getRoomById@{getRoomById}!org.example.services.RoomService@{org.example.services.RoomService}}
+\doxysubsubsection{\texorpdfstring{getRoomById()}{getRoomById()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_room_service_aa3806ac88766fa700af62934763a5ff4} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} org.\+example.\+services.\+Room\+Service.\+get\+Room\+By\+Id (\begin{DoxyParamCaption}\item[{Long}]{room\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Получение номера по его идентификатору. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Id} & Идентификатор номера. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Объект \doxylink{classorg_1_1example_1_1entities_1_1_room}{Room}, соответствующий заданному ID. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_room_service_acfeb79ab442e1c21abc1c4b6dc2a3d62}\index{org.example.services.RoomService@{org.example.services.RoomService}!getRoomsByHotel@{getRoomsByHotel}}
+\index{getRoomsByHotel@{getRoomsByHotel}!org.example.services.RoomService@{org.example.services.RoomService}}
+\doxysubsubsection{\texorpdfstring{getRoomsByHotel()}{getRoomsByHotel()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_room_service_acfeb79ab442e1c21abc1c4b6dc2a3d62} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ org.\+example.\+services.\+Room\+Service.\+get\+Rooms\+By\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}}}]{hotel}{}\end{DoxyParamCaption})}
+
+
+
+Получение всех номеров, относящихся к конкретному отелю. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Отель, к которому относятся номера. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список номеров, связанных с данным отелем. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1services_1_1_room_service_a990b30755ec11874047f875d108de6d9}\index{org.example.services.RoomService@{org.example.services.RoomService}!saveRoom@{saveRoom}}
+\index{saveRoom@{saveRoom}!org.example.services.RoomService@{org.example.services.RoomService}}
+\doxysubsubsection{\texorpdfstring{saveRoom()}{saveRoom()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1services_1_1_room_service_a990b30755ec11874047f875d108de6d9} 
+void org.\+example.\+services.\+Room\+Service.\+save\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}}}]{room}{}\end{DoxyParamCaption})}
+
+
+
+Сохранение или обновление номера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Объект \doxylink{classorg_1_1example_1_1entities_1_1_room}{Room} для сохранения в базу данных. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/services/Room\+Service.\+java\end{DoxyCompactItemize}

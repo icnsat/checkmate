@@ -1,0 +1,146 @@
+\doxysection{org.\+example.\+entities.\+City Class Reference}
+\hypertarget{classorg_1_1example_1_1entities_1_1_city}{}\label{classorg_1_1example_1_1entities_1_1_city}\index{org.example.entities.City@{org.example.entities.City}}
+
+
+Сущность, представляющая город, в котором расположен отель.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classorg_1_1example_1_1entities_1_1_city_a21edd6f462e43d9ce6dc0aed7f989ed6}\label{classorg_1_1example_1_1entities_1_1_city_a21edd6f462e43d9ce6dc0aed7f989ed6} 
+{\bfseries City} ()
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city_a844ad0266dc314eebabb2b933b04fb6b}{City}} (String name, String country)
+\begin{DoxyCompactList}\small\item\em Конструктор с параметрами. \end{DoxyCompactList}\item 
+Long \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city_a30ada5cd732294c72a31ef103466f3ef}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Получить ID города. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city_aa3ea359813d3cfef0f7090edccf09270}{set\+Id}} (Long id)
+\begin{DoxyCompactList}\small\item\em Установить ID города. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city_a5248c62e7e619f419213e455c66d2e23}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Получить название города. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city_a5a319d988c7054b86110ab7417dc527d}{set\+Name}} (String name)
+\begin{DoxyCompactList}\small\item\em Установить название города. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city_a0acc8856477d72db57ca898621a50411}{get\+Country}} ()
+\begin{DoxyCompactList}\small\item\em Получить страну города. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city_ace5f9b1648a0a1374eb92bcb1a29c1dd}{set\+Country}} (String country)
+\begin{DoxyCompactList}\small\item\em Установить страну города. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Сущность, представляющая город, в котором расположен отель. 
+
+Используется для хранения названия города и страны, где находится отель.
+
+@entity Аннотация JPA для сопоставления с таблицей "{}cities"{} @table Указывает имя таблицы в базе данных 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_city_a844ad0266dc314eebabb2b933b04fb6b}\index{org.example.entities.City@{org.example.entities.City}!City@{City}}
+\index{City@{City}!org.example.entities.City@{org.example.entities.City}}
+\doxysubsubsection{\texorpdfstring{City()}{City()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_city_a844ad0266dc314eebabb2b933b04fb6b} 
+org.\+example.\+entities.\+City.\+City (\begin{DoxyParamCaption}\item[{String}]{name}{, }\item[{String}]{country}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор с параметрами. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Название города. \\
+\hline
+{\em country} & Название страны. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_city_a0acc8856477d72db57ca898621a50411}\index{org.example.entities.City@{org.example.entities.City}!getCountry@{getCountry}}
+\index{getCountry@{getCountry}!org.example.entities.City@{org.example.entities.City}}
+\doxysubsubsection{\texorpdfstring{getCountry()}{getCountry()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_city_a0acc8856477d72db57ca898621a50411} 
+String org.\+example.\+entities.\+City.\+get\+Country (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить страну города. 
+
+\begin{DoxyReturn}{Returns}
+Название страны. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_city_a30ada5cd732294c72a31ef103466f3ef}\index{org.example.entities.City@{org.example.entities.City}!getId@{getId}}
+\index{getId@{getId}!org.example.entities.City@{org.example.entities.City}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_city_a30ada5cd732294c72a31ef103466f3ef} 
+Long org.\+example.\+entities.\+City.\+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить ID города. 
+
+\begin{DoxyReturn}{Returns}
+Уникальный идентификатор города. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_city_a5248c62e7e619f419213e455c66d2e23}\index{org.example.entities.City@{org.example.entities.City}!getName@{getName}}
+\index{getName@{getName}!org.example.entities.City@{org.example.entities.City}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_city_a5248c62e7e619f419213e455c66d2e23} 
+String org.\+example.\+entities.\+City.\+get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить название города. 
+
+\begin{DoxyReturn}{Returns}
+Название города. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_city_ace5f9b1648a0a1374eb92bcb1a29c1dd}\index{org.example.entities.City@{org.example.entities.City}!setCountry@{setCountry}}
+\index{setCountry@{setCountry}!org.example.entities.City@{org.example.entities.City}}
+\doxysubsubsection{\texorpdfstring{setCountry()}{setCountry()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_city_ace5f9b1648a0a1374eb92bcb1a29c1dd} 
+void org.\+example.\+entities.\+City.\+set\+Country (\begin{DoxyParamCaption}\item[{String}]{country}{}\end{DoxyParamCaption})}
+
+
+
+Установить страну города. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em country} & Название страны. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_city_aa3ea359813d3cfef0f7090edccf09270}\index{org.example.entities.City@{org.example.entities.City}!setId@{setId}}
+\index{setId@{setId}!org.example.entities.City@{org.example.entities.City}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_city_aa3ea359813d3cfef0f7090edccf09270} 
+void org.\+example.\+entities.\+City.\+set\+Id (\begin{DoxyParamCaption}\item[{Long}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Установить ID города. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Идентификатор города. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_city_a5a319d988c7054b86110ab7417dc527d}\index{org.example.entities.City@{org.example.entities.City}!setName@{setName}}
+\index{setName@{setName}!org.example.entities.City@{org.example.entities.City}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_city_a5a319d988c7054b86110ab7417dc527d} 
+void org.\+example.\+entities.\+City.\+set\+Name (\begin{DoxyParamCaption}\item[{String}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Установить название города. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Название города. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/entities/City.\+java\end{DoxyCompactItemize}

@@ -1,0 +1,92 @@
+\doxysection{org.\+example.\+controllers.\+Account\+Controller Class Reference}
+\hypertarget{classorg_1_1example_1_1controllers_1_1_account_controller}{}\label{classorg_1_1example_1_1controllers_1_1_account_controller}\index{org.example.controllers.AccountController@{org.example.controllers.AccountController}}
+
+
+Контроллер для работы с личным кабинетом пользователя.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_account_controller_a5ba21f81f7e8872cd33acb037e716902}{Account\+Controller}} (\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}} user\+Service, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service}{Booking\+Service}} booking\+Service)
+\begin{DoxyCompactList}\small\item\em Конструктор с внедрением зависимостей. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_account_controller_ad8fee26520117339f4d10c3854462f2e}{account}} (Model model)
+\begin{DoxyCompactList}\small\item\em Обрабатывает запрос на отображение личного кабинета. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Контроллер для работы с личным кабинетом пользователя. 
+
+Обрабатывает запросы, связанные с отображением информации в личном кабинете пользователя. \begin{DoxyAuthor}{Author}
+Елизавета Горновова 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17.\+04.\+25 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_account_controller_a5ba21f81f7e8872cd33acb037e716902}\index{org.example.controllers.AccountController@{org.example.controllers.AccountController}!AccountController@{AccountController}}
+\index{AccountController@{AccountController}!org.example.controllers.AccountController@{org.example.controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{AccountController()}{AccountController()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_account_controller_a5ba21f81f7e8872cd33acb037e716902} 
+org.\+example.\+controllers.\+Account\+Controller.\+Account\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}}}]{user\+Service}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service}{Booking\+Service}}}]{booking\+Service}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор с внедрением зависимостей. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Service} & Сервис для работы с пользователями \\
+\hline
+{\em booking\+Service} & Сервис для работы с бронированиями \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_account_controller_ad8fee26520117339f4d10c3854462f2e}\index{org.example.controllers.AccountController@{org.example.controllers.AccountController}!account@{account}}
+\index{account@{account}!org.example.controllers.AccountController@{org.example.controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{account()}{account()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_account_controller_ad8fee26520117339f4d10c3854462f2e} 
+String org.\+example.\+controllers.\+Account\+Controller.\+account (\begin{DoxyParamCaption}\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Обрабатывает запрос на отображение личного кабинета. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Модель для передачи данных в представление \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Имя шаблона для отображения (account.\+html)
+\end{DoxyReturn}
+Метод выполняет\+:
+\begin{DoxyEnumerate}
+\item Получение текущего пользователя через user\+Service
+\item Получение списка бронирований пользователя через booking\+Service
+\item Добавление данных в модель\+:
+\begin{DoxyItemize}
+\item Атрибут "{}user"{} с информацией о пользователе
+\item Атрибут "{}bookings"{} со списком бронирований
+\end{DoxyItemize}
+\item Возвращает имя шаблона для отображения
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+Требует аутентификации пользователя 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Логирование ошибок должно быть реализовано в сервисах 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/controllers/Account\+Controller.\+java\end{DoxyCompactItemize}

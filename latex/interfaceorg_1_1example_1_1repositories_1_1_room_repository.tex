@@ -1,0 +1,115 @@
+\doxysection{org.\+example.\+repositories.\+Room\+Repository Interface Reference}
+\hypertarget{interfaceorg_1_1example_1_1repositories_1_1_room_repository}{}\label{interfaceorg_1_1example_1_1repositories_1_1_room_repository}\index{org.example.repositories.RoomRepository@{org.example.repositories.RoomRepository}}
+
+
+Репозиторий для управления сущностями \doxylink{classorg_1_1example_1_1entities_1_1_room}{Room} (Комнаты).  
+
+
+Inheritance diagram for org.\+example.\+repositories.\+Room\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceorg_1_1example_1_1repositories_1_1_room_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_room_repository_acde992ad98c4e13196d0d1171237014c}{find\+Available\+Rooms}} ( @Param("{}hotel\+Id"{}) Long hotel\+Id, @Param("{}check\+In\+Date"{}) Local\+Date check\+In\+Date, @Param("{}check\+Out\+Date"{}) Local\+Date check\+Out\+Date, @Param("{}adults"{}) int adults)
+\begin{DoxyCompactList}\small\item\em Найти доступные комнаты в указанном отеле на заданные даты. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_room_repository_af3bf85c7abe046f4c51f04d0e46e3b1d}{find\+Room\+By\+Id}} (Long room\+Id)
+\begin{DoxyCompactList}\small\item\em Найти комнату по ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_room_repository_a4484dd8b0059e3025665db00bde7faa8}{find\+Hotel\+By\+Room\+Id}} (@Param("{}room\+Id"{}) Long room\+Id)
+\begin{DoxyCompactList}\small\item\em Найти отель, к которому принадлежит комната по её ID. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_room_repository_af73aa06c1ef47272646a03611f076bf4}{find\+All\+By\+Hotel}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} hotel)
+\begin{DoxyCompactList}\small\item\em Найти все комнаты в указанном отеле. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Репозиторий для управления сущностями \doxylink{classorg_1_1example_1_1entities_1_1_room}{Room} (Комнаты). 
+
+Содержит методы для работы с комнатами, включая поиск доступных комнат, поиск комнаты по ID и извлечение отеля по ID комнаты. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_room_repository_af73aa06c1ef47272646a03611f076bf4}\index{org.example.repositories.RoomRepository@{org.example.repositories.RoomRepository}!findAllByHotel@{findAllByHotel}}
+\index{findAllByHotel@{findAllByHotel}!org.example.repositories.RoomRepository@{org.example.repositories.RoomRepository}}
+\doxysubsubsection{\texorpdfstring{findAllByHotel()}{findAllByHotel()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_room_repository_af73aa06c1ef47272646a03611f076bf4} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ org.\+example.\+repositories.\+Room\+Repository.\+find\+All\+By\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}}}]{hotel}{}\end{DoxyParamCaption})}
+
+
+
+Найти все комнаты в указанном отеле. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Отель, для которого нужно найти комнаты. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список всех комнат, принадлежащих указанному отелю. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_room_repository_acde992ad98c4e13196d0d1171237014c}\index{org.example.repositories.RoomRepository@{org.example.repositories.RoomRepository}!findAvailableRooms@{findAvailableRooms}}
+\index{findAvailableRooms@{findAvailableRooms}!org.example.repositories.RoomRepository@{org.example.repositories.RoomRepository}}
+\doxysubsubsection{\texorpdfstring{findAvailableRooms()}{findAvailableRooms()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_room_repository_acde992ad98c4e13196d0d1171237014c} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} $>$ org.\+example.\+repositories.\+Room\+Repository.\+find\+Available\+Rooms (\begin{DoxyParamCaption}\item[{@Param("{}hotel\+Id"{}) Long}]{hotel\+Id}{, }\item[{@Param("{}check\+In\+Date"{}) Local\+Date}]{check\+In\+Date}{, }\item[{@Param("{}check\+Out\+Date"{}) Local\+Date}]{check\+Out\+Date}{, }\item[{@Param("{}adults"{}) int}]{adults}{}\end{DoxyParamCaption})}
+
+
+
+Найти доступные комнаты в указанном отеле на заданные даты. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel\+Id} & Идентификатор отеля. \\
+\hline
+{\em check\+In\+Date} & Дата заезда. \\
+\hline
+{\em check\+Out\+Date} & Дата выезда. \\
+\hline
+{\em adults} & Количество взрослых. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список доступных комнат в указанном отеле на указанные даты. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_room_repository_a4484dd8b0059e3025665db00bde7faa8}\index{org.example.repositories.RoomRepository@{org.example.repositories.RoomRepository}!findHotelByRoomId@{findHotelByRoomId}}
+\index{findHotelByRoomId@{findHotelByRoomId}!org.example.repositories.RoomRepository@{org.example.repositories.RoomRepository}}
+\doxysubsubsection{\texorpdfstring{findHotelByRoomId()}{findHotelByRoomId()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_room_repository_a4484dd8b0059e3025665db00bde7faa8} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} org.\+example.\+repositories.\+Room\+Repository.\+find\+Hotel\+By\+Room\+Id (\begin{DoxyParamCaption}\item[{@Param("{}room\+Id"{}) Long}]{room\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Найти отель, к которому принадлежит комната по её ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Id} & Идентификатор комнаты. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Отель, в котором находится комната с указанным ID. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_room_repository_af3bf85c7abe046f4c51f04d0e46e3b1d}\index{org.example.repositories.RoomRepository@{org.example.repositories.RoomRepository}!findRoomById@{findRoomById}}
+\index{findRoomById@{findRoomById}!org.example.repositories.RoomRepository@{org.example.repositories.RoomRepository}}
+\doxysubsubsection{\texorpdfstring{findRoomById()}{findRoomById()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_room_repository_af3bf85c7abe046f4c51f04d0e46e3b1d} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} org.\+example.\+repositories.\+Room\+Repository.\+find\+Room\+By\+Id (\begin{DoxyParamCaption}\item[{Long}]{room\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Найти комнату по ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Id} & Идентификатор комнаты. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Комната с указанным ID. 
+\end{DoxyReturn}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/repositories/Room\+Repository.\+java\end{DoxyCompactItemize}

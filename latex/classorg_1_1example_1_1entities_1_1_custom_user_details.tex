@@ -1,0 +1,186 @@
+\doxysection{org.\+example.\+entities.\+Custom\+User\+Details Class Reference}
+\hypertarget{classorg_1_1example_1_1entities_1_1_custom_user_details}{}\label{classorg_1_1example_1_1entities_1_1_custom_user_details}\index{org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}}
+
+
+Кастомная реализация интерфейса User\+Details для интеграции с Spring Security.  
+
+
+Inheritance diagram for org.\+example.\+entities.\+Custom\+User\+Details\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1example_1_1entities_1_1_custom_user_details}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_custom_user_details_a2affdf53a47d994aba0872af526799ba}{Custom\+User\+Details}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} user)
+\begin{DoxyCompactList}\small\item\em Конструктор с параметром. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_custom_user_details_a7d044ffc9baf70e95ce1f1fb270ac74d}{get\+User}} ()
+\begin{DoxyCompactList}\small\item\em Получить пользователя. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_custom_user_details_a8edb1ebf91318f18c44b3c563be0c21d}{set\+User}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} user)
+\begin{DoxyCompactList}\small\item\em Установить пользователя. \end{DoxyCompactList}\item 
+Collection$<$? extends Granted\+Authority $>$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_custom_user_details_ad6c0a0742be36402335fbaceeaca9249}{get\+Authorities}} ()
+\begin{DoxyCompactList}\small\item\em Получить список ролей пользователя. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_custom_user_details_ae817cba94eff527ff31ba8d63bdbdc7c}{get\+Password}} ()
+\begin{DoxyCompactList}\small\item\em Получить пароль пользователя. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_custom_user_details_a93fc1951106512760a72340aa67b71b0}{get\+Username}} ()
+\begin{DoxyCompactList}\small\item\em Получить имя пользователя (используется email). \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_custom_user_details_a6378f60bc5ee0019b9df9ef97483db45}{is\+Account\+Non\+Expired}} ()
+\begin{DoxyCompactList}\small\item\em Проверка, не истек ли срок действия аккаунта. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_custom_user_details_a5e952388b047889401704ad84d93fb1a}{is\+Account\+Non\+Locked}} ()
+\begin{DoxyCompactList}\small\item\em Проверка, не заблокирован ли аккаунт. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_custom_user_details_a61d13ec9a25add08a1196ea172197989}{is\+Credentials\+Non\+Expired}} ()
+\begin{DoxyCompactList}\small\item\em Проверка, не истекли ли учетные данные. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_custom_user_details_a9cada5b24db4960bcd270b7ce0ce83ac}{is\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Проверка, включен ли аккаунт. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Кастомная реализация интерфейса User\+Details для интеграции с Spring Security. 
+
+Используется для авторизации и аутентификации пользователей системы. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_custom_user_details_a2affdf53a47d994aba0872af526799ba}\index{org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}!CustomUserDetails@{CustomUserDetails}}
+\index{CustomUserDetails@{CustomUserDetails}!org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}}
+\doxysubsubsection{\texorpdfstring{CustomUserDetails()}{CustomUserDetails()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_custom_user_details_a2affdf53a47d994aba0872af526799ba} 
+org.\+example.\+entities.\+Custom\+User\+Details.\+Custom\+User\+Details (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{user}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор с параметром. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Пользователь, для которого создаются детали. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_custom_user_details_ad6c0a0742be36402335fbaceeaca9249}\index{org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}!getAuthorities@{getAuthorities}}
+\index{getAuthorities@{getAuthorities}!org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}}
+\doxysubsubsection{\texorpdfstring{getAuthorities()}{getAuthorities()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_custom_user_details_ad6c0a0742be36402335fbaceeaca9249} 
+Collection$<$? extends Granted\+Authority $>$ org.\+example.\+entities.\+Custom\+User\+Details.\+get\+Authorities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить список ролей пользователя. 
+
+\begin{DoxyReturn}{Returns}
+Коллекция прав доступа пользователя. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_custom_user_details_ae817cba94eff527ff31ba8d63bdbdc7c}\index{org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}}
+\doxysubsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_custom_user_details_ae817cba94eff527ff31ba8d63bdbdc7c} 
+String org.\+example.\+entities.\+Custom\+User\+Details.\+get\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить пароль пользователя. 
+
+\begin{DoxyReturn}{Returns}
+Пароль пользователя. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_custom_user_details_a7d044ffc9baf70e95ce1f1fb270ac74d}\index{org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}!getUser@{getUser}}
+\index{getUser@{getUser}!org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}}
+\doxysubsubsection{\texorpdfstring{getUser()}{getUser()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_custom_user_details_a7d044ffc9baf70e95ce1f1fb270ac74d} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} org.\+example.\+entities.\+Custom\+User\+Details.\+get\+User (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить пользователя. 
+
+\begin{DoxyReturn}{Returns}
+Объект пользователя. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_custom_user_details_a93fc1951106512760a72340aa67b71b0}\index{org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}!getUsername@{getUsername}}
+\index{getUsername@{getUsername}!org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}}
+\doxysubsubsection{\texorpdfstring{getUsername()}{getUsername()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_custom_user_details_a93fc1951106512760a72340aa67b71b0} 
+String org.\+example.\+entities.\+Custom\+User\+Details.\+get\+Username (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить имя пользователя (используется email). 
+
+Считаем, что username -\/ это email\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/ /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \begin{DoxyReturn}{Returns}
+Email пользователя. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_custom_user_details_a6378f60bc5ee0019b9df9ef97483db45}\index{org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}!isAccountNonExpired@{isAccountNonExpired}}
+\index{isAccountNonExpired@{isAccountNonExpired}!org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}}
+\doxysubsubsection{\texorpdfstring{isAccountNonExpired()}{isAccountNonExpired()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_custom_user_details_a6378f60bc5ee0019b9df9ef97483db45} 
+boolean org.\+example.\+entities.\+Custom\+User\+Details.\+is\+Account\+Non\+Expired (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Проверка, не истек ли срок действия аккаунта. 
+
+\begin{DoxyReturn}{Returns}
+Всегда true (не истекает). 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_custom_user_details_a5e952388b047889401704ad84d93fb1a}\index{org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}!isAccountNonLocked@{isAccountNonLocked}}
+\index{isAccountNonLocked@{isAccountNonLocked}!org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}}
+\doxysubsubsection{\texorpdfstring{isAccountNonLocked()}{isAccountNonLocked()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_custom_user_details_a5e952388b047889401704ad84d93fb1a} 
+boolean org.\+example.\+entities.\+Custom\+User\+Details.\+is\+Account\+Non\+Locked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Проверка, не заблокирован ли аккаунт. 
+
+\begin{DoxyReturn}{Returns}
+Всегда true (не блокируется). 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_custom_user_details_a61d13ec9a25add08a1196ea172197989}\index{org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}!isCredentialsNonExpired@{isCredentialsNonExpired}}
+\index{isCredentialsNonExpired@{isCredentialsNonExpired}!org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}}
+\doxysubsubsection{\texorpdfstring{isCredentialsNonExpired()}{isCredentialsNonExpired()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_custom_user_details_a61d13ec9a25add08a1196ea172197989} 
+boolean org.\+example.\+entities.\+Custom\+User\+Details.\+is\+Credentials\+Non\+Expired (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Проверка, не истекли ли учетные данные. 
+
+\begin{DoxyReturn}{Returns}
+Всегда true (не истекают). 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_custom_user_details_a9cada5b24db4960bcd270b7ce0ce83ac}\index{org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}}
+\doxysubsubsection{\texorpdfstring{isEnabled()}{isEnabled()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_custom_user_details_a9cada5b24db4960bcd270b7ce0ce83ac} 
+boolean org.\+example.\+entities.\+Custom\+User\+Details.\+is\+Enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Проверка, включен ли аккаунт. 
+
+\begin{DoxyReturn}{Returns}
+Всегда true (всегда включен). 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_custom_user_details_a8edb1ebf91318f18c44b3c563be0c21d}\index{org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}!setUser@{setUser}}
+\index{setUser@{setUser}!org.example.entities.CustomUserDetails@{org.example.entities.CustomUserDetails}}
+\doxysubsubsection{\texorpdfstring{setUser()}{setUser()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_custom_user_details_a8edb1ebf91318f18c44b3c563be0c21d} 
+void org.\+example.\+entities.\+Custom\+User\+Details.\+set\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{user}{}\end{DoxyParamCaption})}
+
+
+
+Установить пользователя. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Объект пользователя. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/entities/Custom\+User\+Details.\+java\end{DoxyCompactItemize}

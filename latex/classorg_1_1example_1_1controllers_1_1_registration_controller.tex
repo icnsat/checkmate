@@ -1,0 +1,132 @@
+\doxysection{org.\+example.\+controllers.\+Registration\+Controller Class Reference}
+\hypertarget{classorg_1_1example_1_1controllers_1_1_registration_controller}{}\label{classorg_1_1example_1_1controllers_1_1_registration_controller}\index{org.example.controllers.RegistrationController@{org.example.controllers.RegistrationController}}
+
+
+Контроллер для обработки регистрации и аутентификации пользователей.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_registration_controller_a544d279d3df8679fc3928225dff708a6}{Registration\+Controller}} (\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}} user\+Service)
+\begin{DoxyCompactList}\small\item\em Конструктор с внедрением зависимости \doxylink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_registration_controller_ab7d0dedf27838fd8408c4db98d9b2fa4}{registration}} ()
+\begin{DoxyCompactList}\small\item\em Отображает страницу регистрации. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_registration_controller_af1996937cec13e5eba67e46593b5fbd3}{add\+User}} (@Model\+Attribute \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} user, Model model)
+\begin{DoxyCompactList}\small\item\em Обрабатывает данные регистрации (версия с Model\+Attribute). \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_registration_controller_a1c894dce80f3d884435d8815ee160fc0}{login}} ()
+\begin{DoxyCompactList}\small\item\em Отображает страницу входа в систему. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Контроллер для обработки регистрации и аутентификации пользователей. 
+
+Обрабатывает запросы, связанные с\+:
+\begin{DoxyItemize}
+\item Отображением форм регистрации и входа
+\item Обработкой данных регистрации
+\item Перенаправлением после успешной аутентификации
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Елизавета Горновова 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17.\+04.\+25 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_registration_controller_a544d279d3df8679fc3928225dff708a6}\index{org.example.controllers.RegistrationController@{org.example.controllers.RegistrationController}!RegistrationController@{RegistrationController}}
+\index{RegistrationController@{RegistrationController}!org.example.controllers.RegistrationController@{org.example.controllers.RegistrationController}}
+\doxysubsubsection{\texorpdfstring{RegistrationController()}{RegistrationController()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_registration_controller_a544d279d3df8679fc3928225dff708a6} 
+org.\+example.\+controllers.\+Registration\+Controller.\+Registration\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}}}]{user\+Service}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор с внедрением зависимости \doxylink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Service} & Сервис для работы с пользователями \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_registration_controller_af1996937cec13e5eba67e46593b5fbd3}\index{org.example.controllers.RegistrationController@{org.example.controllers.RegistrationController}!addUser@{addUser}}
+\index{addUser@{addUser}!org.example.controllers.RegistrationController@{org.example.controllers.RegistrationController}}
+\doxysubsubsection{\texorpdfstring{addUser()}{addUser()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_registration_controller_af1996937cec13e5eba67e46593b5fbd3} 
+String org.\+example.\+controllers.\+Registration\+Controller.\+add\+User (\begin{DoxyParamCaption}\item[{@Model\+Attribute \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{user}{, }\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Обрабатывает данные регистрации (версия с Model\+Attribute). 
+
+с Request\+Param\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/ @\+Post\+Mapping("{}/registration"{}) public String add\+User(@\+Request\+Param String email, String password) \{//\+User user, Model model) \{ log.\+info("{}\+Starting registration"{}); return user\+Service.\+register\+User(email, password);//user, model); \}
+
+/\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}с Model\+Attribute\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/ /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} 
+\begin{DoxyParams}{Parameters}
+{\em user} & Объект пользователя с данными формы \\
+\hline
+{\em model} & Модель для передачи данных в представление \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Результат обработки регистрации (перенаправление или страница с ошибкой)
+\end{DoxyReturn}
+Метод\+:
+\begin{DoxyEnumerate}
+\item Логирует начало регистрации
+\item Делегирует обработку в user\+Service.\+register\+User()
+\item Возвращает результат обработки
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+POST /registration 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Валидация данных должна выполняться в сервисе 
+\end{DoxyWarning}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_registration_controller_a1c894dce80f3d884435d8815ee160fc0}\index{org.example.controllers.RegistrationController@{org.example.controllers.RegistrationController}!login@{login}}
+\index{login@{login}!org.example.controllers.RegistrationController@{org.example.controllers.RegistrationController}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_registration_controller_a1c894dce80f3d884435d8815ee160fc0} 
+String org.\+example.\+controllers.\+Registration\+Controller.\+login (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Отображает страницу входа в систему. 
+
+\begin{DoxyReturn}{Returns}
+Имя шаблона login.\+html
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Логирует посещение страницы входа 
+\end{DoxyNote}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_registration_controller_ab7d0dedf27838fd8408c4db98d9b2fa4}\index{org.example.controllers.RegistrationController@{org.example.controllers.RegistrationController}!registration@{registration}}
+\index{registration@{registration}!org.example.controllers.RegistrationController@{org.example.controllers.RegistrationController}}
+\doxysubsubsection{\texorpdfstring{registration()}{registration()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_registration_controller_ab7d0dedf27838fd8408c4db98d9b2fa4} 
+String org.\+example.\+controllers.\+Registration\+Controller.\+registration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Отображает страницу регистрации. 
+
+\begin{DoxyReturn}{Returns}
+Имя шаблона registration.\+html
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Логирует посещение страницы регистрации 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/controllers/Registration\+Controller.\+java\end{DoxyCompactItemize}

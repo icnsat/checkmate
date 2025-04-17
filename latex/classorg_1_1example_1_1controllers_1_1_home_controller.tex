@@ -1,0 +1,166 @@
+\doxysection{org.\+example.\+controllers.\+Home\+Controller Class Reference}
+\hypertarget{classorg_1_1example_1_1controllers_1_1_home_controller}{}\label{classorg_1_1example_1_1controllers_1_1_home_controller}\index{org.example.controllers.HomeController@{org.example.controllers.HomeController}}
+
+
+Контроллер для главной страницы, поиска отелей, отображения информации об отеле и автодополнения городов.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_home_controller_addf7aa2170cd64f902c74fecf40d1b11}{Home\+Controller}} (\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_hotel_service}{Hotel\+Service}} hotel\+Service, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_city_service}{City\+Service}} city\+Service, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}} user\+Service)
+\begin{DoxyCompactList}\small\item\em Конструктор с внедрением зависимостей. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_home_controller_af143446a75d71dd71cb08fb4f26d81bb}{homepage}} (Model model)
+\begin{DoxyCompactList}\small\item\em Перенаправляет на страницу поиска отелей. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_home_controller_a5bf086d03d6a55d7b4309d6d588e6caa}{show\+Search\+Form}} (Model model)
+\begin{DoxyCompactList}\small\item\em Отображает форму поиска отелей с начальными значениями. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_home_controller_ae8acc7eb3a0b3aebda5ca468b927d475}{search\+Hotels}} ( @Model\+Attribute("{}hotel\+Search\+Form"{}) \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_search_form}{Hotel\+Search\+Form}} hotel\+Search\+Form, Model model)
+\begin{DoxyCompactList}\small\item\em Обрабатывает форму поиска отелей и возвращает результаты. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_home_controller_a1feede9315c8eadf1c4476935d832a60}{search\+Cities}} (@Request\+Param String query)
+\begin{DoxyCompactList}\small\item\em API-\/метод для поиска городов по строке запроса. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_home_controller_a0b59410ddd6e4b9fa61c0b1847e83cc6}{get\+Hotel\+Details}} ( @Path\+Variable("{}id"{}) Long hotel\+Id, @Request\+Param("{}check\+In\+Date"{}) @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date check\+In\+Date, @Request\+Param("{}check\+Out\+Date"{}) @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date check\+Out\+Date, @Request\+Param("{}adults"{}) int adults, Model model)
+\begin{DoxyCompactList}\small\item\em Отображает подробности об отеле и доступных номерах на выбранные даты. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Контроллер для главной страницы, поиска отелей, отображения информации об отеле и автодополнения городов. 
+
+\begin{DoxyAuthor}{Author}
+Елизавета Горновова 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17.\+04.\+25 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_home_controller_addf7aa2170cd64f902c74fecf40d1b11}\index{org.example.controllers.HomeController@{org.example.controllers.HomeController}!HomeController@{HomeController}}
+\index{HomeController@{HomeController}!org.example.controllers.HomeController@{org.example.controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{HomeController()}{HomeController()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_home_controller_addf7aa2170cd64f902c74fecf40d1b11} 
+org.\+example.\+controllers.\+Home\+Controller.\+Home\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_hotel_service}{Hotel\+Service}}}]{hotel\+Service}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_city_service}{City\+Service}}}]{city\+Service}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}}}]{user\+Service}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор с внедрением зависимостей. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel\+Service} & Сервис работы с отелями \\
+\hline
+{\em city\+Service} & Сервис работы с городами \\
+\hline
+{\em user\+Service} & Сервис работы с пользователями \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_home_controller_a0b59410ddd6e4b9fa61c0b1847e83cc6}\index{org.example.controllers.HomeController@{org.example.controllers.HomeController}!getHotelDetails@{getHotelDetails}}
+\index{getHotelDetails@{getHotelDetails}!org.example.controllers.HomeController@{org.example.controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{getHotelDetails()}{getHotelDetails()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_home_controller_a0b59410ddd6e4b9fa61c0b1847e83cc6} 
+String org.\+example.\+controllers.\+Home\+Controller.\+get\+Hotel\+Details (\begin{DoxyParamCaption}\item[{@Path\+Variable("{}id"{}) Long}]{hotel\+Id}{, }\item[{@Request\+Param("{}check\+In\+Date"{}) @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date}]{check\+In\+Date}{, }\item[{@Request\+Param("{}check\+Out\+Date"{}) @Date\+Time\+Format(iso=Date\+Time\+Format.\+ISO.\+DATE) Local\+Date}]{check\+Out\+Date}{, }\item[{@Request\+Param("{}adults"{}) int}]{adults}{, }\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Отображает подробности об отеле и доступных номерах на выбранные даты. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel\+Id} & ID отеля \\
+\hline
+{\em check\+In\+Date} & Дата заезда \\
+\hline
+{\em check\+Out\+Date} & Дата выезда \\
+\hline
+{\em adults} & Количество взрослых \\
+\hline
+{\em model} & Модель для передачи данных в шаблон \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+имя Thymeleaf-\/шаблона "{}search\+\_\+rooms"{} 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_home_controller_af143446a75d71dd71cb08fb4f26d81bb}\index{org.example.controllers.HomeController@{org.example.controllers.HomeController}!homepage@{homepage}}
+\index{homepage@{homepage}!org.example.controllers.HomeController@{org.example.controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{homepage()}{homepage()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_home_controller_af143446a75d71dd71cb08fb4f26d81bb} 
+String org.\+example.\+controllers.\+Home\+Controller.\+homepage (\begin{DoxyParamCaption}\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Перенаправляет на страницу поиска отелей. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Модель для передачи данных в шаблон \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+редирект на /search\+\_\+homepage 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_home_controller_a1feede9315c8eadf1c4476935d832a60}\index{org.example.controllers.HomeController@{org.example.controllers.HomeController}!searchCities@{searchCities}}
+\index{searchCities@{searchCities}!org.example.controllers.HomeController@{org.example.controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{searchCities()}{searchCities()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_home_controller_a1feede9315c8eadf1c4476935d832a60} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_city}{City}} $>$ org.\+example.\+controllers.\+Home\+Controller.\+search\+Cities (\begin{DoxyParamCaption}\item[{@Request\+Param String}]{query}{}\end{DoxyParamCaption})}
+
+
+
+API-\/метод для поиска городов по строке запроса. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & Часть названия города \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+список городов, содержащих подстроку запроса 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_home_controller_ae8acc7eb3a0b3aebda5ca468b927d475}\index{org.example.controllers.HomeController@{org.example.controllers.HomeController}!searchHotels@{searchHotels}}
+\index{searchHotels@{searchHotels}!org.example.controllers.HomeController@{org.example.controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{searchHotels()}{searchHotels()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_home_controller_ae8acc7eb3a0b3aebda5ca468b927d475} 
+String org.\+example.\+controllers.\+Home\+Controller.\+search\+Hotels (\begin{DoxyParamCaption}\item[{@Model\+Attribute("{}hotel\+Search\+Form"{}) \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel_search_form}{Hotel\+Search\+Form}}}]{hotel\+Search\+Form}{, }\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Обрабатывает форму поиска отелей и возвращает результаты. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel\+Search\+Form} & Объект формы поиска отелей \\
+\hline
+{\em model} & Модель для передачи данных в шаблон \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+имя Thymeleaf-\/шаблона "{}search\+\_\+results"{} 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_home_controller_a5bf086d03d6a55d7b4309d6d588e6caa}\index{org.example.controllers.HomeController@{org.example.controllers.HomeController}!showSearchForm@{showSearchForm}}
+\index{showSearchForm@{showSearchForm}!org.example.controllers.HomeController@{org.example.controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{showSearchForm()}{showSearchForm()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_home_controller_a5bf086d03d6a55d7b4309d6d588e6caa} 
+String org.\+example.\+controllers.\+Home\+Controller.\+show\+Search\+Form (\begin{DoxyParamCaption}\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Отображает форму поиска отелей с начальными значениями. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Модель для передачи данных в шаблон \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+имя Thymeleaf-\/шаблона "{}search\+\_\+homepage"{} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/controllers/Home\+Controller.\+java\end{DoxyCompactItemize}

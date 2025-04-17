@@ -16,11 +16,26 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+/**
+ * @class HomeController
+ * @brief Контроллер для главной страницы, поиска отелей, отображения информации об отеле и автодополнения городов.
+ *
+ * @author Елизавета Горновова
+ * @version 1.0
+ * @date 17.04.25
+ */
 @Controller
 public class HomeController {
     private final HotelService hotelService;
     private final CityService cityService;
     private final UserService userService;
+
+    /**
+     * @brief Конструктор с внедрением зависимостей.
+     * @param hotelService Сервис работы с отелями
+     * @param cityService Сервис работы с городами
+     * @param userService Сервис работы с пользователями
+     */
     @Autowired
     public HomeController(HotelService hotelService, CityService cityService, UserService userService) {
         this.hotelService = hotelService;
@@ -30,12 +45,21 @@ public class HomeController {
 
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(UserService.class);
 
-
+    /**
+     * @brief Перенаправляет на страницу поиска отелей.
+     * @param model Модель для передачи данных в шаблон
+     * @return редирект на /search_homepage
+     */
     @GetMapping("/")
     public String homepage(Model model) {
         return "redirect:/search_homepage";
     }
 
+    /**
+     * @brief Отображает форму поиска отелей с начальными значениями.
+     * @param model Модель для передачи данных в шаблон
+     * @return имя Thymeleaf-шаблона "search_homepage"
+     */
     @GetMapping("/search_homepage")
     public String showSearchForm(Model model) {
 //        User user = userService.getUser();
@@ -68,6 +92,12 @@ public class HomeController {
         return "search_homepage"; // Имя шаблона Thymeleaf
     }
 
+    /**
+     * @brief Обрабатывает форму поиска отелей и возвращает результаты.
+     * @param hotelSearchForm Объект формы поиска отелей
+     * @param model Модель для передачи данных в шаблон
+     * @return имя Thymeleaf-шаблона "search_results"
+     */
     @PostMapping("/search")
     public String searchHotels(
             @ModelAttribute("hotelSearchForm") HotelSearchForm hotelSearchForm,
@@ -104,7 +134,11 @@ public class HomeController {
         return "search_results"; // Имя HTML-шаблона для результатов
     }
 
-
+    /**
+     * @brief API-метод для поиска городов по строке запроса.
+     * @param query Часть названия города
+     * @return список городов, содержащих подстроку запроса
+     */
     @GetMapping("/api/cities")
     @ResponseBody
     public List<City> searchCities(@RequestParam String query) {
@@ -116,7 +150,15 @@ public class HomeController {
 //        return ResponseEntity.ok(matchingCities);
 //    }
 
-
+    /**
+     * @brief Отображает подробности об отеле и доступных номерах на выбранные даты.
+     * @param hotelId ID отеля
+     * @param checkInDate Дата заезда
+     * @param checkOutDate Дата выезда
+     * @param adults Количество взрослых
+     * @param model Модель для передачи данных в шаблон
+     * @return имя Thymeleaf-шаблона "search_rooms"
+     */
     @GetMapping("/hotel/{id}")
     public String getHotelDetails(
             @PathVariable("id") Long hotelId,

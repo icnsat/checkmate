@@ -1,0 +1,49 @@
+\doxysection{org.\+example.\+repositories.\+Booking\+Status\+Repository Interface Reference}
+\hypertarget{interfaceorg_1_1example_1_1repositories_1_1_booking_status_repository}{}\label{interfaceorg_1_1example_1_1repositories_1_1_booking_status_repository}\index{org.example.repositories.BookingStatusRepository@{org.example.repositories.BookingStatusRepository}}
+
+
+Репозиторий для работы с сущностями \doxylink{classorg_1_1example_1_1entities_1_1_booking_status}{Booking\+Status} (Статус бронирования).  
+
+
+Inheritance diagram for org.\+example.\+repositories.\+Booking\+Status\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceorg_1_1example_1_1repositories_1_1_booking_status_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking_status}{Booking\+Status}} \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_booking_status_repository_a2f5789443cc24ac374d8d20bb87ccd75}{find\+Booking\+Status\+By\+Name}} (String name)
+\begin{DoxyCompactList}\small\item\em Найти статус бронирования по его имени. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Репозиторий для работы с сущностями \doxylink{classorg_1_1example_1_1entities_1_1_booking_status}{Booking\+Status} (Статус бронирования). 
+
+Обеспечивает доступ к данным статусов бронирования. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_booking_status_repository_a2f5789443cc24ac374d8d20bb87ccd75}\index{org.example.repositories.BookingStatusRepository@{org.example.repositories.BookingStatusRepository}!findBookingStatusByName@{findBookingStatusByName}}
+\index{findBookingStatusByName@{findBookingStatusByName}!org.example.repositories.BookingStatusRepository@{org.example.repositories.BookingStatusRepository}}
+\doxysubsubsection{\texorpdfstring{findBookingStatusByName()}{findBookingStatusByName()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_booking_status_repository_a2f5789443cc24ac374d8d20bb87ccd75} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking_status}{Booking\+Status}} org.\+example.\+repositories.\+Booking\+Status\+Repository.\+find\+Booking\+Status\+By\+Name (\begin{DoxyParamCaption}\item[{String}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Найти статус бронирования по его имени. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Имя статуса (например, "{}\+PENDING"{}, "{}\+CONFIRMED"{}, "{}\+CANCELLED"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Объект \doxylink{classorg_1_1example_1_1entities_1_1_booking_status}{Booking\+Status}, соответствующий имени, или null, если не найден. 
+\end{DoxyReturn}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/repositories/Booking\+Status\+Repository.\+java\end{DoxyCompactItemize}

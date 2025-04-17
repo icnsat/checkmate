@@ -1,0 +1,146 @@
+\doxysection{org.\+example.\+entities.\+Booking\+Status Class Reference}
+\hypertarget{classorg_1_1example_1_1entities_1_1_booking_status}{}\label{classorg_1_1example_1_1entities_1_1_booking_status}\index{org.example.entities.BookingStatus@{org.example.entities.BookingStatus}}
+
+
+Сущность, представляющая статус бронирования.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classorg_1_1example_1_1entities_1_1_booking_status_a2e4c0cbedf3782e7ea523b60143f1a7f}\label{classorg_1_1example_1_1entities_1_1_booking_status_a2e4c0cbedf3782e7ea523b60143f1a7f} 
+{\bfseries Booking\+Status} ()
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking_status_adc36bc8aa78f5201d7ea5a28f98f1927}{Booking\+Status}} (String name, String description)
+\begin{DoxyCompactList}\small\item\em Конструктор с параметрами. \end{DoxyCompactList}\item 
+Long \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking_status_a97fd5f2fd72a3340be4ed91568a6bbea}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Получить ID статуса. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking_status_a8bbb218c162b89b2f72500d31932451a}{set\+Id}} (Long id)
+\begin{DoxyCompactList}\small\item\em Установить ID статуса. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking_status_af6a1dc78f03856b97fe0bc003b3d3345}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Получить название статуса. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking_status_a23cd687d504a234562f44a21f46ca388}{set\+Name}} (String name)
+\begin{DoxyCompactList}\small\item\em Установить название статуса. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking_status_a12b46afb225aaa0f5508cea7cf49dcfe}{get\+Description}} ()
+\begin{DoxyCompactList}\small\item\em Получить описание статуса. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking_status_a614ccb091f5e1f4755127731592920a5}{set\+Description}} (String description)
+\begin{DoxyCompactList}\small\item\em Установить описание статуса. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Сущность, представляющая статус бронирования. 
+
+Представляет статус, который может быть присвоен бронированию (например, PENDING, CONFIRMED, CANCELLED).
+
+@entity Аннотация JPA для сопоставления с таблицей "{}booking\+\_\+statuses"{} @table Указывает имя таблицы в базе данных 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_booking_status_adc36bc8aa78f5201d7ea5a28f98f1927}\index{org.example.entities.BookingStatus@{org.example.entities.BookingStatus}!BookingStatus@{BookingStatus}}
+\index{BookingStatus@{BookingStatus}!org.example.entities.BookingStatus@{org.example.entities.BookingStatus}}
+\doxysubsubsection{\texorpdfstring{BookingStatus()}{BookingStatus()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_booking_status_adc36bc8aa78f5201d7ea5a28f98f1927} 
+org.\+example.\+entities.\+Booking\+Status.\+Booking\+Status (\begin{DoxyParamCaption}\item[{String}]{name}{, }\item[{String}]{description}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор с параметрами. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Название статуса. \\
+\hline
+{\em description} & Описание статуса. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_booking_status_a12b46afb225aaa0f5508cea7cf49dcfe}\index{org.example.entities.BookingStatus@{org.example.entities.BookingStatus}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!org.example.entities.BookingStatus@{org.example.entities.BookingStatus}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_booking_status_a12b46afb225aaa0f5508cea7cf49dcfe} 
+String org.\+example.\+entities.\+Booking\+Status.\+get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить описание статуса. 
+
+\begin{DoxyReturn}{Returns}
+Текст описания. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_booking_status_a97fd5f2fd72a3340be4ed91568a6bbea}\index{org.example.entities.BookingStatus@{org.example.entities.BookingStatus}!getId@{getId}}
+\index{getId@{getId}!org.example.entities.BookingStatus@{org.example.entities.BookingStatus}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_booking_status_a97fd5f2fd72a3340be4ed91568a6bbea} 
+Long org.\+example.\+entities.\+Booking\+Status.\+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить ID статуса. 
+
+\begin{DoxyReturn}{Returns}
+Уникальный идентификатор статуса. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_booking_status_af6a1dc78f03856b97fe0bc003b3d3345}\index{org.example.entities.BookingStatus@{org.example.entities.BookingStatus}!getName@{getName}}
+\index{getName@{getName}!org.example.entities.BookingStatus@{org.example.entities.BookingStatus}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_booking_status_af6a1dc78f03856b97fe0bc003b3d3345} 
+String org.\+example.\+entities.\+Booking\+Status.\+get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить название статуса. 
+
+\begin{DoxyReturn}{Returns}
+Название. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_booking_status_a614ccb091f5e1f4755127731592920a5}\index{org.example.entities.BookingStatus@{org.example.entities.BookingStatus}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!org.example.entities.BookingStatus@{org.example.entities.BookingStatus}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_booking_status_a614ccb091f5e1f4755127731592920a5} 
+void org.\+example.\+entities.\+Booking\+Status.\+set\+Description (\begin{DoxyParamCaption}\item[{String}]{description}{}\end{DoxyParamCaption})}
+
+
+
+Установить описание статуса. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em description} & Текст описания. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_booking_status_a8bbb218c162b89b2f72500d31932451a}\index{org.example.entities.BookingStatus@{org.example.entities.BookingStatus}!setId@{setId}}
+\index{setId@{setId}!org.example.entities.BookingStatus@{org.example.entities.BookingStatus}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_booking_status_a8bbb218c162b89b2f72500d31932451a} 
+void org.\+example.\+entities.\+Booking\+Status.\+set\+Id (\begin{DoxyParamCaption}\item[{Long}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Установить ID статуса. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Идентификатор статуса. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_booking_status_a23cd687d504a234562f44a21f46ca388}\index{org.example.entities.BookingStatus@{org.example.entities.BookingStatus}!setName@{setName}}
+\index{setName@{setName}!org.example.entities.BookingStatus@{org.example.entities.BookingStatus}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_booking_status_a23cd687d504a234562f44a21f46ca388} 
+void org.\+example.\+entities.\+Booking\+Status.\+set\+Name (\begin{DoxyParamCaption}\item[{String}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Установить название статуса. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Название. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/entities/Booking\+Status.\+java\end{DoxyCompactItemize}

@@ -7,11 +7,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-
+/**
+ * @class RegistrationController
+ * @brief Контроллер для обработки регистрации и аутентификации пользователей.
+ *
+ * Обрабатывает запросы, связанные с:
+ * - Отображением форм регистрации и входа
+ * - Обработкой данных регистрации
+ * - Перенаправлением после успешной аутентификации
+ *
+ * @author Елизавета Горновова
+ * @version 1.0
+ * @date 17.04.25
+ */
 @Controller
 public class RegistrationController {
     private UserService userService;
 
+    /**
+     * @brief Конструктор с внедрением зависимости UserService.
+     * @param userService Сервис для работы с пользователями
+     */
     @Autowired
     public RegistrationController(UserService userService) {
         this.userService = userService;
@@ -19,34 +35,60 @@ public class RegistrationController {
 
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(UserService.class);
 
+    /**
+     * @brief Отображает страницу регистрации.
+     * @return Имя шаблона registration.html
+     *
+     * @note Логирует посещение страницы регистрации
+     */
     @GetMapping("/registration")
     public String registration() {
         log.info("Registration page visited");
         return "registration";
     }
 
-    /**с RequestParam**/
+    ///**с RequestParam**/
 //    @PostMapping("/registration")
 //    public String addUser(@RequestParam String email, String password) {//User user, Model model) {
 //        log.info("Starting registration");
 //        return userService.registerUser(email, password);//user, model);
 //    }
 
-    /**с ModelAttribute**/
+    ///**с ModelAttribute**/
+    /**
+     * @brief Обрабатывает данные регистрации (версия с ModelAttribute).
+     * @param user Объект пользователя с данными формы
+     * @param model Модель для передачи данных в представление
+     * @return Результат обработки регистрации (перенаправление или страница с ошибкой)
+     *
+     * @details Метод:
+     * 1. Логирует начало регистрации
+     * 2. Делегирует обработку в userService.registerUser()
+     * 3. Возвращает результат обработки
+     *
+     * @note POST /registration
+     * @warning Валидация данных должна выполняться в сервисе
+     */
     @PostMapping("/registration")
     public String addUser(@ModelAttribute User user, Model model) {
         log.info("Starting registration for user: {}", user.getEmail());
         return userService.registerUser(user, model);
     }
 
+    /**
+     * @brief Отображает страницу входа в систему.
+     * @return Имя шаблона login.html
+     *
+     * @note Логирует посещение страницы входа
+     */
     @GetMapping("/login")
     public String login() {
         log.info("Login page visited");
         return "login";
     }
 
-    /** Пыталась сделать редирект на страницу, с которой пользователя перебросило на логин,
-     * а оказалосб, что это автоматически делается, если убрать из конфига defaultSuccessUrl **/
+    // /** Пыталась сделать редирект на страницу, с которой пользователя перебросило на логин,
+    // * а оказалось, что это автоматически делается, если убрать из конфига defaultSuccessUrl **/
 //    @PostMapping("/login")
 //    public String loginUser(@RequestParam String username, @RequestParam String password, HttpSession session) {
 //        boolean isAuthenticated = userService.authenticate(username, password);

@@ -1,0 +1,108 @@
+\doxysection{org.\+example.\+Security\+Config Class Reference}
+\hypertarget{classorg_1_1example_1_1_security_config}{}\label{classorg_1_1example_1_1_security_config}\index{org.example.SecurityConfig@{org.example.SecurityConfig}}
+
+
+Основной класс конфигурации безопасности Spring Security.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BCrypt\+Password\+Encoder \mbox{\hyperlink{classorg_1_1example_1_1_security_config_a56cbe582695dbc006ea053ba7f64565d}{password\+Encoder}} ()
+\begin{DoxyCompactList}\small\item\em Создает bean для кодирования паролей. \end{DoxyCompactList}\item 
+User\+Details\+Service \mbox{\hyperlink{classorg_1_1example_1_1_security_config_a215967d55c007ddd2057f8e2e2adabd1}{user\+Details\+Service}} ()
+\begin{DoxyCompactList}\small\item\em Создает bean для загрузки данных пользователя. \end{DoxyCompactList}\item 
+Authentication\+Provider \mbox{\hyperlink{classorg_1_1example_1_1_security_config_aff2ab712d75f2948ebd098af86b964a9}{authentication\+Provider}} ()
+\begin{DoxyCompactList}\small\item\em Настраивает провайдер аутентификации. \end{DoxyCompactList}\item 
+Security\+Filter\+Chain \mbox{\hyperlink{classorg_1_1example_1_1_security_config_a3a51a47b39512403a494ea9b4ed8ecc3}{security\+Filter\+Chain}} (Http\+Security http)  throws Exception 
+\begin{DoxyCompactList}\small\item\em Конфигурирует цепочку фильтров безопасности. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Основной класс конфигурации безопасности Spring Security. 
+
+Настраивает аутентификацию, авторизацию и правила доступа для приложения. \begin{DoxyAuthor}{Author}
+Елизавета Горновова 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17.\+04.\+25 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1_security_config_aff2ab712d75f2948ebd098af86b964a9}\index{org.example.SecurityConfig@{org.example.SecurityConfig}!authenticationProvider@{authenticationProvider}}
+\index{authenticationProvider@{authenticationProvider}!org.example.SecurityConfig@{org.example.SecurityConfig}}
+\doxysubsubsection{\texorpdfstring{authenticationProvider()}{authenticationProvider()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1_security_config_aff2ab712d75f2948ebd098af86b964a9} 
+Authentication\+Provider org.\+example.\+Security\+Config.\+authentication\+Provider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Настраивает провайдер аутентификации. 
+
+\begin{DoxyReturn}{Returns}
+Authentication\+Provider -\/ Dao\+Authentication\+Provider с настроенными User\+Details\+Service и Password\+Encoder. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1_security_config_a56cbe582695dbc006ea053ba7f64565d}\index{org.example.SecurityConfig@{org.example.SecurityConfig}!passwordEncoder@{passwordEncoder}}
+\index{passwordEncoder@{passwordEncoder}!org.example.SecurityConfig@{org.example.SecurityConfig}}
+\doxysubsubsection{\texorpdfstring{passwordEncoder()}{passwordEncoder()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1_security_config_a56cbe582695dbc006ea053ba7f64565d} 
+BCrypt\+Password\+Encoder org.\+example.\+Security\+Config.\+password\+Encoder (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Создает bean для кодирования паролей. 
+
+\begin{DoxyReturn}{Returns}
+BCrypt\+Password\+Encoder -\/ реализация Password\+Encoder, использующая алгоритм BCrypt. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1_security_config_a3a51a47b39512403a494ea9b4ed8ecc3}\index{org.example.SecurityConfig@{org.example.SecurityConfig}!securityFilterChain@{securityFilterChain}}
+\index{securityFilterChain@{securityFilterChain}!org.example.SecurityConfig@{org.example.SecurityConfig}}
+\doxysubsubsection{\texorpdfstring{securityFilterChain()}{securityFilterChain()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1_security_config_a3a51a47b39512403a494ea9b4ed8ecc3} 
+Security\+Filter\+Chain org.\+example.\+Security\+Config.\+security\+Filter\+Chain (\begin{DoxyParamCaption}\item[{Http\+Security}]{http}{}\end{DoxyParamCaption}) throws Exception}
+
+
+
+Конфигурирует цепочку фильтров безопасности. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em http} & -\/ объект для настройки безопасности веб-\/запросов. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Security\+Filter\+Chain -\/ цепочка фильтров безопасности. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & при ошибках конфигурации.\\
+\hline
+\end{DoxyExceptions}
+Настройки включают\+:
+\begin{DoxyItemize}
+\item Отключение CSRF и CORS защиты
+\item Настройку правил доступа для различных URL
+\item Конфигурацию формы входа
+\item Настройку выхода из системы 
+\end{DoxyItemize}!!\Hypertarget{classorg_1_1example_1_1_security_config_a215967d55c007ddd2057f8e2e2adabd1}\index{org.example.SecurityConfig@{org.example.SecurityConfig}!userDetailsService@{userDetailsService}}
+\index{userDetailsService@{userDetailsService}!org.example.SecurityConfig@{org.example.SecurityConfig}}
+\doxysubsubsection{\texorpdfstring{userDetailsService()}{userDetailsService()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1_security_config_a215967d55c007ddd2057f8e2e2adabd1} 
+User\+Details\+Service org.\+example.\+Security\+Config.\+user\+Details\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Создает bean для загрузки данных пользователя. 
+
+\begin{DoxyReturn}{Returns}
+User\+Details\+Service -\/ кастомная реализация сервиса для работы с пользователями. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/Security\+Config.\+java\end{DoxyCompactItemize}

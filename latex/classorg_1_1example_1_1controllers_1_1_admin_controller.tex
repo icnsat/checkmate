@@ -1,0 +1,119 @@
+\doxysection{org.\+example.\+controllers.\+Admin\+Controller Class Reference}
+\hypertarget{classorg_1_1example_1_1controllers_1_1_admin_controller}{}\label{classorg_1_1example_1_1controllers_1_1_admin_controller}\index{org.example.controllers.AdminController@{org.example.controllers.AdminController}}
+
+
+Контроллер для административных операций с пользователями.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_admin_controller_a31d3ae38b01c4f22b81a925e6beaeecc}{Admin\+Controller}} (\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}} user\+Service)
+\begin{DoxyCompactList}\small\item\em Конструктор с внедрением зависимости \doxylink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_admin_controller_ab0f91ebebee5c0feff9c35d31f0c5960}{admin\+Users}} (Model model)
+\begin{DoxyCompactList}\small\item\em Отображает список всех пользователей. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_admin_controller_aeeb6b5c941e82007cca510799a1bb4a1}{block\+User}} (@Path\+Variable Long id, @Request\+Param boolean block\+Status)
+\begin{DoxyCompactList}\small\item\em Блокирует/разблокирует пользователя. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Контроллер для административных операций с пользователями. 
+
+Обрабатывает запросы, связанные с управлением пользователями в административной панели. Все методы доступны по пути /admin. \begin{DoxyAuthor}{Author}
+Елизавета Горновова 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17.\+04.\+25 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_admin_controller_a31d3ae38b01c4f22b81a925e6beaeecc}\index{org.example.controllers.AdminController@{org.example.controllers.AdminController}!AdminController@{AdminController}}
+\index{AdminController@{AdminController}!org.example.controllers.AdminController@{org.example.controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{AdminController()}{AdminController()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_admin_controller_a31d3ae38b01c4f22b81a925e6beaeecc} 
+org.\+example.\+controllers.\+Admin\+Controller.\+Admin\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}}}]{user\+Service}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор с внедрением зависимости \doxylink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Service} & Сервис для работы с пользователями \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_admin_controller_ab0f91ebebee5c0feff9c35d31f0c5960}\index{org.example.controllers.AdminController@{org.example.controllers.AdminController}!adminUsers@{adminUsers}}
+\index{adminUsers@{adminUsers}!org.example.controllers.AdminController@{org.example.controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{adminUsers()}{adminUsers()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_admin_controller_ab0f91ebebee5c0feff9c35d31f0c5960} 
+String org.\+example.\+controllers.\+Admin\+Controller.\+admin\+Users (\begin{DoxyParamCaption}\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Отображает список всех пользователей. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Модель для передачи данных в представление \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Имя шаблона для отображения (admin\+\_\+users.\+html)
+\end{DoxyReturn}
+Метод\+:
+\begin{DoxyEnumerate}
+\item Получает список всех пользователей через user\+Service
+\item Добавляет список пользователей в модель под атрибутом "{}users"{}
+\item Возвращает имя шаблона для отображения
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+Доступен по GET /admin/users 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Требует прав администратора 
+\end{DoxyWarning}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_admin_controller_aeeb6b5c941e82007cca510799a1bb4a1}\index{org.example.controllers.AdminController@{org.example.controllers.AdminController}!blockUser@{blockUser}}
+\index{blockUser@{blockUser}!org.example.controllers.AdminController@{org.example.controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{blockUser()}{blockUser()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_admin_controller_aeeb6b5c941e82007cca510799a1bb4a1} 
+String org.\+example.\+controllers.\+Admin\+Controller.\+block\+User (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id}{, }\item[{@Request\+Param boolean}]{block\+Status}{}\end{DoxyParamCaption})}
+
+
+
+Блокирует/разблокирует пользователя. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID пользователя \\
+\hline
+{\em block\+Status} & Флаг блокировки (true -\/ заблокировать, false -\/ разблокировать) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Перенаправление на страницу списка пользователей
+\end{DoxyReturn}
+Метод\+:
+\begin{DoxyEnumerate}
+\item Обновляет статус блокировки пользователя через user\+Service
+\item Перенаправляет на страницу /admin/users
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+Доступен по POST /admin/users/\{id\}/block 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Требует прав администратора 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/controllers/Admin\+Controller.\+java\end{DoxyCompactItemize}

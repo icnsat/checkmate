@@ -14,6 +14,11 @@ import org.springframework.ui.Model;
 
 import java.util.List;
 
+/**
+ * @brief Сервис для управления пользователями.
+ * @details Предоставляет функциональность регистрации пользователей, получения текущего пользователя,
+ * управления блокировкой пользователей и работы с ролями.
+ */
 @Service
 public class UserService {
 
@@ -21,6 +26,12 @@ public class UserService {
     private final RoleRepository roleRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
+    /**
+     * @brief Конструктор UserService.
+     * @param userRepository Репозиторий пользователей.
+     * @param roleRepository Репозиторий ролей.
+     * @param passwordEncoder Кодировщик паролей.
+     */
     @Autowired
     public UserService(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
@@ -52,7 +63,16 @@ public class UserService {
 //    }
 
 
-    /**с ModelAttribute**/
+    // /**с ModelAttribute**/
+    /**
+     * @brief Регистрация нового пользователя через форму (ModelAttribute).
+     * @details Проверяет, существует ли уже пользователь с таким email. Если нет — создаёт нового
+     * пользователя с ролью "CUSTOMER", кодирует пароль и сохраняет в базу данных.
+     *
+     * @param user Объект пользователя, полученный из формы.
+     * @param model Модель для передачи ошибок в представление.
+     * @return Строка-перенаправление на страницу входа или регистрации.
+     */
     public String registerUser(User user, Model model) {
         // Проверяем, существует ли пользователь с таким email
         if (userRepository.findByEmail(user.getEmail()).isPresent()) {
@@ -75,17 +95,31 @@ public class UserService {
         return "redirect:/login";
     }
 
-
+    /**
+     * @brief Получение текущего авторизованного пользователя.
+     * @return Объект текущего пользователя.
+     */
     public User getUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         CustomUserDetails customUserDetails = (CustomUserDetails) authentication.getPrincipal();
         return customUserDetails.getUser();
     }
 
+    /**
+     * @brief Получение всех пользователей.
+     * @return Список всех пользователей в системе.
+     */
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
+    /**
+     * @brief Обновление статуса блокировки пользователя.
+     * @details Позволяет администратору заблокировать или разблокировать пользователя.
+     *
+     * @param userId Идентификатор пользователя.
+     * @param blockStatus Новый статус блокировки (true — заблокирован).
+     */
     public void updateBlockStatus(Long userId, boolean blockStatus) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new IllegalStateException("User not found"));

@@ -1,0 +1,136 @@
+\doxysection{org.\+example.\+entities.\+Role Class Reference}
+\hypertarget{classorg_1_1example_1_1entities_1_1_role}{}\label{classorg_1_1example_1_1entities_1_1_role}\index{org.example.entities.Role@{org.example.entities.Role}}
+
+
+Сущность, представляющая роль пользователя в системе.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_role_aae5db5f380eea5f54e97570a02886f97}{Role}} ()
+\begin{DoxyCompactList}\small\item\em Пустой конструктор. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_role_a62524182906f33e43286d190c6339dd2}{Role}} (String role\+Name)
+\begin{DoxyCompactList}\small\item\em Конструктор с указанием названия роли. \end{DoxyCompactList}\item 
+Long \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_role_aaede08b9baade591468cf39b85855b41}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Получить ID роли. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_role_a76e21c4686928ac91acbd6a691cb2224}{set\+Id}} (Long id)
+\begin{DoxyCompactList}\small\item\em Установить ID роли. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_role_a63c3f1a2a5ac722a737be1cb8756b151}{get\+Role\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Получить название роли. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_role_aa41c25f06e3dc059591c2dd366dab722}{set\+Role\+Name}} (String role\+Name)
+\begin{DoxyCompactList}\small\item\em Установить название роли. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_role_a8bdc476f336b41e72d316c1eacea8ada}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает строковое представление роли. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Сущность, представляющая роль пользователя в системе. 
+
+Определяет тип доступа и полномочий (например, ADMIN, MANAGER, USER).
+
+@entity Аннотация JPA для сопоставления с таблицей "{}roles"{} @table Указывает имя таблицы в базе данных 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_role_aae5db5f380eea5f54e97570a02886f97}\index{org.example.entities.Role@{org.example.entities.Role}!Role@{Role}}
+\index{Role@{Role}!org.example.entities.Role@{org.example.entities.Role}}
+\doxysubsubsection{\texorpdfstring{Role()}{Role()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_role_aae5db5f380eea5f54e97570a02886f97} 
+org.\+example.\+entities.\+Role.\+Role (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Пустой конструктор. 
+
+Необходим для JPA. \Hypertarget{classorg_1_1example_1_1entities_1_1_role_a62524182906f33e43286d190c6339dd2}\index{org.example.entities.Role@{org.example.entities.Role}!Role@{Role}}
+\index{Role@{Role}!org.example.entities.Role@{org.example.entities.Role}}
+\doxysubsubsection{\texorpdfstring{Role()}{Role()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_role_a62524182906f33e43286d190c6339dd2} 
+org.\+example.\+entities.\+Role.\+Role (\begin{DoxyParamCaption}\item[{String}]{role\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор с указанием названия роли. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em role\+Name} & Название роли. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_role_aaede08b9baade591468cf39b85855b41}\index{org.example.entities.Role@{org.example.entities.Role}!getId@{getId}}
+\index{getId@{getId}!org.example.entities.Role@{org.example.entities.Role}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_role_aaede08b9baade591468cf39b85855b41} 
+Long org.\+example.\+entities.\+Role.\+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить ID роли. 
+
+\begin{DoxyReturn}{Returns}
+Уникальный идентификатор роли. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_role_a63c3f1a2a5ac722a737be1cb8756b151}\index{org.example.entities.Role@{org.example.entities.Role}!getRoleName@{getRoleName}}
+\index{getRoleName@{getRoleName}!org.example.entities.Role@{org.example.entities.Role}}
+\doxysubsubsection{\texorpdfstring{getRoleName()}{getRoleName()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_role_a63c3f1a2a5ac722a737be1cb8756b151} 
+String org.\+example.\+entities.\+Role.\+get\+Role\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить название роли. 
+
+\begin{DoxyReturn}{Returns}
+Название роли. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_role_a76e21c4686928ac91acbd6a691cb2224}\index{org.example.entities.Role@{org.example.entities.Role}!setId@{setId}}
+\index{setId@{setId}!org.example.entities.Role@{org.example.entities.Role}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_role_a76e21c4686928ac91acbd6a691cb2224} 
+void org.\+example.\+entities.\+Role.\+set\+Id (\begin{DoxyParamCaption}\item[{Long}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Установить ID роли. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Уникальный идентификатор роли. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_role_aa41c25f06e3dc059591c2dd366dab722}\index{org.example.entities.Role@{org.example.entities.Role}!setRoleName@{setRoleName}}
+\index{setRoleName@{setRoleName}!org.example.entities.Role@{org.example.entities.Role}}
+\doxysubsubsection{\texorpdfstring{setRoleName()}{setRoleName()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_role_aa41c25f06e3dc059591c2dd366dab722} 
+void org.\+example.\+entities.\+Role.\+set\+Role\+Name (\begin{DoxyParamCaption}\item[{String}]{role\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Установить название роли. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em role\+Name} & Название роли. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_role_a8bdc476f336b41e72d316c1eacea8ada}\index{org.example.entities.Role@{org.example.entities.Role}!toString@{toString}}
+\index{toString@{toString}!org.example.entities.Role@{org.example.entities.Role}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_role_a8bdc476f336b41e72d316c1eacea8ada} 
+String org.\+example.\+entities.\+Role.\+to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Возвращает строковое представление роли. 
+
+\begin{DoxyReturn}{Returns}
+Название роли. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/entities/Role.\+java\end{DoxyCompactItemize}

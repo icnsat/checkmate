@@ -1,0 +1,54 @@
+\doxysection{org.\+example.\+controllers.\+Global\+Controller\+Advice Class Reference}
+\hypertarget{classorg_1_1example_1_1controllers_1_1_global_controller_advice}{}\label{classorg_1_1example_1_1controllers_1_1_global_controller_advice}\index{org.example.controllers.GlobalControllerAdvice@{org.example.controllers.GlobalControllerAdvice}}
+
+
+Глобальный контроллер для добавления общих атрибутов модели во все контроллеры.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_global_controller_advice_a7c36f0e9edb1918632440cf3882c6d83}{user\+Role}} (Authentication authentication)
+\begin{DoxyCompactList}\small\item\em Добавляет роль текущего пользователя в модель. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Глобальный контроллер для добавления общих атрибутов модели во все контроллеры. 
+
+Используется для внедрения роли пользователя (user\+Role) во все модели контроллеров, чтобы можно было использовать её в шаблонах представлений. \begin{DoxyAuthor}{Author}
+Елизавета Горновова 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17.\+04.\+25 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_global_controller_advice_a7c36f0e9edb1918632440cf3882c6d83}\index{org.example.controllers.GlobalControllerAdvice@{org.example.controllers.GlobalControllerAdvice}!userRole@{userRole}}
+\index{userRole@{userRole}!org.example.controllers.GlobalControllerAdvice@{org.example.controllers.GlobalControllerAdvice}}
+\doxysubsubsection{\texorpdfstring{userRole()}{userRole()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_global_controller_advice_a7c36f0e9edb1918632440cf3882c6d83} 
+String org.\+example.\+controllers.\+Global\+Controller\+Advice.\+user\+Role (\begin{DoxyParamCaption}\item[{Authentication}]{authentication}{}\end{DoxyParamCaption})}
+
+
+
+Добавляет роль текущего пользователя в модель. 
+
+Метод вызывается автоматически перед выполнением каждого контроллера и добавляет атрибут "{}user\+Role"{} в модель, основываясь на данных аутентификации.
+
+
+\begin{DoxyParams}{Parameters}
+{\em authentication} & Объект аутентификации, содержащий данные о текущем пользователе \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+строка, представляющая роль пользователя (например, "{}\+ADMIN"{}, "{}\+GUEST"{}) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/controllers/Global\+Controller\+Advice.\+java\end{DoxyCompactItemize}

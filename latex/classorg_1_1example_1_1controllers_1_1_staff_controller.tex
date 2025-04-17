@@ -1,0 +1,328 @@
+\doxysection{org.\+example.\+controllers.\+Staff\+Controller Class Reference}
+\hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller}{}\label{classorg_1_1example_1_1controllers_1_1_staff_controller}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+
+
+Контроллер для обработки запросов, связанные с действиями менеджеров отелей.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_staff_controller_a68ff256c88eb954ef604b392de001d1e}{Staff\+Controller}} (\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}} user\+Service, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_hotel_service}{Hotel\+Service}} hotel\+Service, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service}{Booking\+Service}} booking\+Service, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_room_service}{Room\+Service}} room\+Service, \mbox{\hyperlink{classorg_1_1example_1_1services_1_1_city_service}{City\+Service}} city\+Service)
+\begin{DoxyCompactList}\small\item\em Конструктор с внедрением зависимостей. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_staff_controller_aa1dc7a7e659a7bdabe22afb438010b20}{manager\+Dashboard}} (Model model)
+\begin{DoxyCompactList}\small\item\em Отображает панель управления менеджера. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_staff_controller_ade405fbcadc95105b7803450b00b8b47}{view\+Hotel\+Rooms}} (@Path\+Variable("{}id"{}) Long hotel\+Id, Model model)
+\begin{DoxyCompactList}\small\item\em Отображает список номеров конкретного отеля. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_staff_controller_a16732ca0dae2e6e34086547dbbf897a6}{edit\+Hotel}} (@Request\+Param Long id, @Request\+Param String name, @Request\+Param String city, @Request\+Param String country, @Request\+Param String address, @Request\+Param Double rating, @Request\+Param("{}photo"{}) Multipart\+File photo)  throws IOException
+\begin{DoxyCompactList}\small\item\em Обновляет данные отеля. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_staff_controller_a444c654c36d31a7ebdfc509340c1fd86}{add\+Hotel}} (@Request\+Param String name, @Request\+Param String city, @Request\+Param String country, @Request\+Param String address, @Request\+Param Double rating, @Request\+Param("{}photo"{}) Multipart\+File photo)  throws IOException 
+\begin{DoxyCompactList}\small\item\em Добавляет новый отель. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_staff_controller_af278d27cfa3e6fc6df1da836c446a3da}{delete\+Hotel}} (@Request\+Param Long id)
+\begin{DoxyCompactList}\small\item\em Удаляет отель и связанные с ним данные. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_staff_controller_a8612f9df21427ceda221371ab32a2a42}{add\+Room}} (@Request\+Param Long hotel\+Id, @Request\+Param String room\+Type, @Request\+Param int capacity, @Request\+Param Double price, @Request\+Param String description, @Request\+Param("{}photo"{}) Multipart\+File photo)  throws IOException 
+\begin{DoxyCompactList}\small\item\em Добавляет новый номер в отель. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_staff_controller_a146f8862a49e9d0a96eaae1d638e3238}{update\+Room}} (@Request\+Param Long id, @Request\+Param Long hotel\+Id, @Request\+Param String room\+Type, @Request\+Param int capacity, @Request\+Param Double price, @Request\+Param String description, @Request\+Param("{}photo"{}) Multipart\+File photo)  throws IOException 
+\begin{DoxyCompactList}\small\item\em Редактирует информацию о номере. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_staff_controller_aa7872e8f151ad2321c97f9e502645bdd}{delete\+Room}} (@Request\+Param Long id)
+\begin{DoxyCompactList}\small\item\em Удаляет номер и связанные с ним бронирования. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_staff_controller_a79bbe29386891f2d076f176484ef172a}{view\+Bookings}} (Model model)
+\begin{DoxyCompactList}\small\item\em Отображает список всех бронирований для менеджера. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1controllers_1_1_staff_controller_a134adb1929d55cd9c3f38935450443a3}{edit\+Booking\+Status}} (@Request\+Param Long booking\+Id, @Request\+Param String status)
+\begin{DoxyCompactList}\small\item\em Изменяет статус бронирования. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Контроллер для обработки запросов, связанные с действиями менеджеров отелей. 
+
+Контроллер позволяет менеджерам просматривать отели, номера, бронирования и управлять ими. \begin{DoxyAuthor}{Author}
+Елизавета Горновова 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17.\+04.\+25 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller_a68ff256c88eb954ef604b392de001d1e}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}!StaffController@{StaffController}}
+\index{StaffController@{StaffController}!org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+\doxysubsubsection{\texorpdfstring{StaffController()}{StaffController()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_staff_controller_a68ff256c88eb954ef604b392de001d1e} 
+org.\+example.\+controllers.\+Staff\+Controller.\+Staff\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_user_service}{User\+Service}}}]{user\+Service}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_hotel_service}{Hotel\+Service}}}]{hotel\+Service}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_booking_service}{Booking\+Service}}}]{booking\+Service}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_room_service}{Room\+Service}}}]{room\+Service}{, }\item[{\mbox{\hyperlink{classorg_1_1example_1_1services_1_1_city_service}{City\+Service}}}]{city\+Service}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор с внедрением зависимостей. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Service} & Сервис для работы с пользователями \\
+\hline
+{\em hotel\+Service} & Сервис для работы с отелями \\
+\hline
+{\em booking\+Service} & Сервис для работы с бронированиями \\
+\hline
+{\em room\+Service} & Сервис для работы с номерами \\
+\hline
+{\em city\+Service} & Сервис для работы с городами \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller_a444c654c36d31a7ebdfc509340c1fd86}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}!addHotel@{addHotel}}
+\index{addHotel@{addHotel}!org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+\doxysubsubsection{\texorpdfstring{addHotel()}{addHotel()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_staff_controller_a444c654c36d31a7ebdfc509340c1fd86} 
+String org.\+example.\+controllers.\+Staff\+Controller.\+add\+Hotel (\begin{DoxyParamCaption}\item[{@Request\+Param String}]{name}{, }\item[{@Request\+Param String}]{city}{, }\item[{@Request\+Param String}]{country}{, }\item[{@Request\+Param String}]{address}{, }\item[{@Request\+Param Double}]{rating}{, }\item[{@Request\+Param("{}photo"{}) Multipart\+File}]{photo}{}\end{DoxyParamCaption}) throws IOException}
+
+
+
+Добавляет новый отель. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Название отеля \\
+\hline
+{\em city} & Название города \\
+\hline
+{\em country} & Страна \\
+\hline
+{\em address} & Адрес \\
+\hline
+{\em rating} & Рейтинг \\
+\hline
+{\em photo} & Фото отеля \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Редирект на дашборд 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & При ошибке загрузки файла \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller_a8612f9df21427ceda221371ab32a2a42}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}!addRoom@{addRoom}}
+\index{addRoom@{addRoom}!org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+\doxysubsubsection{\texorpdfstring{addRoom()}{addRoom()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_staff_controller_a8612f9df21427ceda221371ab32a2a42} 
+String org.\+example.\+controllers.\+Staff\+Controller.\+add\+Room (\begin{DoxyParamCaption}\item[{@Request\+Param Long}]{hotel\+Id}{, }\item[{@Request\+Param String}]{room\+Type}{, }\item[{@Request\+Param int}]{capacity}{, }\item[{@Request\+Param Double}]{price}{, }\item[{@Request\+Param String}]{description}{, }\item[{@Request\+Param("{}photo"{}) Multipart\+File}]{photo}{}\end{DoxyParamCaption}) throws IOException}
+
+
+
+Добавляет новый номер в отель. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel\+Id} & Идентификатор отеля \\
+\hline
+{\em room\+Type} & Тип номера \\
+\hline
+{\em capacity} & Вместимость \\
+\hline
+{\em price} & Цена за ночь \\
+\hline
+{\em description} & Описание \\
+\hline
+{\em photo} & Фото номера \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Редирект к списку номеров отеля 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & При ошибке загрузки \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller_af278d27cfa3e6fc6df1da836c446a3da}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}!deleteHotel@{deleteHotel}}
+\index{deleteHotel@{deleteHotel}!org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+\doxysubsubsection{\texorpdfstring{deleteHotel()}{deleteHotel()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_staff_controller_af278d27cfa3e6fc6df1da836c446a3da} 
+String org.\+example.\+controllers.\+Staff\+Controller.\+delete\+Hotel (\begin{DoxyParamCaption}\item[{@Request\+Param Long}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Удаляет отель и связанные с ним данные. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Идентификатор отеля \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Редирект на дашборд 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller_aa7872e8f151ad2321c97f9e502645bdd}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}!deleteRoom@{deleteRoom}}
+\index{deleteRoom@{deleteRoom}!org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+\doxysubsubsection{\texorpdfstring{deleteRoom()}{deleteRoom()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_staff_controller_aa7872e8f151ad2321c97f9e502645bdd} 
+String org.\+example.\+controllers.\+Staff\+Controller.\+delete\+Room (\begin{DoxyParamCaption}\item[{@Request\+Param Long}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Удаляет номер и связанные с ним бронирования. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Идентификатор номера \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Редирект к списку номеров отеля 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller_a134adb1929d55cd9c3f38935450443a3}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}!editBookingStatus@{editBookingStatus}}
+\index{editBookingStatus@{editBookingStatus}!org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+\doxysubsubsection{\texorpdfstring{editBookingStatus()}{editBookingStatus()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_staff_controller_a134adb1929d55cd9c3f38935450443a3} 
+String org.\+example.\+controllers.\+Staff\+Controller.\+edit\+Booking\+Status (\begin{DoxyParamCaption}\item[{@Request\+Param Long}]{booking\+Id}{, }\item[{@Request\+Param String}]{status}{}\end{DoxyParamCaption})}
+
+
+
+Изменяет статус бронирования. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em booking\+Id} & Идентификатор бронирования \\
+\hline
+{\em status} & Новый статус (CONFIRMED или CANCELLED) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Редирект к списку бронирований 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller_a16732ca0dae2e6e34086547dbbf897a6}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}!editHotel@{editHotel}}
+\index{editHotel@{editHotel}!org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+\doxysubsubsection{\texorpdfstring{editHotel()}{editHotel()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_staff_controller_a16732ca0dae2e6e34086547dbbf897a6} 
+String org.\+example.\+controllers.\+Staff\+Controller.\+edit\+Hotel (\begin{DoxyParamCaption}\item[{@Request\+Param Long}]{id}{, }\item[{@Request\+Param String}]{name}{, }\item[{@Request\+Param String}]{city}{, }\item[{@Request\+Param String}]{country}{, }\item[{@Request\+Param String}]{address}{, }\item[{@Request\+Param Double}]{rating}{, }\item[{@Request\+Param("{}photo"{}) Multipart\+File}]{photo}{}\end{DoxyParamCaption}) throws IOException}
+
+
+
+Обновляет данные отеля. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Идентификатор отеля \\
+\hline
+{\em name} & Название отеля \\
+\hline
+{\em city} & Название города \\
+\hline
+{\em country} & Страна \\
+\hline
+{\em address} & Адрес \\
+\hline
+{\em rating} & Рейтинг \\
+\hline
+{\em photo} & Фото отеля \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Редирект на дашборд 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & При ошибке загрузки файла \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller_aa1dc7a7e659a7bdabe22afb438010b20}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}!managerDashboard@{managerDashboard}}
+\index{managerDashboard@{managerDashboard}!org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+\doxysubsubsection{\texorpdfstring{managerDashboard()}{managerDashboard()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_staff_controller_aa1dc7a7e659a7bdabe22afb438010b20} 
+String org.\+example.\+controllers.\+Staff\+Controller.\+manager\+Dashboard (\begin{DoxyParamCaption}\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Отображает панель управления менеджера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Модель для передачи данных на фронтенд \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Название HTML-\/шаблона 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller_a146f8862a49e9d0a96eaae1d638e3238}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}!updateRoom@{updateRoom}}
+\index{updateRoom@{updateRoom}!org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+\doxysubsubsection{\texorpdfstring{updateRoom()}{updateRoom()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_staff_controller_a146f8862a49e9d0a96eaae1d638e3238} 
+String org.\+example.\+controllers.\+Staff\+Controller.\+update\+Room (\begin{DoxyParamCaption}\item[{@Request\+Param Long}]{id}{, }\item[{@Request\+Param Long}]{hotel\+Id}{, }\item[{@Request\+Param String}]{room\+Type}{, }\item[{@Request\+Param int}]{capacity}{, }\item[{@Request\+Param Double}]{price}{, }\item[{@Request\+Param String}]{description}{, }\item[{@Request\+Param("{}photo"{}) Multipart\+File}]{photo}{}\end{DoxyParamCaption}) throws IOException}
+
+
+
+Редактирует информацию о номере. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Идентификатор номера \\
+\hline
+{\em hotel\+Id} & Идентификатор отеля \\
+\hline
+{\em room\+Type} & Тип номера \\
+\hline
+{\em capacity} & Вместимость \\
+\hline
+{\em price} & Цена за ночь \\
+\hline
+{\em description} & Описание \\
+\hline
+{\em photo} & Фото номера \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Редирект к списку номеров отеля 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & При ошибке загрузки \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller_a79bbe29386891f2d076f176484ef172a}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}!viewBookings@{viewBookings}}
+\index{viewBookings@{viewBookings}!org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+\doxysubsubsection{\texorpdfstring{viewBookings()}{viewBookings()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_staff_controller_a79bbe29386891f2d076f176484ef172a} 
+String org.\+example.\+controllers.\+Staff\+Controller.\+view\+Bookings (\begin{DoxyParamCaption}\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Отображает список всех бронирований для менеджера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Модель с данными \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+HTML-\/шаблон со списком бронирований 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1controllers_1_1_staff_controller_ade405fbcadc95105b7803450b00b8b47}\index{org.example.controllers.StaffController@{org.example.controllers.StaffController}!viewHotelRooms@{viewHotelRooms}}
+\index{viewHotelRooms@{viewHotelRooms}!org.example.controllers.StaffController@{org.example.controllers.StaffController}}
+\doxysubsubsection{\texorpdfstring{viewHotelRooms()}{viewHotelRooms()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1controllers_1_1_staff_controller_ade405fbcadc95105b7803450b00b8b47} 
+String org.\+example.\+controllers.\+Staff\+Controller.\+view\+Hotel\+Rooms (\begin{DoxyParamCaption}\item[{@Path\+Variable("{}id"{}) Long}]{hotel\+Id}{, }\item[{Model}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Отображает список номеров конкретного отеля. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel\+Id} & Идентификатор отеля \\
+\hline
+{\em model} & Модель для передачи данных \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Название HTML-\/шаблона 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/controllers/Staff\+Controller.\+java\end{DoxyCompactItemize}

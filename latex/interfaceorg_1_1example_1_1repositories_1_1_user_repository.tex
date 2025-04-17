@@ -1,0 +1,84 @@
+\doxysection{org.\+example.\+repositories.\+User\+Repository Interface Reference}
+\hypertarget{interfaceorg_1_1example_1_1repositories_1_1_user_repository}{}\label{interfaceorg_1_1example_1_1repositories_1_1_user_repository}\index{org.example.repositories.UserRepository@{org.example.repositories.UserRepository}}
+
+
+Репозиторий для управления сущностями \doxylink{classorg_1_1example_1_1entities_1_1_user}{User} (Пользователи).  
+
+
+Inheritance diagram for org.\+example.\+repositories.\+User\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceorg_1_1example_1_1repositories_1_1_user_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_user_repository_ae6b55c8bc729ae2bf4e3d326cb4e08ed}{find\+User\+By\+Email}} (String email)
+\begin{DoxyCompactList}\small\item\em Найти пользователя по его email. \end{DoxyCompactList}\item 
+Optional$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_user_repository_a30e4997d6a8f7e57de533e6d5b81a38e}{find\+By\+Email}} (String email)
+\begin{DoxyCompactList}\small\item\em Найти пользователя по его email. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_user_repository_a008e9e35583e6f080482c59d68a47121}{find\+All}} ()
+\begin{DoxyCompactList}\small\item\em Получить список всех пользователей. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Репозиторий для управления сущностями \doxylink{classorg_1_1example_1_1entities_1_1_user}{User} (Пользователи). 
+
+Содержит методы для работы с пользователями, включая поиск пользователей по email и извлечение всех пользователей. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_user_repository_a008e9e35583e6f080482c59d68a47121}\index{org.example.repositories.UserRepository@{org.example.repositories.UserRepository}!findAll@{findAll}}
+\index{findAll@{findAll}!org.example.repositories.UserRepository@{org.example.repositories.UserRepository}}
+\doxysubsubsection{\texorpdfstring{findAll()}{findAll()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_user_repository_a008e9e35583e6f080482c59d68a47121} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} $>$ org.\+example.\+repositories.\+User\+Repository.\+find\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить список всех пользователей. 
+
+\begin{DoxyReturn}{Returns}
+Список всех пользователей в базе данных. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_user_repository_a30e4997d6a8f7e57de533e6d5b81a38e}\index{org.example.repositories.UserRepository@{org.example.repositories.UserRepository}!findByEmail@{findByEmail}}
+\index{findByEmail@{findByEmail}!org.example.repositories.UserRepository@{org.example.repositories.UserRepository}}
+\doxysubsubsection{\texorpdfstring{findByEmail()}{findByEmail()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_user_repository_a30e4997d6a8f7e57de533e6d5b81a38e} 
+Optional$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} $>$ org.\+example.\+repositories.\+User\+Repository.\+find\+By\+Email (\begin{DoxyParamCaption}\item[{String}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Найти пользователя по его email. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Адрес электронной почты пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Optional объект, содержащий пользователя, если он существует, или пустой, если не найден. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_user_repository_ae6b55c8bc729ae2bf4e3d326cb4e08ed}\index{org.example.repositories.UserRepository@{org.example.repositories.UserRepository}!findUserByEmail@{findUserByEmail}}
+\index{findUserByEmail@{findUserByEmail}!org.example.repositories.UserRepository@{org.example.repositories.UserRepository}}
+\doxysubsubsection{\texorpdfstring{findUserByEmail()}{findUserByEmail()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_user_repository_ae6b55c8bc729ae2bf4e3d326cb4e08ed} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} org.\+example.\+repositories.\+User\+Repository.\+find\+User\+By\+Email (\begin{DoxyParamCaption}\item[{String}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Найти пользователя по его email. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Адрес электронной почты пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Пользователь с указанным email. 
+\end{DoxyReturn}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/repositories/User\+Repository.\+java\end{DoxyCompactItemize}

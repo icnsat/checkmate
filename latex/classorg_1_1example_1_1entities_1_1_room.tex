@@ -1,0 +1,331 @@
+\doxysection{org.\+example.\+entities.\+Room Class Reference}
+\hypertarget{classorg_1_1example_1_1entities_1_1_room}{}\label{classorg_1_1example_1_1entities_1_1_room}\index{org.example.entities.Room@{org.example.entities.Room}}
+
+
+Сущность, представляющая комнату в отеле.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a4df61c021efb8fbc1ee7c461dbb31233}{Room}} ()
+\begin{DoxyCompactList}\small\item\em Пустой конструктор. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_ad6325fd72a52c6ff59428d8aa3d6b00d}{Room}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} hotel, String room\+Type, int capacity, Double price, String description)
+\begin{DoxyCompactList}\small\item\em Конструктор для создания комнаты без фото. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a8b13f19e772cf20201ddf9dfcc601b3f}{Room}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} hotel, String room\+Type, int capacity, Double price, String description, String photo)
+\begin{DoxyCompactList}\small\item\em Конструктор с указанием фото. \end{DoxyCompactList}\item 
+Long \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_ab457ed513924cf94db701c828327b0cd}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Получить ID номера. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_affc4381dce9a30bffefb4fa2e35288cc}{set\+Id}} (Long id)
+\begin{DoxyCompactList}\small\item\em Установить ID номера. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a4d7710bb49d5fe46bdde2e4d32635a15}{get\+Hotel}} ()
+\begin{DoxyCompactList}\small\item\em Получить отель номера. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a07bf9c5e304ff7ed50a864428c82f950}{set\+Hotel}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} hotel)
+\begin{DoxyCompactList}\small\item\em Установить отель номера. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a9a2dccb91ce1c6bdb2949bd174220f74}{get\+Room\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Получить тип номера. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_ab44eb47880e0893f6030f1171ddccc94}{set\+Room\+Type}} (String room\+Type)
+\begin{DoxyCompactList}\small\item\em Установить тип номера. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a9251a3ec9fba04facc35dab2a1ac578b}{get\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Получить вместимость номера. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a6eff0608f79839e8c124315070b09146}{set\+Capacity}} (int capacity)
+\begin{DoxyCompactList}\small\item\em Установить вместимость номера. \end{DoxyCompactList}\item 
+Double \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a370c9b64629c24e827b5416fe7263a65}{get\+Price}} ()
+\begin{DoxyCompactList}\small\item\em Получить цену номера за ночь. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a15442849e8ce4dc43cd34c3f8a4d5d0a}{set\+Price}} (Double price)
+\begin{DoxyCompactList}\small\item\em Установить цену номера за ночь. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a2257e3444f3396a7a9e9f119052defd4}{get\+Description}} ()
+\begin{DoxyCompactList}\small\item\em Получить описаиние номера. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a737a88b3ba8c8ffa5d738618f9a64474}{set\+Description}} (String description)
+\begin{DoxyCompactList}\small\item\em Установить описаиние номера. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a2a88dde7776273b2c5eef5da2989d6e3}{get\+Photo}} ()
+\begin{DoxyCompactList}\small\item\em Получить фото номера. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a2f7e528e34d3f8b3f3129311b642d4c5}{set\+Photo}} (String photo)
+\begin{DoxyCompactList}\small\item\em Установить фото номера. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room_a643b3d862f5841105cb8eec343bc12fb}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает строковое представление комнаты. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Сущность, представляющая комнату в отеле. 
+
+Хранит информацию о типе комнаты, вместимости, цене, описании и связи с отелем.
+
+@entity Аннотация JPA для сопоставления с таблицей "{}rooms"{} @table Указывает имя таблицы в базе данных 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a4df61c021efb8fbc1ee7c461dbb31233}\index{org.example.entities.Room@{org.example.entities.Room}!Room@{Room}}
+\index{Room@{Room}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{Room()}{Room()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a4df61c021efb8fbc1ee7c461dbb31233} 
+org.\+example.\+entities.\+Room.\+Room (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Пустой конструктор. 
+
+Необходим для JPA. \Hypertarget{classorg_1_1example_1_1entities_1_1_room_ad6325fd72a52c6ff59428d8aa3d6b00d}\index{org.example.entities.Room@{org.example.entities.Room}!Room@{Room}}
+\index{Room@{Room}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{Room()}{Room()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_ad6325fd72a52c6ff59428d8aa3d6b00d} 
+org.\+example.\+entities.\+Room.\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}}}]{hotel}{, }\item[{String}]{room\+Type}{, }\item[{int}]{capacity}{, }\item[{Double}]{price}{, }\item[{String}]{description}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор для создания комнаты без фото. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Отель, к которому относится комната. \\
+\hline
+{\em room\+Type} & Тип комнаты. \\
+\hline
+{\em capacity} & Вместимость. \\
+\hline
+{\em price} & Цена за ночь. \\
+\hline
+{\em description} & Описание. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a8b13f19e772cf20201ddf9dfcc601b3f}\index{org.example.entities.Room@{org.example.entities.Room}!Room@{Room}}
+\index{Room@{Room}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{Room()}{Room()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a8b13f19e772cf20201ddf9dfcc601b3f} 
+org.\+example.\+entities.\+Room.\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}}}]{hotel}{, }\item[{String}]{room\+Type}{, }\item[{int}]{capacity}{, }\item[{Double}]{price}{, }\item[{String}]{description}{, }\item[{String}]{photo}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор с указанием фото. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Отель. \\
+\hline
+{\em room\+Type} & Тип комнаты. \\
+\hline
+{\em capacity} & Вместимость. \\
+\hline
+{\em price} & Цена. \\
+\hline
+{\em description} & Описание. \\
+\hline
+{\em photo} & Фото комнаты. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a9251a3ec9fba04facc35dab2a1ac578b}\index{org.example.entities.Room@{org.example.entities.Room}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a9251a3ec9fba04facc35dab2a1ac578b} 
+int org.\+example.\+entities.\+Room.\+get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить вместимость номера. 
+
+\begin{DoxyReturn}{Returns}
+Вместимость номера. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a2257e3444f3396a7a9e9f119052defd4}\index{org.example.entities.Room@{org.example.entities.Room}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a2257e3444f3396a7a9e9f119052defd4} 
+String org.\+example.\+entities.\+Room.\+get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить описаиние номера. 
+
+\begin{DoxyReturn}{Returns}
+Описание номера. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a4d7710bb49d5fe46bdde2e4d32635a15}\index{org.example.entities.Room@{org.example.entities.Room}!getHotel@{getHotel}}
+\index{getHotel@{getHotel}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{getHotel()}{getHotel()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a4d7710bb49d5fe46bdde2e4d32635a15} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} org.\+example.\+entities.\+Room.\+get\+Hotel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить отель номера. 
+
+\begin{DoxyReturn}{Returns}
+Отель номера. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_ab457ed513924cf94db701c828327b0cd}\index{org.example.entities.Room@{org.example.entities.Room}!getId@{getId}}
+\index{getId@{getId}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_ab457ed513924cf94db701c828327b0cd} 
+Long org.\+example.\+entities.\+Room.\+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить ID номера. 
+
+\begin{DoxyReturn}{Returns}
+Уникальный идентификатор номера. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a2a88dde7776273b2c5eef5da2989d6e3}\index{org.example.entities.Room@{org.example.entities.Room}!getPhoto@{getPhoto}}
+\index{getPhoto@{getPhoto}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{getPhoto()}{getPhoto()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a2a88dde7776273b2c5eef5da2989d6e3} 
+String org.\+example.\+entities.\+Room.\+get\+Photo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить фото номера. 
+
+\begin{DoxyReturn}{Returns}
+Фото номера. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a370c9b64629c24e827b5416fe7263a65}\index{org.example.entities.Room@{org.example.entities.Room}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a370c9b64629c24e827b5416fe7263a65} 
+Double org.\+example.\+entities.\+Room.\+get\+Price (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить цену номера за ночь. 
+
+\begin{DoxyReturn}{Returns}
+Цена номера за ночь. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a9a2dccb91ce1c6bdb2949bd174220f74}\index{org.example.entities.Room@{org.example.entities.Room}!getRoomType@{getRoomType}}
+\index{getRoomType@{getRoomType}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{getRoomType()}{getRoomType()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a9a2dccb91ce1c6bdb2949bd174220f74} 
+String org.\+example.\+entities.\+Room.\+get\+Room\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Получить тип номера. 
+
+\begin{DoxyReturn}{Returns}
+Тип номера. 
+\end{DoxyReturn}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a6eff0608f79839e8c124315070b09146}\index{org.example.entities.Room@{org.example.entities.Room}!setCapacity@{setCapacity}}
+\index{setCapacity@{setCapacity}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{setCapacity()}{setCapacity()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a6eff0608f79839e8c124315070b09146} 
+void org.\+example.\+entities.\+Room.\+set\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Установить вместимость номера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Вместимость номера. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a737a88b3ba8c8ffa5d738618f9a64474}\index{org.example.entities.Room@{org.example.entities.Room}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a737a88b3ba8c8ffa5d738618f9a64474} 
+void org.\+example.\+entities.\+Room.\+set\+Description (\begin{DoxyParamCaption}\item[{String}]{description}{}\end{DoxyParamCaption})}
+
+
+
+Установить описаиние номера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em description} & Описание номера. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a07bf9c5e304ff7ed50a864428c82f950}\index{org.example.entities.Room@{org.example.entities.Room}!setHotel@{setHotel}}
+\index{setHotel@{setHotel}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{setHotel()}{setHotel()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a07bf9c5e304ff7ed50a864428c82f950} 
+void org.\+example.\+entities.\+Room.\+set\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}}}]{hotel}{}\end{DoxyParamCaption})}
+
+
+
+Установить отель номера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Отель номера. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_affc4381dce9a30bffefb4fa2e35288cc}\index{org.example.entities.Room@{org.example.entities.Room}!setId@{setId}}
+\index{setId@{setId}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_affc4381dce9a30bffefb4fa2e35288cc} 
+void org.\+example.\+entities.\+Room.\+set\+Id (\begin{DoxyParamCaption}\item[{Long}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Установить ID номера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Идентификатор номера. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a2f7e528e34d3f8b3f3129311b642d4c5}\index{org.example.entities.Room@{org.example.entities.Room}!setPhoto@{setPhoto}}
+\index{setPhoto@{setPhoto}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{setPhoto()}{setPhoto()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a2f7e528e34d3f8b3f3129311b642d4c5} 
+void org.\+example.\+entities.\+Room.\+set\+Photo (\begin{DoxyParamCaption}\item[{String}]{photo}{}\end{DoxyParamCaption})}
+
+
+
+Установить фото номера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em photo} & Фото номера. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a15442849e8ce4dc43cd34c3f8a4d5d0a}\index{org.example.entities.Room@{org.example.entities.Room}!setPrice@{setPrice}}
+\index{setPrice@{setPrice}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{setPrice()}{setPrice()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a15442849e8ce4dc43cd34c3f8a4d5d0a} 
+void org.\+example.\+entities.\+Room.\+set\+Price (\begin{DoxyParamCaption}\item[{Double}]{price}{}\end{DoxyParamCaption})}
+
+
+
+Установить цену номера за ночь. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em price} & Цена номера за ночь. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_ab44eb47880e0893f6030f1171ddccc94}\index{org.example.entities.Room@{org.example.entities.Room}!setRoomType@{setRoomType}}
+\index{setRoomType@{setRoomType}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{setRoomType()}{setRoomType()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_ab44eb47880e0893f6030f1171ddccc94} 
+void org.\+example.\+entities.\+Room.\+set\+Room\+Type (\begin{DoxyParamCaption}\item[{String}]{room\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Установить тип номера. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Type} & Тип номера. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classorg_1_1example_1_1entities_1_1_room_a643b3d862f5841105cb8eec343bc12fb}\index{org.example.entities.Room@{org.example.entities.Room}!toString@{toString}}
+\index{toString@{toString}!org.example.entities.Room@{org.example.entities.Room}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{classorg_1_1example_1_1entities_1_1_room_a643b3d862f5841105cb8eec343bc12fb} 
+String org.\+example.\+entities.\+Room.\+to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Возвращает строковое представление комнаты. 
+
+\begin{DoxyReturn}{Returns}
+Строка с основными характеристиками комнаты. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/entities/Room.\+java\end{DoxyCompactItemize}

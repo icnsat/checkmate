@@ -1,0 +1,126 @@
+\doxysection{org.\+example.\+repositories.\+Booking\+Repository Interface Reference}
+\hypertarget{interfaceorg_1_1example_1_1repositories_1_1_booking_repository}{}\label{interfaceorg_1_1example_1_1repositories_1_1_booking_repository}\index{org.example.repositories.BookingRepository@{org.example.repositories.BookingRepository}}
+
+
+Репозиторий для работы с сущностями \doxylink{classorg_1_1example_1_1entities_1_1_booking}{Booking} (Бронирование).  
+
+
+Inheritance diagram for org.\+example.\+repositories.\+Booking\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceorg_1_1example_1_1repositories_1_1_booking_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a5c1291f60d1a9b6bee93008dcbe1c27a}{find\+All\+By\+User}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}} user)
+\begin{DoxyCompactList}\small\item\em Найти все бронирования для заданного пользователя. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a22d9aa1a5ea467273979f815eef4cd27}{find\+By\+Hotel\+In}} (List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} $>$ hotels)
+\begin{DoxyCompactList}\small\item\em Найти все бронирования, связанные с отелями из списка. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_ab4f23e713aa0906c4ed594faa0f4e807}{delete\+All\+By\+Room}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} room)
+\begin{DoxyCompactList}\small\item\em Удалить все бронирования, связанные с указанной комнатой. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} $>$ \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a01c5f511c43f47236efc2fc6ea999452}{find\+By\+Room}} (\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}} room)
+\begin{DoxyCompactList}\small\item\em Найти все бронирования по конкретной комнате. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} \mbox{\hyperlink{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a738585a7e79c4ed19428cbd2d472d91f}{find\+Booking\+By\+Id}} (Long booking\+Id)
+\begin{DoxyCompactList}\small\item\em Найти бронирование по его идентификатору. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Репозиторий для работы с сущностями \doxylink{classorg_1_1example_1_1entities_1_1_booking}{Booking} (Бронирование). 
+
+Предоставляет методы доступа к данным бронирований, в том числе по пользователям, отелям и комнатам. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_ab4f23e713aa0906c4ed594faa0f4e807}\index{org.example.repositories.BookingRepository@{org.example.repositories.BookingRepository}!deleteAllByRoom@{deleteAllByRoom}}
+\index{deleteAllByRoom@{deleteAllByRoom}!org.example.repositories.BookingRepository@{org.example.repositories.BookingRepository}}
+\doxysubsubsection{\texorpdfstring{deleteAllByRoom()}{deleteAllByRoom()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_ab4f23e713aa0906c4ed594faa0f4e807} 
+void org.\+example.\+repositories.\+Booking\+Repository.\+delete\+All\+By\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}}}]{room}{}\end{DoxyParamCaption})}
+
+
+
+Удалить все бронирования, связанные с указанной комнатой. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Комната, бронирования которой необходимо удалить. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a5c1291f60d1a9b6bee93008dcbe1c27a}\index{org.example.repositories.BookingRepository@{org.example.repositories.BookingRepository}!findAllByUser@{findAllByUser}}
+\index{findAllByUser@{findAllByUser}!org.example.repositories.BookingRepository@{org.example.repositories.BookingRepository}}
+\doxysubsubsection{\texorpdfstring{findAllByUser()}{findAllByUser()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a5c1291f60d1a9b6bee93008dcbe1c27a} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} $>$ org.\+example.\+repositories.\+Booking\+Repository.\+find\+All\+By\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_user}{User}}}]{user}{}\end{DoxyParamCaption})}
+
+
+
+Найти все бронирования для заданного пользователя. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Пользователь, чьи бронирования нужно получить. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список бронирований пользователя. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a738585a7e79c4ed19428cbd2d472d91f}\index{org.example.repositories.BookingRepository@{org.example.repositories.BookingRepository}!findBookingById@{findBookingById}}
+\index{findBookingById@{findBookingById}!org.example.repositories.BookingRepository@{org.example.repositories.BookingRepository}}
+\doxysubsubsection{\texorpdfstring{findBookingById()}{findBookingById()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a738585a7e79c4ed19428cbd2d472d91f} 
+\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} org.\+example.\+repositories.\+Booking\+Repository.\+find\+Booking\+By\+Id (\begin{DoxyParamCaption}\item[{Long}]{booking\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Найти бронирование по его идентификатору. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em booking\+Id} & Идентификатор бронирования. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Объект \doxylink{classorg_1_1example_1_1entities_1_1_booking}{Booking}, если найден. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a22d9aa1a5ea467273979f815eef4cd27}\index{org.example.repositories.BookingRepository@{org.example.repositories.BookingRepository}!findByHotelIn@{findByHotelIn}}
+\index{findByHotelIn@{findByHotelIn}!org.example.repositories.BookingRepository@{org.example.repositories.BookingRepository}}
+\doxysubsubsection{\texorpdfstring{findByHotelIn()}{findByHotelIn()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a22d9aa1a5ea467273979f815eef4cd27} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} $>$ org.\+example.\+repositories.\+Booking\+Repository.\+find\+By\+Hotel\+In (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_hotel}{Hotel}} $>$}]{hotels}{}\end{DoxyParamCaption})}
+
+
+
+Найти все бронирования, связанные с отелями из списка. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotels} & Список отелей. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список бронирований, связанных с этими отелями. 
+\end{DoxyReturn}
+\Hypertarget{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a01c5f511c43f47236efc2fc6ea999452}\index{org.example.repositories.BookingRepository@{org.example.repositories.BookingRepository}!findByRoom@{findByRoom}}
+\index{findByRoom@{findByRoom}!org.example.repositories.BookingRepository@{org.example.repositories.BookingRepository}}
+\doxysubsubsection{\texorpdfstring{findByRoom()}{findByRoom()}}
+{\footnotesize\ttfamily \label{interfaceorg_1_1example_1_1repositories_1_1_booking_repository_a01c5f511c43f47236efc2fc6ea999452} 
+List$<$ \mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_booking}{Booking}} $>$ org.\+example.\+repositories.\+Booking\+Repository.\+find\+By\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1example_1_1entities_1_1_room}{Room}}}]{room}{}\end{DoxyParamCaption})}
+
+
+
+Найти все бронирования по конкретной комнате. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Комната, по которой осуществляется поиск. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Список бронирований по комнате. 
+\end{DoxyReturn}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/org/example/repositories/Booking\+Repository.\+java\end{DoxyCompactItemize}
